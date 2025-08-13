@@ -114,7 +114,7 @@ export const portfolio: PortfolioProject[] = [
     category: "Marca Personal",
     imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/LaSoledad_md.jpg",
     description: "Managed the full production for La Soledad cycling race, capturing the event’s energy from planning and filming to post-production, resulting in a dynamic and engaging final video.",
-    videoUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/Videos/Specialized_Orotina.MP4",
+    videoUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/Videos/LaSoledad.MP4",
     dataAiHint: "cycling race"
   },
   {
