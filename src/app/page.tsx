@@ -216,17 +216,20 @@ export default function Home() {
                     <div>
                         <h2 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">Sobre Videame</h2>
                         <p className="mt-6 text-lg text-muted-foreground">
-I’m Jose Chaves, an Audiovisual Producer, Filmmaker and Systems Engineer specialized in motion graphics, AR/VR and post-production. My 16 years of experience and my diverse skill set allows me to bring an unique perspective to every project, blending technical expertise with creative vision to deliver high-quality solutions and immersive audiovisual content. With passion for storytelling and commitment to innovation, I strive to push the boundaries of what’s possible in the world of digital media.
+                          Nacimos en 2018 con una misión clara: fusionar la narrativa cinematográfica con la estrategia de marca para crear contenido audiovisual que no solo se ve bien, sino que también conecta, inspira y genera resultados.
+                        </p>
+                        <p className="mt-4 text-lg text-muted-foreground">
+                          Somos un equipo de creativos apasionados por el poder de la imagen en movimiento. Con base en San José, Costa Rica, trabajamos con marcas y personas para contar sus historias de la forma más auténtica y memorable.
                         </p>
                     </div>
                     <div>
                         <Image 
-                            src="https://storage.googleapis.com/project-os-prod/6c62c3f8-d44a-4e20-9988-51829e2e283c/src/app/6c735d49a37e4663a75b7509d3b5b637.png"
-                            alt="Jose Chaves, Audiovisual Producer"
+                            src="https://placehold.co/600x400.png"
+                            alt="Equipo de Videame trabajando"
                             width={600}
                             height={400}
                             className="rounded-lg shadow-lg"
-                            data-ai-hint="man portrait"
+                            data-ai-hint="film crew"
                         />
                     </div>
                 </div>
