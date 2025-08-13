@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import {
   Camera,
@@ -221,7 +222,7 @@ export default function Home() {
                     </div>
                     <div>
                         <Image 
-                            src="https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/imagenes/jose-chaves.jpg"
+                            src="https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/jose-chaves.jpeg"
                             alt="Jose Chaves, Productor Audiovisual"
                             width={600}
                             height={400}
@@ -307,3 +308,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
