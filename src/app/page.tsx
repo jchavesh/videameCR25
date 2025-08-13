@@ -48,6 +48,7 @@ export default function Home() {
     offset: ["start start", "end start"],
   });
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const buttonsY = useTransform(scrollYProgress, [0, 1], ["0%", "150%"]);
 
   const servicesRef = useRef<HTMLElement>(null);
   const { scrollYProgress: servicesScrollYProgress } = useScroll({
@@ -84,7 +85,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/60"></div>
           <div className="relative z-10 px-4">
             
-            <motion.div style={{ y }} className="mt-10 flex flex-wrap justify-center gap-4">
+            <motion.div style={{ y: buttonsY }} className="mt-10 flex flex-wrap justify-center gap-4">
               <Dialog open={isReelOpen} onOpenChange={setIsReelOpen}>
                 <DialogTrigger asChild>
                   <Button size="lg" aria-label="Ver Reel de Videame">
@@ -268,10 +269,10 @@ export default function Home() {
                 </div>
                  <div className="mt-20">
                     <h3 className="text-center text-2xl font-headline font-semibold mb-8">Algunos de nuestros clientes</h3>
-                    <div className="relative w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
-                        <div className="flex animate-scroll" style={{ animationDuration: '91s' }}>
-                            {clients.concat(clients).map((client, index) => (
-                                <div key={`${client.name}-${index}`} className="flex-shrink-0 mx-8">
+                    <div className="w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+                        <div className="flex w-max animate-scroll">
+                            {[...clients, ...clients].map((client, index) => (
+                                <div key={`${client.name}-${index}`} className="flex-shrink-0 px-8">
                                     <Image
                                         src={client.logoUrl}
                                         alt={`${client.name} logo`}
