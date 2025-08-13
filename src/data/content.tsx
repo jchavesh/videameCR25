@@ -202,19 +202,19 @@ export const content: Record<Language, Content> = {
         name: 'Ana Rodriguez',
         title: 'Gerente de Marketing, Café Sol',
         quote: 'El equipo de Videame superó nuestras expectativas. Capturaron la esencia de nuestra marca con una calidad visual impresionante. Totalmente recomendados.',
-        avatar: 'https://placehold.co/100x100/FFC0CB/000000.png',
+        avatar: 'https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?w=100&h=100&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d29tYW58ZW58MHwwfDB8fHwy',
       },
       {
         name: 'Carlos Jimenez',
         title: 'Fundador, TechNova',
         quote: 'Profesionalismo, creatividad y entrega puntual. El video de lanzamiento fue un éxito y una pieza clave en nuestra estrategia.',
-        avatar: 'https://placehold.co/100x100/ADD8E6/000000.png',
+        avatar: 'https://placehold.co/100x100.png',
       },
       {
         name: 'Sofia Vargas',
         title: 'Wedding Planner',
         quote: 'Trabajar con Videame es garantía de tranquilidad. Sus videos de boda son pura emoción y arte. Mis clientes siempre quedan felices.',
-        avatar: 'https://placehold.co/100x100/90EE90/000000.png',
+        avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d29tYW58ZW58MHwwfDB8fHwy',
       },
     ],
     clients: [
@@ -337,7 +337,7 @@ export const content: Record<Language, Content> = {
           title: "Vuelta Al Lago",
           category: "Personal Brand",
           imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/vueltaLago.png",
-          description: "Led the full audiovisual production for Vuelta al Lago, a cycling race—covering planning, on-site multi-camera coverage, and post-production—to deliver a high-energy film that captures the course, the athletes, and the event’s atmosphere.",
+          description: "We led the full audiovisual production for Vuelta al Lago, a cycling race—covering planning, on-site multi-camera coverage, and post-production—to deliver a high-energy film that captures the course, the athletes, and the event’s atmosphere.",
           videoUrl: "https://youtu.be/bq89JREVBN8?si=sltU5J6AfnOtLinR",
           dataAiHint: "cycling race"
         },
@@ -346,7 +346,7 @@ export const content: Record<Language, Content> = {
           title: "Mambotopia",
           category: "Personal Brand",
           imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/mambotopia.png",
-          description: "Led the full audiovisual production for Mambotopia, an international dance congress—covering pre-production, multi-camera event capture, and post-production—to deliver energetic highlight films, artist features, and social cutdowns.",
+          description: "We led the full audiovisual production for Mambotopia, an international dance congress—covering pre-production, multi-camera event capture, and post-production—to deliver energetic highlight films, artist features, and social cutdowns.",
           videoUrl: "https://youtu.be/iuGd8RN20hY?si=l9cIuAleTK9uK3tP",
           dataAiHint: "dance congress"
         },
@@ -427,7 +427,7 @@ export const content: Record<Language, Content> = {
           title: "Motta y Vieto Arquitectura e Ingeniería",
           category: "Personal Brand",
           imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/Motta_md.jpg",
-          description: "Led the full audiovisual production for Motta & Vieto, one of Costa Rica’s top architecture and engineering firms, delivering a visually striking piece that highlighted their expertise and innovative projects.",
+          description: "We led the full audiovisual production for Motta & Vieto, one of Costa Rica’s top architecture and engineering firms, delivering a visually striking piece that highlighted their expertise and innovative projects.",
           videoUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/Videos/MottayVieto.MP4",
           dataAiHint: "architecture"
         },
@@ -472,7 +472,7 @@ export const content: Record<Language, Content> = {
           title: "Caribe",
           category: "Personal Brand",
           imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/Caribe_md.jpg",
-          description: "Led the full audiovisual production for Caribe (ICT – Costa Rica Tourism Board), from concept development and logistics, to field production and post-production, delivering a cinematic piece that highlights the region’s culture and natural beauty.",
+          description: "We led the full audiovisual production for Caribe (ICT – Costa Rica Tourism Board), from concept development and logistics, to field production and post-production, delivering a cinematic piece that highlights the region’s culture and natural beauty.",
           videoUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/Videos/Caribe.MP4",
           dataAiHint: "tourism video"
         },
@@ -481,7 +481,7 @@ export const content: Record<Language, Content> = {
           title: "CR BioHealth",
           category: "Personal Brand",
           imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/BioHealth_md.jpg",
-          description: "Led the full audiovisual production for CR BioHealth (dentistry), from concept and script through filming and post, delivering a clean, patient-centric piece that communicates trust and care.",
+          description: "We led the full audiovisual production for CR BioHealth (dentistry), from concept and script through filming and post, delivering a clean, patient-centric piece that communicates trust and care.",
           videoUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/Videos/CRBioHealth_V3.MP4",
           dataAiHint: "dentistry"
         }
@@ -491,19 +491,19 @@ export const content: Record<Language, Content> = {
         name: 'Ana Rodriguez',
         title: 'Marketing Manager, Café Sol',
         quote: 'The Videame team exceeded our expectations. They captured the essence of our brand with stunning visual quality. Totally recommended.',
-        avatar: 'https://placehold.co/100x100/FFC0CB/000000.png',
+        avatar: 'https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?w=100&h=100&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d29tYW58ZW58MHwwfDB8fHwy',
       },
       {
         name: 'Carlos Jimenez',
         title: 'Founder, TechNova',
         quote: 'Professionalism, creativity, and on-time delivery. The launch video was a success and a key part of our strategy.',
-        avatar: 'https://placehold.co/100x100/ADD8E6/000000.png',
+        avatar: 'https://placehold.co/100x100.png',
       },
       {
         name: 'Sofia Vargas',
         title: 'Wedding Planner',
         quote: 'Working with Videame is a guarantee of peace of mind. Their wedding videos are pure emotion and art. My clients are always happy.',
-        avatar: 'https://placehold.co/100x100/90EE90/000000.png',
+        avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d29tYW58ZW58MHwwfDB8fHwy',
       },
     ],
     clients: [
