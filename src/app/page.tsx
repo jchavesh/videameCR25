@@ -216,10 +216,7 @@ export default function Home() {
                     <div>
                         <h2 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">Sobre Videame</h2>
                         <p className="mt-6 text-lg text-muted-foreground">
-                          Nacimos en 2018 con una misión clara: fusionar la narrativa cinematográfica con la estrategia de marca para crear contenido audiovisual que no solo se ve bien, sino que también conecta, inspira y genera resultados.
-                        </p>
-                        <p className="mt-4 text-lg text-muted-foreground">
-                          Somos un equipo de creativos apasionados por el poder de la imagen en movimiento. Con base en San José, Costa Rica, trabajamos con marcas y personas para contar sus historias de la forma más auténtica y memorable.
+                          I’m Jose Chaves, an Audiovisual Producer, Filmmaker and Systems Engineer specialized in motion graphics, AR/VR and post-production. My 16 years of experience and my diverse skill set allows me to bring an unique perspective to every project, blending technical expertise with creative vision to deliver high-quality solutions and immersive audiovisual content. With passion for storytelling and commitment to innovation, I strive to push the boundaries of what’s possible in the world of digital media.
                         </p>
                     </div>
                     <div>

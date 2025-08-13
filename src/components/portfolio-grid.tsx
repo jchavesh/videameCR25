@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from 'react';
@@ -14,7 +15,7 @@ import {
 } from '@/components/ui/dialog';
 import { motion } from 'framer-motion';
 
-const categories: PortfolioCategory[] = ['Comercial', 'Evento', 'Producto', 'Marca Personal', 'Drone'];
+const categories: PortfolioCategory[] = ['Comercial', 'Evento', 'Producto', 'Marca Personal', 'Drone', 'Motion Graphics'];
 
 export default function PortfolioGrid() {
   const [activeCategory, setActiveCategory] = useState<PortfolioCategory | 'Todos'>('Todos');
@@ -105,7 +106,7 @@ export default function PortfolioGrid() {
                         <div>
                         {project.videoUrl ? (
                              <div className="aspect-video w-full h-full bg-black">
-                                {project.videoUrl.endsWith('.mp4') ? (
+                                {project.videoUrl.endsWith('.mp4') || project.videoUrl.endsWith('.MP4') ? (
                                     <video src={project.videoUrl} width="100%" height="100%" controls autoPlay playsInline />
                                 ) : (
                                     <iframe 

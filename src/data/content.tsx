@@ -1,3 +1,4 @@
+
 import { Camera, Clapperboard, Megaphone, Scissors, Users, Lightbulb, Film, Award } from 'lucide-react';
 import type { ReactElement } from "react";
 
@@ -30,7 +31,7 @@ export const services: Service[] = [
   },
 ];
 
-export type PortfolioCategory = 'Comercial' | 'Evento' | 'Producto' | 'Marca Personal' | 'Drone';
+export type PortfolioCategory = 'Comercial' | 'Evento' | 'Producto' | 'Marca Personal' | 'Drone' | 'Motion Graphics';
 
 export interface PortfolioProject {
   id: number;
@@ -46,15 +47,6 @@ export interface PortfolioProject {
 export const portfolio: PortfolioProject[] = [
   {
     id: 1,
-    title: "Kimberly Clark",
-    category: "Comercial",
-    imageUrl: "https://studio.bypgd.com/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/kimberly.png",
-    description: "Video corporativo para Kimberly Clark.",
-    videoUrl: "https://player.vimeo.com/video/336825378?h=9d529a5881",
-    dataAiHint: "corporate video"
-  },
-  {
-    id: 7,
     title: "Entornos CR",
     category: "Comercial",
     imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/AR_mg.jpg",
@@ -62,8 +54,8 @@ export const portfolio: PortfolioProject[] = [
     videoUrl: "https://youtu.be/gHVWjYhBZxQ?si=k-AtKKTUb81k7sGW",
     dataAiHint: "corporate video"
   },
-   {
-    id: 8,
+  {
+    id: 2,
     title: "Introducing the Ford Explorer® Men’s Only Edition",
     category: "Comercial",
     imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/MensOnly_md.jpg",
@@ -72,7 +64,16 @@ export const portfolio: PortfolioProject[] = [
     dataAiHint: "car commercial"
   },
   {
-    id: 2,
+    id: 3,
+    title: "Kimberly Clark",
+    category: "Comercial",
+    imageUrl: "https://studio.bypgd.com/pdgstudio/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/kimberly.png",
+    description: "Video corporativo para Kimberly Clark.",
+    videoUrl: "https://player.vimeo.com/video/336825378?h=9d529a5881",
+    dataAiHint: "corporate video"
+  },
+  {
+    id: 4,
     title: "Banco Nacional",
     category: "Comercial",
     imageUrl: "https://studio.bypgd.com/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/banco.png",
@@ -81,7 +82,7 @@ export const portfolio: PortfolioProject[] = [
     dataAiHint: "bank commercial"
   },
   {
-    id: 3,
+    id: 5,
     title: "Huawei",
     category: "Producto",
     imageUrl: "https://studio.bypgd.com/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/huawei.png",
@@ -90,7 +91,7 @@ export const portfolio: PortfolioProject[] = [
     dataAiHint: "tech product"
   },
   {
-    id: 4,
+    id: 6,
     title: "Toyota",
     category: "Comercial",
     imageUrl: "https://studio.bypgd.com/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/toyota.png",
@@ -99,7 +100,7 @@ export const portfolio: PortfolioProject[] = [
     dataAiHint: "car commercial"
   },
   {
-    id: 5,
+    id: 7,
     title: "Coronado",
     category: "Producto",
     imageUrl: "https://studio.bypgd.com/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/coronado.png",
@@ -108,13 +109,130 @@ export const portfolio: PortfolioProject[] = [
     dataAiHint: "food product"
   },
   {
-    id: 6,
+    id: 8,
     title: "Coope Ande",
     category: "Comercial",
     imageUrl: "https://studio.bypgd.com/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/coopeande.png",
     description: "Comercial para Coope Ande.",
     videoUrl: "https://player.vimeo.com/video/336825378?h=9d529a5881",
     dataAiHint: "financial services"
+  },
+  {
+    id: 9,
+    title: "Kotex Overnight",
+    category: "Comercial",
+    imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/Kotex_md.jpg",
+    description: "We developed the Kotex Over the Night commercial from the ground up, overseeing the entire creative process—from concept and script to production and post-production—delivering a visually compelling and brand-focused final piece.",
+    videoUrl: "https://youtu.be/XobsJHkZrSw?si=NKKBrbn6shWkqQkv",
+    dataAiHint: "beauty product"
+  },
+  {
+    id: 10,
+    title: "Purina Pro Plan",
+    category: "Motion Graphics",
+    imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/Purina_md.jpg",
+    description: "Created custom motion graphics for PURINA Pro Plan, enhancing the visual storytelling and elevating the brand’s message through dynamic, high-quality animations.",
+    videoUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/Videos/Purina_LATAM_PP_Storytelling_DOG_SPA_Reduced.mp4",
+    dataAiHint: "pet food"
+  },
+  {
+    id: 11,
+    title: "Otra Ves - Prince Royce",
+    category: "Marca Personal",
+    imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/Prince_md.jpg",
+    description: "Contributed to the production of a music video for Prince Royce, delivering creative and technical support to achieve a visually captivating final piece aligned with the artist’s style.",
+    videoUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/Videos/PrinceRoyce-OtraVez.MP4",
+    dataAiHint: "music video"
+  },
+  {
+    id: 12,
+    title: "Specialized",
+    category: "Comercial",
+    imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/Specialized_md.jpg",
+    description: "Managed the full audiovisual production for Specialized, from concept development and filming to post-production, creating a high-impact piece that showcased the brand’s innovation and performance.",
+    videoUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/Videos/Specialized_Orotina.MP4",
+    dataAiHint: "bicycle"
+  },
+  {
+    id: 13,
+    title: "A New American Is Arriving",
+    category: "Comercial",
+    imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/America_md.jpg",
+    description: "Produced the full video for American Airlines, covering every stage from concept and script to filming and post-production, delivering a polished and brand-aligned final piece.",
+    videoUrl: "https://youtu.be/1c8daiOKRD8?si=QsM78szc-ayku9Jl",
+    dataAiHint: "airline"
+  },
+  {
+    id: 14,
+    title: "La Soledad",
+    category: "Marca Personal",
+    imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/LaSoledad_md.jpg",
+    description: "Managed the full production for La Soledad cycling race, capturing the event’s energy from planning and filming to post-production, resulting in a dynamic and engaging final video.",
+    videoUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/Videos/Specialized_Orotina.MP4",
+    dataAiHint: "cycling race"
+  },
+  {
+    id: 15,
+    title: "Motta y Vieto Arquitectura e Ingeniería",
+    category: "Marca Personal",
+    imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/Motta_md.jpg",
+    description: "Led the full audiovisual production for Motta & Vieto, one of Costa Rica’s top architecture and engineering firms, delivering a visually striking piece that highlighted their expertise and innovative projects.",
+    videoUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/Videos/MottayVieto.MP4",
+    dataAiHint: "architecture"
+  },
+  {
+    id: 16,
+    title: "HPE Social",
+    category: "Comercial",
+    imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/HpeMg.jpg",
+    description: "Produced TV and social media videos for HPE, crafting engaging content tailored for broadcast and digital platforms, aligned with the brand’s messaging and visual identity.",
+    videoUrl: "https://player.vimeo.com/video/540334508?h=0f3b80e739&title=0&byline=0&portrait=0",
+    dataAiHint: "tech company"
+  },
+  {
+    id: 17,
+    title: "Baila q Baila",
+    category: "Marca Personal",
+    imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/work_2_md.jpg",
+    description: "Managed the full audiovisual production for Baila q Baila—from concept and pre-production to filming and post—delivering a dynamic, performance-driven final piece.",
+    videoUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/Videos/BailaqBaila.MP4",
+    dataAiHint: "dance performance"
+  },
+  {
+    id: 18,
+    title: "Lunchables",
+    category: "Comercial",
+    imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/Lunchables_md.jpg",
+    description: "Served as Video Editor for Lunchables, delivering crisp pacing, tight storytelling, and brand-aligned visuals for a punchy, youth-focused spot.",
+    videoUrl: "https://youtu.be/nIph2h63jRw",
+    dataAiHint: "food product"
+  },
+  {
+    id: 19,
+    title: "Mugre",
+    category: "Marca Personal",
+    imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/Mugre_mg.jpg",
+    description: "Character Animation",
+    videoUrl: "https://youtu.be/gvNn3qwPGXA?si=_f_tH-VXa-yC6mdr",
+    dataAiHint: "character animation"
+  },
+  {
+    id: 20,
+    title: "Caribe",
+    category: "Marca Personal",
+    imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/Caribe_md.jpg",
+    description: "Led the full audiovisual production for Caribe (ICT – Costa Rica Tourism Board), from concept development and logistics to field production and post-production, delivering a cinematic piece that highlights the region’s culture and natural beauty.",
+    videoUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/Videos/Caribe.MP4",
+    dataAiHint: "tourism video"
+  },
+  {
+    id: 21,
+    title: "CR BioHealth",
+    category: "Marca Personal",
+    imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/BioHealth_md.jpg",
+    description: "Led the full audiovisual production for CR BioHealth (dentistry), from concept and script through filming and post, delivering a clean, patient-centric piece that communicates trust and care.",
+    videoUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/Videos/CRBioHealth_V3.MP4",
+    dataAiHint: "dentistry"
   }
 ];
 
