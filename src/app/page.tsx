@@ -269,31 +269,35 @@ export default function Home() {
                  <div className="mt-20">
                     <h3 className="text-center text-2xl font-headline font-semibold mb-8">Algunos de nuestros clientes</h3>
                     <div className="relative w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
-                        <div className="flex w-max animate-scroll">
-                            {clients.map((client) => (
-                                <div key={client.name} className="flex-shrink-0 mx-8">
-                                    <Image
-                                        src={client.logoUrl}
-                                        alt={`${client.name} logo`}
-                                        width={120}
-                                        height={60}
-                                        className="object-contain"
-                                        data-ai-hint="company logo"
-                                    />
-                                </div>
-                            ))}
-                            {clients.map((client) => (
-                                <div key={`${client.name}-duplicate`} className="flex-shrink-0 mx-8" aria-hidden="true">
-                                    <Image
-                                        src={client.logoUrl}
-                                        alt={`${client.name} logo`}
-                                        width={120}
-                                        height={60}
-                                        className="object-contain"
-                                        data-ai-hint="company logo"
-                                    />
-                                </div>
-                            ))}
+                        <div className="flex flex-nowrap">
+                            <div className="flex animate-scroll">
+                                {clients.map((client) => (
+                                    <div key={client.name} className="flex-shrink-0 mx-8">
+                                        <Image
+                                            src={client.logoUrl}
+                                            alt={`${client.name} logo`}
+                                            width={120}
+                                            height={60}
+                                            className="object-contain"
+                                            data-ai-hint="company logo"
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="flex animate-scroll" aria-hidden="true">
+                                {clients.map((client) => (
+                                    <div key={`${client.name}-duplicate`} className="flex-shrink-0 mx-8">
+                                        <Image
+                                            src={client.logoUrl}
+                                            alt={`${client.name} logo`}
+                                            width={120}
+                                            height={60}
+                                            className="object-contain"
+                                            data-ai-hint="company logo"
+                                        />
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
