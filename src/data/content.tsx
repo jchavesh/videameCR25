@@ -31,7 +31,7 @@ export const services: Service[] = [
   },
 ];
 
-export type PortfolioCategory = 'Comercial' | 'Evento' | 'Producto' | 'Marca Personal' | 'Drone' | 'Motion Graphics';
+export type PortfolioCategory = 'Comercial' | 'Marca Personal' | 'Motion Graphics';
 
 export interface PortfolioProject {
   id: number;
@@ -207,7 +207,6 @@ export const testimonials = [
 export const clients = [
     { name: 'Adobe', logoUrl: 'https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/logo-adobe.png' },
     { name: 'American Airlines', logoUrl: 'https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/logo-American.png' },
-    { name: 'Bridgestone', logoUrl: 'https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/logo-Bridgestone.png' },
     { name: 'CR Dental', logoUrl: 'https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/logo-Dental.png' },
     { name: 'Google', logoUrl: 'https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/logo-google.png' },
     { name: 'HP', logoUrl: 'https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/logo-HP.png' },
