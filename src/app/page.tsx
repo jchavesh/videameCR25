@@ -124,21 +124,28 @@ export default function Home() {
               </p>
             </motion.div>
             <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-              {t.services.map((service) => (
-                <Card
+              {t.services.map((service, index) => (
+                <motion.div
                   key={service.title}
-                  className="bg-secondary/50 border-border hover:border-primary/50 transition-all duration-300 transform hover:-translate-y-2"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <CardHeader className="items-center">
-                    <div className="p-4 bg-primary/10 rounded-full text-primary">
-                      {service.icon}
-                    </div>
-                    <CardTitle className="mt-4 text-center">{service.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-center text-muted-foreground">
-                    <p>{service.description}</p>
-                  </CardContent>
-                </Card>
+                  <Card
+                    className="bg-secondary/50 border-border hover:border-primary/50 transition-all duration-300 transform hover:-translate-y-2 h-full"
+                  >
+                    <CardHeader className="items-center">
+                      <div className="p-4 bg-primary/10 rounded-full text-primary">
+                        {service.icon}
+                      </div>
+                      <CardTitle className="mt-4 text-center">{service.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="text-center text-muted-foreground">
+                      <p>{service.description}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -268,7 +275,7 @@ export default function Home() {
                     <h3 className="text-center text-2xl font-headline font-semibold mb-8">{t.page.ourClients}</h3>
                     <div className="w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
                         <div className="flex w-max animate-scroll-slow hover:pause-animation">
-                            {[...t.clients, ...t.clients].map((client, index) => (
+                            {[...t.clients, ...t.clients, ...t.clients, ...t.clients].map((client, index) => (
                                 <div key={`${client.name}-${index}`} className="flex-shrink-0 w-48 flex justify-center items-center px-4">
                                     <Image
                                         src={client.logoUrl}
