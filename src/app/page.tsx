@@ -221,7 +221,7 @@ export default function Home() {
                     </div>
                     <div>
                         <Image 
-                            src="/imgs/jose-chaves.jpeg"
+                            src="https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/imagenes/jose-chaves.jpg"
                             alt="Jose Chaves, Productor Audiovisual"
                             width={600}
                             height={400}
