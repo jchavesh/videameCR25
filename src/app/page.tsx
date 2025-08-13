@@ -231,20 +231,23 @@ export default function Home() {
                         />
                     </div>
                 </div>
-                <div className="mt-20">
-                    <h3 className="text-center text-2xl font-headline font-semibold">Algunos de nuestros clientes</h3>
-                    <div className="mt-8 flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
-                        {clients.map(client => (
-                            <Image
-                                key={client.name}
-                                src={client.logoUrl}
-                                alt={`${client.name} logo`}
-                                width={120}
-                                height={60}
-                                className="object-contain"
-                                data-ai-hint="company logo"
-                            />
-                        ))}
+                 <div className="mt-20">
+                    <h3 className="text-center text-2xl font-headline font-semibold mb-8">Algunos de nuestros clientes</h3>
+                    <div className="relative w-full overflow-hidden">
+                        <div className="flex animate-scroll group-hover:pause">
+                            {[...clients, ...clients].map((client, index) => (
+                                <div key={`${client.name}-${index}`} className="flex-shrink-0 mx-8">
+                                    <Image
+                                        src={client.logoUrl}
+                                        alt={`${client.name} logo`}
+                                        width={120}
+                                        height={60}
+                                        className="object-contain"
+                                        data-ai-hint="company logo"
+                                    />
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

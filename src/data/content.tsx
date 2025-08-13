@@ -205,11 +205,20 @@ export const testimonials = [
 ];
 
 export const clients = [
-    { name: 'Client 1', logoUrl: 'https://placehold.co/120x60/FFFFFF/000000?text=Cliente+1' },
-    { name: 'Client 2', logoUrl: 'https://placehold.co/120x60/FFFFFF/000000?text=Cliente+2' },
-    { name: 'Client 3', logoUrl: 'https://placehold.co/120x60/FFFFFF/000000?text=Cliente+3' },
-    { name: 'Client 4', logoUrl: 'https://placehold.co/120x60/FFFFFF/000000?text=Cliente+4' },
-    { name: 'Client 5', logoUrl: 'https://placehold.co/120x60/FFFFFF/000000?text=Cliente+5' },
+    { name: 'Adobe', logoUrl: 'https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/logo-adobe.png' },
+    { name: 'American Airlines', logoUrl: 'https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/logo-American.png' },
+    { name: 'Bridgestone', logoUrl: 'https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/logo-Bridgestone.png' },
+    { name: 'CR Dental', logoUrl: 'https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/logo-Dental.png' },
+    { name: 'Google', logoUrl: 'https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/logo-google.png' },
+    { name: 'HP', logoUrl: 'https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/logo-HP.png' },
+    { name: 'Kimberly Clark', logoUrl: 'https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/logo-KC.png' },
+    { name: 'Kotex', logoUrl: 'https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/logo-Kotex.png' },
+    { name: 'Lunchables', logoUrl: 'https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/logo-lunchables.png' },
+    { name: 'Motta & Vieto', logoUrl: 'https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/logo-MV.png' },
+    { name: 'Paypal', logoUrl: 'https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/logo-paypal.png' },
+    { name: 'Puma', logoUrl: 'https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/logo-puma.png' },
+    { name: 'Rayban', logoUrl: 'https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/logo-Rayban.png' },
+    { name: 'Specialized', logoUrl: 'https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/logo-spec.png' },
 ];
 
 export const processSteps = [
