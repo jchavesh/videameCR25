@@ -7,6 +7,9 @@ import { LanguageProvider } from '@/context/language-context';
 export const metadata: Metadata = {
   title: 'Videame | Producción Audiovisual & Fotografía en Costa Rica',
   description: 'Producción audiovisual y fotografía con sello cinematográfico, desde Costa Rica para el mundo. Contamos historias que se sienten en pantalla.',
+  icons: {
+    icon: 'https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/Favicon.png',
+  },
   openGraph: {
     title: 'Videame | Producción Audiovisual & Fotografía en Costa Rica',
     description: 'Producción audiovisual y fotografía con sello cinematográfico, desde Costa Rica para el mundo.',
