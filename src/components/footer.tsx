@@ -5,8 +5,8 @@ import { VimeoIcon } from './icons/vimeo-icon';
 import { Logo } from './logo';
 
 const socialLinks = [
-  { name: 'Instagram', href: '#', icon: <Instagram className="w-6 h-6" /> },
-  { name: 'YouTube', href: '#', icon: <Youtube className="w-6 h-6" /> },
+  { name: 'Instagram', href: 'http://instagram.com/videame.cr', icon: <Instagram className="w-6 h-6" /> },
+  { name: 'YouTube', href: 'https://www.youtube.com/@VideameMedia', icon: <Youtube className="w-6 h-6" /> },
   { name: 'Vimeo', href: '#', icon: <VimeoIcon className="w-6 h-6" /> },
 ];
 

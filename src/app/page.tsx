@@ -54,9 +54,6 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/60"></div>
           <div className="relative z-10 px-4">
             
-            <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-neutral-200">
-              Producción audiovisual y fotografía con sello cinematográfico, desde Costa Rica para el mundo.
-            </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Dialog>
                 <DialogTrigger asChild>
