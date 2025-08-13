@@ -45,6 +45,15 @@ export interface PortfolioProject {
 
 export const portfolio: PortfolioProject[] = [
   {
+    id: 1,
+    title: "Kimberly Clark",
+    category: "Comercial",
+    imageUrl: "https://studio.bypgd.com/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/kimberly.png",
+    description: "Video corporativo para Kimberly Clark.",
+    videoUrl: "https://player.vimeo.com/video/336825378?h=9d529a5881",
+    dataAiHint: "corporate video"
+  },
+  {
     id: 7,
     title: "Entornos CR",
     category: "Comercial",
@@ -52,6 +61,15 @@ export const portfolio: PortfolioProject[] = [
     description: "The objective of this video project was to create an audiovisual production that positions Entornos CR as a company with experience, solidity, and trust. From the early stages of pre-production, including music selection, the creative direction was guided by the intention to project a calm and concise tone, reinforcing the company’s formal and professional identity.",
     videoUrl: "https://youtu.be/gHVWjYhBZxQ?si=k-AtKKTUb81k7sGW",
     dataAiHint: "corporate video"
+  },
+   {
+    id: 8,
+    title: "Introducing the Ford Explorer® Men’s Only Edition",
+    category: "Comercial",
+    imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/MensOnly_md.jpg",
+    description: "We handled the scriptwriting and post-production for the \"Introducing the Ford Explorer® Men’s Only Edition\" video, shaping a clear and engaging narrative, enhancing visuals with precise editing, and ensuring the final piece aligned seamlessly with Ford’s brand identity.",
+    videoUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/Videos/IntroducingtheFordExplorerMenOnly.mp4",
+    dataAiHint: "car commercial"
   },
   {
     id: 2,
@@ -97,15 +115,6 @@ export const portfolio: PortfolioProject[] = [
     description: "Comercial para Coope Ande.",
     videoUrl: "https://player.vimeo.com/video/336825378?h=9d529a5881",
     dataAiHint: "financial services"
-  },
-  {
-    id: 1,
-    title: "Kimberly Clark",
-    category: "Comercial",
-    imageUrl: "https://studio.bypgd.com/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/kimberly.png",
-    description: "Video corporativo para Kimberly Clark.",
-    videoUrl: "https://player.vimeo.com/video/336825378?h=9d529a5881",
-    dataAiHint: "corporate video"
   }
 ];
 

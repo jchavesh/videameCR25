@@ -27,6 +27,18 @@ export default function PortfolioGrid() {
   const handleProjectClick = (project: PortfolioProject) => {
     setSelectedProject(project);
   };
+  
+  const getEmbedUrl = (videoUrl: string) => {
+    if (videoUrl.includes('youtu.be') || videoUrl.includes('youtube.com')) {
+      const videoId = videoUrl.split('/').pop()?.split('?')[0];
+      return `https://www.youtube.com/embed/${videoId}`;
+    }
+    if (videoUrl.includes('vimeo.com')) {
+      const videoId = videoUrl.split('/').pop()?.split('?')[0];
+      return `https://player.vimeo.com/video/${videoId}`;
+    }
+    return videoUrl;
+  }
 
   return (
     <div>
@@ -93,15 +105,19 @@ export default function PortfolioGrid() {
                         <div>
                         {project.videoUrl ? (
                              <div className="aspect-video w-full h-full bg-black">
-                                <iframe 
-                                    src={project.videoUrl.replace("youtu.be/", "youtube.com/embed/").replace("?si=", "?").split("?")[0]}
-                                    width="100%" 
-                                    height="100%" 
-                                    frameBorder="0" 
-                                    allow="autoplay; fullscreen; picture-in-picture" 
-                                    allowFullScreen
-                                    title={project.title}>
-                                </iframe>
+                                {project.videoUrl.endsWith('.mp4') ? (
+                                    <video src={project.videoUrl} width="100%" height="100%" controls autoPlay playsInline />
+                                ) : (
+                                    <iframe 
+                                        src={getEmbedUrl(project.videoUrl)}
+                                        width="100%" 
+                                        height="100%" 
+                                        frameBorder="0" 
+                                        allow="autoplay; fullscreen; picture-in-picture" 
+                                        allowFullScreen
+                                        title={project.title}>
+                                    </iframe>
+                                )}
                              </div>
                         ) : (
                              <Image
