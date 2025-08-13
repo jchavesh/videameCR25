@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: 'Videame',
     images: [
       {
-        url: 'https://placehold.co/1200x630.png',
+        url: 'https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/VideameLogoFinal.svg',
         width: 1200,
         height: 630,
         alt: 'Videame Audiovisual',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Videame | Producción Audiovisual & Fotografía en Costa Rica',
     description: 'Producción audiovisual y fotografía con sello cinematográfico.',
-    images: ['https://placehold.co/1200x630.png'],
+    images: ['https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/VideameLogoFinal.svg'],
   },
   metadataBase: new URL('https://videame.cr'),
 };
