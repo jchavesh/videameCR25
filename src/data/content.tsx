@@ -45,12 +45,12 @@ export interface PortfolioProject {
 
 export const portfolio: PortfolioProject[] = [
   {
-    id: 1,
-    title: "Kimberly Clark",
+    id: 7,
+    title: "Entornos CR",
     category: "Comercial",
-    imageUrl: "https://studio.bypgd.com/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/kimberly.png",
-    description: "Video corporativo para Kimberly Clark.",
-    videoUrl: "https://player.vimeo.com/video/336825378?h=9d529a5881",
+    imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/AR_mg.jpg",
+    description: "The objective of this video project was to create an audiovisual production that positions Entornos CR as a company with experience, solidity, and trust. From the early stages of pre-production, including music selection, the creative direction was guided by the intention to project a calm and concise tone, reinforcing the company’s formal and professional identity.",
+    videoUrl: "https://youtu.be/gHVWjYhBZxQ?si=k-AtKKTUb81k7sGW",
     dataAiHint: "corporate video"
   },
   {
@@ -99,12 +99,12 @@ export const portfolio: PortfolioProject[] = [
     dataAiHint: "financial services"
   },
   {
-    id: 7,
-    title: "Entornos CR",
+    id: 1,
+    title: "Kimberly Clark",
     category: "Comercial",
-    imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/AR_mg.jpg",
-    description: "The objective of this video project was to create an audiovisual production that positions Entornos CR as a company with experience, solidity, and trust. From the early stages of pre-production, including music selection, the creative direction was guided by the intention to project a calm and concise tone, reinforcing the company’s formal and professional identity.",
-    videoUrl: "https://youtu.be/gHVWjYhBZxQ?si=k-AtKKTUb81k7sGW",
+    imageUrl: "https://studio.bypgd.com/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/kimberly.png",
+    description: "Video corporativo para Kimberly Clark.",
+    videoUrl: "https://player.vimeo.com/video/336825378?h=9d529a5881",
     dataAiHint: "corporate video"
   }
 ];
