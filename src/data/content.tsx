@@ -46,59 +46,60 @@ export interface PortfolioProject {
 export const portfolio: PortfolioProject[] = [
   {
     id: 1,
-    title: 'Campaña "Amanecer"',
-    category: 'Comercial',
-    imageUrl: 'https://placehold.co/600x800.png',
-    description: 'Campaña de lanzamiento para una nueva marca de café, enfocada en la autenticidad y el origen.',
-    videoUrl: 'https://player.vimeo.com/video/336825378',
-    dataAiHint: 'coffee sunrise',
+    title: "Kimberly Clark",
+    category: "Comercial",
+    imageUrl: "https://studio.bypgd.com/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/kimberly.png",
+    description: "Video corporativo para Kimberly Clark.",
+    videoUrl: "https://player.vimeo.com/video/336825378?h=9d529a5881",
+    dataAiHint: "corporate video"
   },
   {
     id: 2,
-    title: 'Boda en la Playa',
-    category: 'Evento',
-    imageUrl: 'https://placehold.co/600x400.png',
-    description: 'Cobertura completa de una boda destino, capturando momentos espontáneos y la belleza del entorno.',
-    gallery: ['https://placehold.co/800x600.png', 'https://placehold.co/800x600.png'],
-    dataAiHint: 'beach wedding',
+    title: "Banco Nacional",
+    category: "Comercial",
+    imageUrl: "https://studio.bypgd.com/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/banco.png",
+    description: "Comercial para el Banco Nacional de Costa Rica.",
+    videoUrl: "https://player.vimeo.com/video/336825378?h=9d529a5881",
+    dataAiHint: "bank commercial"
   },
   {
     id: 3,
-    title: 'Línea de Joyería',
-    category: 'Producto',
-    imageUrl: 'https://placehold.co/600x600.png',
-    description: 'Fotografía de producto y videos cortos para redes sociales, destacando la artesanía y el detalle.',
-    gallery: ['https://placehold.co/800x600.png', 'https://placehold.co/800x600.png'],
-    dataAiHint: 'jewelry product',
+    title: "Huawei",
+    category: "Producto",
+    imageUrl: "https://studio.bypgd.com/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/huawei.png",
+    description: "Video de producto para lanzamiento de Huawei.",
+    videoUrl: "https://player.vimeo.com/video/336825378?h=9d529a5881",
+    dataAiHint: "tech product"
   },
   {
     id: 4,
-    title: 'Marca Personal Chef',
-    category: 'Marca Personal',
-    imageUrl: 'https://placehold.co/600x700.png',
-    description: 'Desarrollo de la identidad visual para un chef emergente, incluyendo retratos y videos de recetas.',
-    videoUrl: 'https://player.vimeo.com/video/336825378',
-    dataAiHint: 'chef cooking',
+    title: "Toyota",
+    category: "Comercial",
+    imageUrl: "https://studio.bypgd.com/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/toyota.png",
+    description: "Comercial para Toyota.",
+    videoUrl: "https://player.vimeo.com/video/336825378?h=9d529a5881",
+    dataAiHint: "car commercial"
   },
   {
     id: 5,
-    title: 'Aventura en la Montaña',
-    category: 'Drone',
-    imageUrl: 'https://placehold.co/600x450.png',
-    description: 'Tomas aéreas espectaculares para un documental de aventura, mostrando la majestuosidad del paisaje.',
-    videoUrl: 'https://player.vimeo.com/video/336825378',
-    dataAiHint: 'mountain landscape',
+    title: "Coronado",
+    category: "Producto",
+    imageUrl: "https://studio.bypgd.com/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/coronado.png",
+    description: "Video de producto para Coronado.",
+    videoUrl: "https://player.vimeo.com/video/336825378?h=9d529a5881",
+    dataAiHint: "food product"
   },
   {
     id: 6,
-    title: 'Tech Startup Launch',
-    category: 'Comercial',
-    imageUrl: 'https://placehold.co/600x500.png',
-    description: 'Video de lanzamiento para una startup tecnológica, explicando su producto de forma clara y dinámica.',
-    videoUrl: 'https://player.vimeo.com/video/336825378',
-    dataAiHint: 'tech startup',
-  },
+    title: "Coope Ande",
+    category: "Comercial",
+    imageUrl: "https://studio.bypgd.com/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/coopeande.png",
+    description: "Comercial para Coope Ande.",
+    videoUrl: "https://player.vimeo.com/video/336825378?h=9d529a5881",
+    dataAiHint: "financial services"
+  }
 ];
+
 
 export const testimonials = [
   {
