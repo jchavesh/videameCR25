@@ -51,21 +51,22 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <section id="hero" ref={heroRef} className="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
-          <video
+          <motion.video
             autoPlay
             loop
             muted
             playsInline
             className="absolute z-0 w-auto min-w-full min-h-full max-w-none object-cover"
+            style={{ y }}
           >
             {/* Ideally, use a WebM for performance */}
             <source src="https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/reel.mp4" type="video/mp4" />
             Your browser does not support the video tag.
-          </video>
+          </motion.video>
           <div className="absolute inset-0 bg-black/60"></div>
-          <motion.div style={{ y }} className="relative z-10 px-4">
+          <div className="relative z-10 px-4">
             
-            <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <motion.div style={{ y }} className="mt-10 flex flex-wrap justify-center gap-4">
               <Dialog>
                 <DialogTrigger asChild>
                   <Button size="lg" aria-label="Ver Reel de Videame">
@@ -89,8 +90,8 @@ export default function Home() {
               <Button size="lg" variant="outline" asChild>
                 <Link href="#contacto">Solicitar Cotización</Link>
               </Button>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </section>
 
         <section id="servicios" className="py-20 sm:py-32">
@@ -322,5 +323,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
