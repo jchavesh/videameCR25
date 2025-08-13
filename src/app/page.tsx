@@ -275,9 +275,9 @@ export default function Home() {
                       <Mail className="w-5 h-5" />
                       <span>info@videamecr.com</span>
                     </a>
-                    <a href="https://wa.me/50688888888" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-primary transition-colors">
+                    <a href="https://wa.me/50683315395" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-primary transition-colors">
                       <Smartphone className="w-5 h-5" />
-                      <span>WhatsApp (+506)</span>
+                      <span>WhatsApp (+506) 8331-5395</span>
                     </a>
                     <div className="flex items-center gap-3">
                       <MapPin className="w-5 h-5" />
