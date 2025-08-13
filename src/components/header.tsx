@@ -1,22 +1,32 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { Logo } from './logo';
-
-const navLinks = [
-  { href: '#servicios', label: 'Servicios' },
-  { href: '#portafolio', label: 'Portafolio' },
-  { href: '#proceso', label: 'Proceso' },
-  { href: '#sobre', label: 'Sobre Nosotros' },
-];
+import { LanguageContext } from '@/context/language-context';
+import { content } from '@/data/content';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { language, setLanguage } = useContext(LanguageContext);
+  const t = content[language].page;
+
+  const navLinks = [
+    { href: '#servicios', label: t.navServices },
+    { href: '#portafolio', label: t.navPortfolio },
+    { href: '#proceso', label: t.navProcess },
+    { href: '#sobre', label: t.navAbout },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,10 +55,26 @@ export default function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
             <Button asChild className="hidden md:flex">
-              <Link href="#contacto">Contacto</Link>
+              <Link href="#contacto">{t.navContact}</Link>
             </Button>
+
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Globe className="h-5 w-5" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={() => setLanguage('es')}>
+                  Español
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLanguage('en')}>
+                  English
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
 
             <Sheet>
               <SheetTrigger asChild>
@@ -82,7 +108,7 @@ export default function Header() {
                      <div className="mt-auto">
                         <SheetClose asChild>
                           <Button asChild className="w-full">
-                            <Link href="#contacto">Contacto</Link>
+                            <Link href="#contacto">{t.navContact}</Link>
                           </Button>
                         </SheetClose>
                      </div>

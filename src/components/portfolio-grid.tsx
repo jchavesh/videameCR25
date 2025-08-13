@@ -1,9 +1,8 @@
-
 "use client";
 
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Image from 'next/image';
-import { portfolio, PortfolioCategory, PortfolioProject } from '@/data/content';
+import { content, PortfolioCategory, PortfolioProject } from '@/data/content';
 import { Button } from '@/components/ui/button';
 import {
   Dialog,
@@ -14,16 +13,25 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import { motion } from 'framer-motion';
-
-const categories: PortfolioCategory[] = ['Comercial', 'Marca Personal', 'Motion Graphics'];
+import { LanguageContext } from '@/context/language-context';
 
 export default function PortfolioGrid() {
-  const [activeCategory, setActiveCategory] = useState<PortfolioCategory | 'Todos'>('Todos');
-  const [selectedProject, setSelectedProject] = useState<PortfolioProject | null>(null);
+  const { language } = useContext(LanguageContext);
+  const t = content[language];
+  const pageT = t.page;
 
-  const filteredPortfolio = activeCategory === 'Todos' 
-    ? portfolio 
-    : portfolio.filter(p => p.category === activeCategory);
+  const categories: PortfolioCategory[] = language === 'es' 
+      ? ['Comercial', 'Marca Personal', 'Motion Graphics']
+      : ['Commercial', 'Personal Brand', 'Motion Graphics'];
+
+  const [activeCategory, setActiveCategory] = useState<PortfolioCategory | 'Todos' | 'All'>('Todos');
+  const [selectedProject, setSelectedProject] = useState<PortfolioProject | null>(null);
+  
+  const allCategory = language === 'es' ? 'Todos' : 'All';
+
+  const filteredPortfolio = activeCategory === allCategory || activeCategory === 'Todos' || activeCategory === 'All'
+    ? t.portfolio 
+    : t.portfolio.filter(p => p.category === activeCategory);
 
   const handleProjectClick = (project: PortfolioProject) => {
     setSelectedProject(project);
@@ -42,15 +50,17 @@ export default function PortfolioGrid() {
     }
     return videoUrl;
   }
+  
+  const currentAllCategory = language === 'es' ? 'Todos' : 'All';
 
   return (
     <div>
       <div className="flex justify-center flex-wrap gap-2 mt-8 mb-12">
         <Button
-          variant={activeCategory === 'Todos' ? 'default' : 'outline'}
-          onClick={() => setActiveCategory('Todos')}
+          variant={activeCategory === currentAllCategory ? 'default' : 'outline'}
+          onClick={() => setActiveCategory(currentAllCategory)}
         >
-          Todos
+          {currentAllCategory}
         </Button>
         {categories.map(category => (
           <Button
