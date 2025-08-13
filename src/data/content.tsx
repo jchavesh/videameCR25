@@ -188,19 +188,19 @@ export const testimonials = [
     name: 'Ana Rodriguez',
     title: 'Gerente de Marketing, Café Sol',
     quote: 'El equipo de Videame superó nuestras expectativas. Capturaron la esencia de nuestra marca con una calidad visual impresionante. Totalmente recomendados.',
-    avatar: 'https://placehold.co/100x100.png',
+    avatar: 'https://placehold.co/100x100/FFC0CB/000000.png',
   },
   {
     name: 'Carlos Jimenez',
     title: 'Fundador, TechNova',
     quote: 'Profesionalismo, creatividad y entrega puntual. El video de lanzamiento fue un éxito y una pieza clave en nuestra estrategia.',
-    avatar: 'https://placehold.co/100x100.png',
+    avatar: 'https://placehold.co/100x100/ADD8E6/000000.png',
   },
   {
     name: 'Sofia Vargas',
     title: 'Wedding Planner',
     quote: 'Trabajar con Videame es garantía de tranquilidad. Sus videos de boda son pura emoción y arte. Mis clientes siempre quedan felices.',
-    avatar: 'https://placehold.co/100x100.png',
+    avatar: 'https://placehold.co/100x100/90EE90/000000.png',
   },
 ];
 
