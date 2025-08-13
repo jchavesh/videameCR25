@@ -219,7 +219,7 @@ export default function Home() {
                       <Card className="h-full bg-background/50 border-border">
                         <CardContent className="flex flex-col items-center text-center p-6">
                            <Avatar className="w-20 h-20 mb-4 border-2 border-primary">
-                             <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
+                             <AvatarImage src={testimonial.avatar} alt={testimonial.name} className="object-cover" />
                              <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
                            </Avatar>
                            <p className="italic text-foreground">"{testimonial.quote}"</p>
@@ -269,7 +269,7 @@ export default function Home() {
                     <div className="w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
                         <div className="flex w-max animate-scroll-slow hover:pause-animation">
                             {[...t.clients, ...t.clients].map((client, index) => (
-                                <div key={`${client.name}-${index}`} className="flex-shrink-0 w-48 flex justify-center items-center">
+                                <div key={`${client.name}-${index}`} className="flex-shrink-0 w-48 flex justify-center items-center px-4">
                                     <Image
                                         src={client.logoUrl}
                                         alt={`${client.name} logo`}
