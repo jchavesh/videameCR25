@@ -55,13 +55,6 @@ export default function Home() {
     offset: ["start end", "end start"],
   });
   const servicesY = useTransform(servicesScrollYProgress, [0, 1], ["-10%", "10%"]);
-
-  const portfolioRef = useRef<HTMLElement>(null);
-  const { scrollYProgress: portfolioScrollYProgress } = useScroll({
-    target: portfolioRef,
-    offset: ["start end", "end start"],
-  });
-  const portfolioY = useTransform(portfolioScrollYProgress, [0, 1], ["-10%", "10%"]);
   
   const aboutImageRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress: aboutImageScrollYProgress } = useScroll({
@@ -153,16 +146,16 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="portafolio" ref={portfolioRef} className="py-20 sm:py-32 bg-secondary/30 overflow-hidden">
+        <section id="portafolio" className="py-20 sm:py-32 bg-secondary/30 overflow-hidden">
           <div className="container mx-auto px-4">
-            <motion.div style={{ y: portfolioY }} className="text-center">
+            <div className="text-center">
               <h2 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">
                 Nuestro Trabajo
               </h2>
               <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
                 Explora una selección de proyectos que hemos traído a la vida.
               </p>
-            </motion.div>
+            </div>
             <PortfolioGrid />
           </div>
         </section>
