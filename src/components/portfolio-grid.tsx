@@ -15,7 +15,7 @@ import {
 } from '@/components/ui/dialog';
 import { motion } from 'framer-motion';
 
-const categories: PortfolioCategory[] = ['Comercial', 'Evento', 'Producto', 'Marca Personal', 'Drone', 'Motion Graphics'];
+const categories: PortfolioCategory[] = ['Comercial', 'Marca Personal', 'Motion Graphics'];
 
 export default function PortfolioGrid() {
   const [activeCategory, setActiveCategory] = useState<PortfolioCategory | 'Todos'>('Todos');
