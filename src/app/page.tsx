@@ -46,6 +46,28 @@ export default function Home() {
   });
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
+  const servicesRef = useRef<HTMLElement>(null);
+  const { scrollYProgress: servicesScrollYProgress } = useScroll({
+    target: servicesRef,
+    offset: ["start end", "end start"],
+  });
+  const servicesY = useTransform(servicesScrollYProgress, [0, 1], ["-10%", "10%"]);
+
+  const portfolioRef = useRef<HTMLElement>(null);
+  const { scrollYProgress: portfolioScrollYProgress } = useScroll({
+    target: portfolioRef,
+    offset: ["start end", "end start"],
+  });
+  const portfolioY = useTransform(portfolioScrollYProgress, [0, 1], ["-10%", "10%"]);
+  
+  const aboutImageRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress: aboutImageScrollYProgress } = useScroll({
+      target: aboutImageRef,
+      offset: ["start end", "end start"],
+  });
+  const aboutImageY = useTransform(aboutImageScrollYProgress, [0, 1], ["-20%", "20%"]);
+
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
@@ -94,16 +116,16 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="servicios" className="py-20 sm:py-32">
+        <section id="servicios" ref={servicesRef} className="py-20 sm:py-32 overflow-hidden">
           <div className="container mx-auto px-4">
-            <div className="text-center">
+            <motion.div style={{ y: servicesY }} className="text-center">
               <h2 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">
                 Nuestros Servicios
               </h2>
               <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
                 Desde la idea hasta la entrega final, te acompañamos en cada paso.
               </p>
-            </div>
+            </motion.div>
             <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
               {services.map((service) => (
                 <Card
@@ -125,16 +147,16 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="portafolio" className="py-20 sm:py-32 bg-secondary/30">
+        <section id="portafolio" ref={portfolioRef} className="py-20 sm:py-32 bg-secondary/30 overflow-hidden">
           <div className="container mx-auto px-4">
-            <div className="text-center">
+            <motion.div style={{ y: portfolioY }} className="text-center">
               <h2 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">
                 Nuestro Trabajo
               </h2>
               <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
                 Explora una selección de proyectos que hemos traído a la vida.
               </p>
-            </div>
+            </motion.div>
             <PortfolioGrid />
           </div>
         </section>
@@ -232,15 +254,17 @@ export default function Home() {
                            </p>
                         </div>
                     </div>
-                    <div>
-                        <Image 
-                            src="https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/jose-chaves.jpeg"
-                            alt="Jose Chaves, Productor Audiovisual"
-                            width={600}
-                            height={400}
-                            className="rounded-lg shadow-lg"
-                            data-ai-hint="man portrait"
-                        />
+                    <div ref={aboutImageRef} className="overflow-hidden rounded-lg">
+                        <motion.div style={{ y: aboutImageY }}>
+                          <Image 
+                              src="https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/jose-chaves.jpeg"
+                              alt="Jose Chaves, Productor Audiovisual"
+                              width={600}
+                              height={400}
+                              className="rounded-lg shadow-lg w-full"
+                              data-ai-hint="man portrait"
+                          />
+                        </motion.div>
                     </div>
                 </div>
                  <div className="mt-20">
@@ -323,3 +347,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
