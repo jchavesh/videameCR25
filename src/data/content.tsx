@@ -60,62 +60,8 @@ export const portfolio: PortfolioProject[] = [
     category: "Comercial",
     imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/MensOnly_md.jpg",
     description: "We handled the scriptwriting and post-production for the \"Introducing the Ford Explorer® Men’s Only Edition\" video, shaping a clear and engaging narrative, enhancing visuals with precise editing, and ensuring the final piece aligned seamlessly with Ford’s brand identity.",
-    videoUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/Videos/IntroducingtheFordExplorerMenOnly.mp4",
+    videoUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/Videos/IntroducingtheFordExplorerMenOnly.MP4",
     dataAiHint: "car commercial"
-  },
-  {
-    id: 3,
-    title: "Kimberly Clark",
-    category: "Comercial",
-    imageUrl: "https://studio.bypgd.com/pdgstudio/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/kimberly.png",
-    description: "Video corporativo para Kimberly Clark.",
-    videoUrl: "https://player.vimeo.com/video/336825378?h=9d529a5881",
-    dataAiHint: "corporate video"
-  },
-  {
-    id: 4,
-    title: "Banco Nacional",
-    category: "Comercial",
-    imageUrl: "https://studio.bypgd.com/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/banco.png",
-    description: "Comercial para el Banco Nacional de Costa Rica.",
-    videoUrl: "https://player.vimeo.com/video/336825378?h=9d529a5881",
-    dataAiHint: "bank commercial"
-  },
-  {
-    id: 5,
-    title: "Huawei",
-    category: "Producto",
-    imageUrl: "https://studio.bypgd.com/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/huawei.png",
-    description: "Video de producto para lanzamiento de Huawei.",
-    videoUrl: "https://player.vimeo.com/video/336825378?h=9d529a5881",
-    dataAiHint: "tech product"
-  },
-  {
-    id: 6,
-    title: "Toyota",
-    category: "Comercial",
-    imageUrl: "https://studio.bypgd.com/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/toyota.png",
-    description: "Comercial para Toyota.",
-    videoUrl: "https://player.vimeo.com/video/336825378?h=9d529a5881",
-    dataAiHint: "car commercial"
-  },
-  {
-    id: 7,
-    title: "Coronado",
-    category: "Producto",
-    imageUrl: "https://studio.bypgd.com/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/coronado.png",
-    description: "Video de producto para Coronado.",
-    videoUrl: "https://player.vimeo.com/video/336825378?h=9d529a5881",
-    dataAiHint: "food product"
-  },
-  {
-    id: 8,
-    title: "Coope Ande",
-    category: "Comercial",
-    imageUrl: "https://studio.bypgd.com/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/coopeande.png",
-    description: "Comercial para Coope Ande.",
-    videoUrl: "https://player.vimeo.com/video/336825378?h=9d529a5881",
-    dataAiHint: "financial services"
   },
   {
     id: 9,
