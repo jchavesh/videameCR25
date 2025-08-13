@@ -224,7 +224,7 @@ export default function Home() {
                     </div>
                     <div>
                         <Image 
-                            src="https://placehold.co/600x400.png"
+                            src="/jose-chaves.jpg"
                             alt="Jose Chaves, Productor Audiovisual"
                             width={600}
                             height={400}
