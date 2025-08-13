@@ -40,6 +40,7 @@ export interface PortfolioProject {
   description: string;
   videoUrl?: string;
   gallery?: string[];
+  dataAiHint: string;
 }
 
 export const portfolio: PortfolioProject[] = [
