@@ -33,6 +33,8 @@ import { services, testimonials, clients, processSteps } from '@/data/content';
 import {
   Dialog,
   DialogContent,
+  DialogHeader,
+  DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
 import { useEffect, useRef, useState } from 'react';
@@ -97,6 +99,9 @@ export default function Home() {
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="max-w-4xl h-auto p-0 bg-black border-primary/20">
+                    <DialogHeader>
+                      <DialogTitle className="sr-only">Videame Reel</DialogTitle>
+                    </DialogHeader>
                     <div className="aspect-video">
                         <video 
                             src="https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/reel.mp4"
@@ -348,5 +353,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
