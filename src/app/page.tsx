@@ -45,10 +45,9 @@ export default function Home() {
             muted
             playsInline
             className="absolute z-0 w-auto min-w-full min-h-full max-w-none object-cover"
-            poster="https://placehold.co/1920x1080.png"
           >
             {/* Ideally, use a WebM for performance */}
-            <source src="/hero-video.mp4" type="video/mp4" />
+            <source src="https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/reel.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div className="absolute inset-0 bg-black/60"></div>
