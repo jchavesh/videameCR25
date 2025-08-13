@@ -53,9 +53,7 @@ export default function Home() {
           </video>
           <div className="absolute inset-0 bg-black/60"></div>
           <div className="relative z-10 px-4">
-            <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-shadow-lg">
-              Historias que se sienten en pantalla.
-            </h1>
+            
             <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-neutral-200">
               Producción audiovisual y fotografía con sello cinematográfico, desde Costa Rica para el mundo.
             </p>
