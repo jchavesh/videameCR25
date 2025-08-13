@@ -97,6 +97,15 @@ export const portfolio: PortfolioProject[] = [
     description: "Comercial para Coope Ande.",
     videoUrl: "https://player.vimeo.com/video/336825378?h=9d529a5881",
     dataAiHint: "financial services"
+  },
+  {
+    id: 7,
+    title: "Entornos CR",
+    category: "Comercial",
+    imageUrl: "https://placehold.co/600x800.png",
+    description: "The objective of this video project was to create an audiovisual production that positions Entornos CR as a company with experience, solidity, and trust. From the early stages of pre-production, including music selection, the creative direction was guided by the intention to project a calm and concise tone, reinforcing the company’s formal and professional identity.",
+    videoUrl: "https://www.youtube.com/embed/gHVWjYhBZxQ",
+    dataAiHint: "corporate video"
   }
 ];
 

@@ -94,7 +94,7 @@ export default function PortfolioGrid() {
                         {project.videoUrl ? (
                              <div className="aspect-video w-full h-full bg-black">
                                 <iframe 
-                                    src={project.videoUrl}
+                                    src={project.videoUrl.replace("youtu.be/", "youtube.com/embed/").replace("?si=", "?").split("?")[0]}
                                     width="100%" 
                                     height="100%" 
                                     frameBorder="0" 
