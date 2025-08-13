@@ -1,4 +1,6 @@
 
+"use client";
+
 import Image from 'next/image';
 import {
   Camera,
@@ -33,13 +35,22 @@ import {
   DialogContent,
   DialogTrigger,
 } from '@/components/ui/dialog';
+import { useEffect, useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 export default function Home() {
+  const heroRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1">
-        <section id="hero" className="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
+        <section id="hero" ref={heroRef} className="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
           <video
             autoPlay
             loop
@@ -52,7 +63,7 @@ export default function Home() {
             Your browser does not support the video tag.
           </video>
           <div className="absolute inset-0 bg-black/60"></div>
-          <div className="relative z-10 px-4">
+          <motion.div style={{ y }} className="relative z-10 px-4">
             
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Dialog>
@@ -79,7 +90,7 @@ export default function Home() {
                 <Link href="#contacto">Solicitar Cotización</Link>
               </Button>
             </div>
-          </div>
+          </motion.div>
         </section>
 
         <section id="servicios" className="py-20 sm:py-32">
@@ -311,7 +322,5 @@ export default function Home() {
     </div>
   );
 }
-
-    
 
     
