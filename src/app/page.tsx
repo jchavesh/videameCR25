@@ -212,10 +212,10 @@ export default function Home() {
                     <div>
                         <h2 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">Sobre Videame</h2>
                         <div className="mt-6 text-lg text-muted-foreground space-y-6">
-                          <p>
+                          <p className="text-justify">
                             En Videame integramos diseño, tecnología y storytelling para convertir objetivos de comunicación en piezas audiovisuales memorables. Nuestro enfoque combina motion graphics, experiencias AR/VR y postproducción de alto nivel, con una operación de extremo a extremo: concepto y guion, producción y post, hasta la entrega final para TV, social y web. Trabajamos de cerca con cada marca para asegurar coherencia visual, claridad del mensaje y resultados medibles.
                           </p>
-                           <p>
+                           <p className="text-justify">
                             La dirección creativa está a cargo de José Chaves, Productor Audiovisual, Filmmaker e Ingeniero en Sistemas con 16 años de experiencia, reconocido por fusionar precisión técnica con lenguaje cinematográfico. Bajo su liderazgo, el estudio impulsa flujos eficientes, acabados consistentes y soluciones creativas alineadas a cada identidad de marca.
                            </p>
                         </div>
@@ -311,5 +311,7 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
