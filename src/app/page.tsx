@@ -224,7 +224,7 @@ export default function Home() {
                     </div>
                     <div>
                         <Image 
-                            src="/jose-chaves.jpg"
+                            src="/imgs/jose-chaves.jpg"
                             alt="Jose Chaves, Productor Audiovisual"
                             width={600}
                             height={400}
