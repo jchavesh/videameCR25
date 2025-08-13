@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Instagram, Youtube } from 'lucide-react';
 import { VimeoIcon } from './icons/vimeo-icon';
@@ -18,7 +19,6 @@ export default function Footer() {
             <Link href="/" className="text-3xl font-bold font-headline text-primary mb-2 inline-block">
                 <Logo />
             </Link>
-            <p className="text-muted-foreground">Historias que se sienten en pantalla.</p>
           </div>
           <div className="flex items-center gap-4">
             {socialLinks.map((link) => (
