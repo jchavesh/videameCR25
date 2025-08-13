@@ -35,10 +35,11 @@ import {
   DialogContent,
   DialogTrigger,
 } from '@/components/ui/dialog';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 export default function Home() {
+  const [isReelOpen, setIsReelOpen] = useState(false);
   const heroRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -89,7 +90,7 @@ export default function Home() {
           <div className="relative z-10 px-4">
             
             <motion.div style={{ y }} className="mt-10 flex flex-wrap justify-center gap-4">
-              <Dialog>
+              <Dialog open={isReelOpen} onOpenChange={setIsReelOpen}>
                 <DialogTrigger asChild>
                   <Button size="lg" aria-label="Ver Reel de Videame">
                     Ver Reel
@@ -97,15 +98,15 @@ export default function Home() {
                 </DialogTrigger>
                 <DialogContent className="max-w-4xl h-auto p-0 bg-black border-primary/20">
                     <div className="aspect-video">
-                        <iframe 
-                            src="https://player.vimeo.com/video/336825378?h=9d529a5881" 
+                        <video 
+                            src="https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/reel.mp4"
                             width="100%" 
                             height="100%" 
-                            frameBorder="0" 
-                            allow="autoplay; fullscreen; picture-in-picture" 
-                            allowFullScreen
+                            controls
+                            autoPlay
+                            playsInline
                             title="Videame Reel">
-                        </iframe>
+                        </video>
                     </div>
                 </DialogContent>
               </Dialog>
