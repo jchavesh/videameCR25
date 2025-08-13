@@ -48,7 +48,7 @@ export const content: Record<Language, Content> = {
         title: "Vuelta Al Lago",
         category: "Marca Personal",
         imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/vueltaLago.png",
-        description: "Lideré la producción audiovisual completa para Vuelta al Lago, una carrera de ciclismo, cubriendo la planificación, la cobertura multicámara en el sitio y la postproducción, para entregar una película de alta energía que captura el recorrido, los atletas y la atmósfera del evento.",
+        description: "Lideramos la producción audiovisual completa para Vuelta al Lago, una carrera de ciclismo, cubriendo la planificación, la cobertura multicámara en el sitio y la postproducción, para entregar una película de alta energía que captura el recorrido, los atletas y la atmósfera del evento.",
         videoUrl: "https://youtu.be/bq89JREVBN8?si=sltU5J6AfnOtLinR",
         dataAiHint: "cycling race"
       },
@@ -57,7 +57,7 @@ export const content: Record<Language, Content> = {
         title: "Mambotopia",
         category: "Marca Personal",
         imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/mambotopia.png",
-        description: "Lideré la producción audiovisual completa para Mambotopia, un congreso internacional de baile, cubriendo la preproducción, la captura de eventos con múltiples cámaras y la postproducción, para entregar videos destacados, perfiles de artistas y cortes para redes sociales.",
+        description: "Lideramos la producción audiovisual completa para Mambotopia, un congreso internacional de baile, cubriendo la preproducción, la captura de eventos con múltiples cámaras y la postproducción, para entregar videos destacados, perfiles de artistas y cortes para redes sociales.",
         videoUrl: "https://youtu.be/iuGd8RN20hY?si=l9cIuAleTK9uK3tP",
         dataAiHint: "dance congress"
       },
@@ -183,7 +183,7 @@ export const content: Record<Language, Content> = {
         title: "Caribe",
         category: "Marca Personal",
         imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/Caribe_md.jpg",
-        description: "Lideré la producción audiovisual completa para Caribe (ICT - Instituto Costarricense de Turismo), desde el desarrollo del concepto y la logística, hasta la producción de campo y la postproducción, entregando una pieza cinematográfica que destaca la cultura y la belleza natural de la región.",
+        description: "Lideramos la producción audiovisual completa para Caribe (ICT - Instituto Costarricense de Turismo), desde el desarrollo del concepto y la logística, hasta la producción de campo y la postproducción, entregando una pieza cinematográfica que destaca la cultura y la belleza natural de la región.",
         videoUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/Videos/Caribe.MP4",
         dataAiHint: "tourism video"
       },
@@ -192,7 +192,7 @@ export const content: Record<Language, Content> = {
         title: "CR BioHealth",
         category: "Marca Personal",
         imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/BioHealth_md.jpg",
-        description: "Lideré la producción audiovisual completa para CR BioHealth (odontología), desde el concepto y el guión hasta la filmación y la postproducción, entregando una pieza limpia y centrada en el paciente que comunica confianza y cuidado.",
+        description: "Lideramos la producción audiovisual completa para CR BioHealth (odontología), desde el concepto y el guión hasta la filmación y la postproducción, entregando una pieza limpia y centrada en el paciente que comunica confianza y cuidado.",
         videoUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/Videos/CRBioHealth_V3.MP4",
         dataAiHint: "dentistry"
       }
