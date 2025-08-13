@@ -224,12 +224,12 @@ export default function Home() {
                     </div>
                     <div>
                         <Image 
-                            src="https://placehold.co/600x400.png"
-                            alt="Equipo de Videame trabajando"
+                            src="/jose-chaves.png"
+                            alt="Jose Chaves, Productor Audiovisual"
                             width={600}
                             height={400}
                             className="rounded-lg shadow-lg"
-                            data-ai-hint="film crew"
+                            data-ai-hint="man portrait"
                         />
                     </div>
                 </div>
