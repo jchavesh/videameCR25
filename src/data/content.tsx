@@ -1,5 +1,5 @@
 
-import { Camera, Clapperboard, Megaphone, Scissors, Users, Lightbulb, Film, Award } from 'lucide-react';
+import { Camera, Clapperboard, Megaphone, Scissors, Users, Lightbulb, Film, Award, Globe } from 'lucide-react';
 import type { ReactElement } from "react";
 
 interface Service {
@@ -25,9 +25,9 @@ export const services: Service[] = [
     icon: <Camera className="w-8 h-8" />,
   },
   {
-    title: 'Social Media & Ads',
-    description: 'Contenido optimizado para redes sociales. Reels, stories y video ads que generan impacto.',
-    icon: <Megaphone className="w-8 h-8" />,
+    title: 'Web Development',
+    description: 'Desarrollo de sitios web modernos y optimizados para complementar tu estrategia audiovisual.',
+    icon: <Globe className="w-8 h-8" />,
   },
 ];
 
