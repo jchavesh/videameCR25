@@ -103,7 +103,7 @@ export const portfolio: PortfolioProject[] = [
     id: 13,
     title: "A New American Is Arriving",
     category: "Comercial",
-    imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/America_md.jpg",
+    imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/America_mg.jpg",
     description: "Produced the full video for American Airlines, covering every stage from concept and script to filming and post-production, delivering a polished and brand-aligned final piece.",
     videoUrl: "https://youtu.be/1c8daiOKRD8?si=QsM78szc-ayku9Jl",
     dataAiHint: "airline"
@@ -148,7 +148,7 @@ export const portfolio: PortfolioProject[] = [
     id: 18,
     title: "Lunchables",
     category: "Comercial",
-    imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/Lunchables_md.jpg",
+    imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/Lunchables_md.png",
     description: "Served as Video Editor for Lunchables, delivering crisp pacing, tight storytelling, and brand-aligned visuals for a punchy, youth-focused spot.",
     videoUrl: "https://youtu.be/nIph2h63jRw",
     dataAiHint: "food product"
