@@ -61,7 +61,7 @@
 
 @layer utilities {
   .animate-scroll-slow {
-    animation: scroll-slow 91s linear infinite;
+    animation: scroll-slow 120s linear infinite;
   }
 
   @keyframes scroll-slow {
@@ -69,7 +69,7 @@
       transform: translateX(0);
     }
     to {
-      transform: translateX(-100%);
+      transform: translateX(calc(-100% - var(--gap)));
     }
   }
   

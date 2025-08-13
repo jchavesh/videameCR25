@@ -179,42 +179,38 @@ export default function Home() {
               <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2 hidden md:block" aria-hidden="true"></div>
               {t.processSteps.map((step, index) => {
                 const isEven = index % 2 === 0;
-                const xValue = isEven ? '-100%' : '100%';
-
+                
                 return (
                   <div key={step.title} className="relative mb-12 md:mb-20">
-                    <motion.div
-                      initial={{ opacity: 0, x: isEven ? -50 : 50 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, ease: "easeOut" }}
-                      className={`flex items-center ${isEven ? 'md:flex-row-reverse' : 'md:flex-row'}`}
-                    >
-                      <div className="hidden md:block w-1/2"></div>
-                      <div className="hidden md:block relative w-12 h-12">
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <motion.div 
-                            initial={{ scale: 0 }}
-                            whileInView={{ scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.4, delay: 0.2 }}
-                            className="w-4 h-4 rounded-full bg-primary ring-8 ring-background"
-                          ></motion.div>
+                     <motion.div 
+                        initial={{ opacity: 0, x: isEven ? -50 : 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.5 }}
+                        transition={{ duration: 0.6 }}
+                        className="md:flex md:items-center"
+                     >
+                        <div className={`md:w-1/2 ${isEven ? 'md:pr-8' : 'md:pl-8 md:order-2'}`}>
+                            <Card className="p-6 bg-secondary/50 border-border">
+                                <div className="flex items-center gap-4">
+                                <div className="flex-shrink-0 text-primary">{step.icon}</div>
+                                <div>
+                                    <Badge variant="outline" className="mb-2">Paso {index + 1}</Badge>
+                                    <h3 className="text-2xl font-headline font-semibold">{step.title}</h3>
+                                    <p className="mt-2 text-muted-foreground">{step.description}</p>
+                                </div>
+                                </div>
+                            </Card>
                         </div>
-                      </div>
-                      <div className="w-full md:w-1/2 md:px-8">
-                         <Card className="p-6 bg-secondary/50 border-border">
-                           <div className="flex items-center gap-4">
-                            <div className="flex-shrink-0 text-primary">{step.icon}</div>
-                            <div>
-                              <Badge variant="outline" className="mb-2">Paso {index + 1}</Badge>
-                              <h3 className="text-2xl font-headline font-semibold">{step.title}</h3>
-                              <p className="mt-2 text-muted-foreground">{step.description}</p>
-                            </div>
-                           </div>
-                         </Card>
-                      </div>
-                    </motion.div>
+                        <div className="hidden md:flex md:w-1/2 relative justify-center items-center">
+                            <motion.div
+                                initial={{ scale: 0 }}
+                                whileInView={{ scale: 1 }}
+                                viewport={{ once: true, amount: 0.5 }}
+                                transition={{ duration: 0.4, delay: 0.2 }}
+                                className="w-4 h-4 rounded-full bg-primary ring-8 ring-background z-10"
+                            ></motion.div>
+                        </div>
+                      </motion.div>
                   </div>
                 )
               })}
@@ -288,11 +284,14 @@ export default function Home() {
                         </motion.div>
                     </div>
                 </div>
-                 <div className="mt-20">
+                <div className="mt-20">
                     <h3 className="text-center text-2xl font-headline font-semibold mb-8">{t.page.ourClients}</h3>
-                    <div className="w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
-                        <div className="flex w-max animate-scroll-slow hover:pause-animation">
-                            {[...t.clients, ...t.clients, ...t.clients, ...t.clients].map((client, index) => (
+                    <div 
+                      className="w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]"
+                      style={{'--gap': '1rem'} as React.CSSProperties}
+                    >
+                        <div className="flex w-max animate-scroll-slow hover:pause-animation gap-[var(--gap)]">
+                            {[...t.clients, ...t.clients].map((client, index) => (
                                 <div key={`${client.name}-${index}`} className="flex-shrink-0 w-48 flex justify-center items-center px-4">
                                     <Image
                                         src={client.logoUrl}
