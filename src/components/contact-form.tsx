@@ -1,12 +1,10 @@
 "use client";
 
-import { useActionState, useEffect } from 'react';
-import { useFormStatus } from 'react-dom';
-import { useForm } from 'react-hook-form';
+import { useState } from 'react';
+import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 
-import { submitContactForm } from '@/lib/actions';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -18,7 +16,6 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
-import { cn } from '@/lib/utils';
 import { Loader2 } from 'lucide-react';
 
 const contactSchema = z.object({
@@ -28,30 +25,28 @@ const contactSchema = z.object({
   projectType: z.string().min(1, { message: 'Selecciona un tipo de proyecto.' }),
   budget: z.string().optional(),
   message: z.string().min(10, { message: 'El mensaje debe tener al menos 10 caracteres.' }),
-  honeypot: z.string().optional(),
 });
 
 type ContactFormInputs = z.infer<typeof contactSchema>;
 
-function SubmitButton() {
-  const { pending } = useFormStatus();
+function SubmitButton({ pending }: { pending: boolean }) {
   return (
     <Button type="submit" disabled={pending} className="w-full">
-      {pending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : 'Enviar Mensaje'}
+      {pending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : 'Enviar Mensaje por WhatsApp'}
     </Button>
   );
 }
 
 export function ContactForm() {
   const { toast } = useToast();
-  const [state, formAction] = useActionState(submitContactForm, { success: false, message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
     control,
+    formState: { errors },
   } = useForm<ContactFormInputs>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -64,21 +59,38 @@ export function ContactForm() {
     }
   });
 
-  useEffect(() => {
-    if (state.message) {
-      toast({
-        title: state.success ? '¡Éxito!' : 'Error',
-        description: state.message,
-        variant: state.success ? 'default' : 'destructive',
-      });
-    }
-    if (state.success) {
-      reset();
-    }
-  }, [state, reset, toast]);
+  const onSubmit = (data: ContactFormInputs) => {
+    setIsSubmitting(true);
+    
+    const whatsAppNumber = "50683315395";
+    const messageParts = [
+      `*Nuevo Contacto desde Videame.cr*`,
+      `*Nombre:* ${data.name}`,
+      `*Email:* ${data.email}`,
+      `*Teléfono:* ${data.phone || 'No especificado'}`,
+      `*Tipo de Proyecto:* ${data.projectType}`,
+      `*Presupuesto:* ${data.budget || 'No especificado'}`,
+      `*Mensaje:*`,
+      `${data.message}`
+    ];
+    
+    const messageText = messageParts.join('\n');
+    const encodedMessage = encodeURIComponent(messageText);
+    const whatsappUrl = `https://wa.me/${whatsAppNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappUrl, '_blank');
+    
+    toast({
+        title: '¡Listo!',
+        description: 'Se ha abierto WhatsApp para que envíes tu mensaje.',
+    });
+
+    reset();
+    setIsSubmitting(false);
+  };
 
   return (
-    <form action={formAction} className="space-y-6">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-muted-foreground mb-1">Nombre</label>
@@ -91,32 +103,43 @@ export function ContactForm() {
           {errors.email && <p className="text-destructive text-sm mt-1">{errors.email.message}</p>}
         </div>
       </div>
-      <div>
-        <label htmlFor="projectType" className="block text-sm font-medium text-muted-foreground mb-1">Tipo de Proyecto</label>
-        <Select name="projectType" onValueChange={(value) => control._updateFormState({ ...control._formValues, projectType: value })}>
-          <SelectTrigger id="projectType">
-            <SelectValue placeholder="Selecciona una opción" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="video-corporativo">Video Corporativo</SelectItem>
-            <SelectItem value="comercial-tv-web">Comercial TV/Web</SelectItem>
-            <SelectItem value="video-evento">Video de Evento</SelectItem>
-            <SelectItem value="fotografia">Fotografía</SelectItem>
-            <SelectItem value="social-media">Contenido para Redes</SelectItem>
-            <SelectItem value="otro">Otro</SelectItem>
-          </SelectContent>
-        </Select>
-        {errors.projectType && <p className="text-destructive text-sm mt-1">{errors.projectType.message}</p>}
+       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div>
+          <label htmlFor="phone" className="block text-sm font-medium text-muted-foreground mb-1">Teléfono (Opcional)</label>
+          <Input id="phone" {...register('phone')} placeholder="Tu número de teléfono" />
+          {errors.phone && <p className="text-destructive text-sm mt-1">{errors.phone.message}</p>}
+        </div>
+        <div>
+           <label htmlFor="projectType" className="block text-sm font-medium text-muted-foreground mb-1">Tipo de Proyecto</label>
+            <Controller
+              name="projectType"
+              control={control}
+              render={({ field }) => (
+                 <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <SelectTrigger id="projectType">
+                    <SelectValue placeholder="Selecciona una opción" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="video-corporativo">Video Corporativo</SelectItem>
+                    <SelectItem value="comercial-tv-web">Comercial TV/Web</SelectItem>
+                    <SelectItem value="video-evento">Video de Evento</SelectItem>
+                    <SelectItem value="fotografia">Fotografía</SelectItem>
+                    <SelectItem value="social-media">Contenido para Redes</SelectItem>
+                    <SelectItem value="otro">Otro</SelectItem>
+                  </SelectContent>
+                </Select>
+              )}
+            />
+          {errors.projectType && <p className="text-destructive text-sm mt-1">{errors.projectType.message}</p>}
+        </div>
       </div>
       <div>
         <label htmlFor="message" className="block text-sm font-medium text-muted-foreground mb-1">Mensaje</label>
         <Textarea id="message" {...register('message')} placeholder="Cuéntanos sobre tu proyecto..." rows={5} />
         {errors.message && <p className="text-destructive text-sm mt-1">{errors.message.message}</p>}
       </div>
-       {/* Honeypot field */}
-      <input type="text" {...register('honeypot')} className="hidden" />
       <div>
-        <SubmitButton />
+        <SubmitButton pending={isSubmitting} />
       </div>
     </form>
   );
