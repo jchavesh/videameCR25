@@ -102,9 +102,9 @@ export const portfolio: PortfolioProject[] = [
     id: 7,
     title: "Entornos CR",
     category: "Comercial",
-    imageUrl: "https://placehold.co/600x800.png",
+    imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/AR_mg.jpg",
     description: "The objective of this video project was to create an audiovisual production that positions Entornos CR as a company with experience, solidity, and trust. From the early stages of pre-production, including music selection, the creative direction was guided by the intention to project a calm and concise tone, reinforcing the company’s formal and professional identity.",
-    videoUrl: "https://www.youtube.com/embed/gHVWjYhBZxQ",
+    videoUrl: "https://youtu.be/gHVWjYhBZxQ?si=k-AtKKTUb81k7sGW",
     dataAiHint: "corporate video"
   }
 ];
