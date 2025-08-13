@@ -179,6 +179,24 @@ export const portfolio: PortfolioProject[] = [
     description: "Led the full audiovisual production for CR BioHealth (dentistry), from concept and script through filming and post, delivering a clean, patient-centric piece that communicates trust and care.",
     videoUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/Videos/CRBioHealth_V3.MP4",
     dataAiHint: "dentistry"
+  },
+  {
+    id: 22,
+    title: "Vuelta Al Lago",
+    category: "Marca Personal",
+    imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/vueltaLago.jpg",
+    description: "Led the full audiovisual production for Vuelta al Lago, a cycling race—covering planning, on-site multi-camera coverage, and post-production—to deliver a high-energy film that captures the course, the athletes, and the event’s atmosphere.",
+    videoUrl: "https://youtu.be/bq89JREVBN8?si=sltU5J6AfnOtLinR",
+    dataAiHint: "cycling race"
+  },
+  {
+    id: 23,
+    title: "Mambotopia",
+    category: "Marca Personal",
+    imageUrl: "https://studio.bypgd.com/pdgstudio//Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/mambotopia.jpg",
+    description: "Led the full audiovisual production for Mambotopia, an international dance congress—covering pre-production, multi-camera event capture, and post-production—to deliver energetic highlight films, artist features, and social cutdowns.",
+    videoUrl: "https://youtu.be/iuGd8RN20hY?si=l9cIuAleTK9uK3tP",
+    dataAiHint: "dance congress"
   }
 ];
 
@@ -242,3 +260,4 @@ export const processSteps = [
         icon: <Award className="w-8 h-8" />,
     },
 ];
+

@@ -30,12 +30,14 @@ export default function PortfolioGrid() {
   };
   
   const getEmbedUrl = (videoUrl: string) => {
+    let videoId;
     if (videoUrl.includes('youtu.be') || videoUrl.includes('youtube.com')) {
-      const videoId = videoUrl.split('/').pop()?.split('?')[0];
+      const url = new URL(videoUrl);
+      videoId = url.hostname === 'youtu.be' ? url.pathname.slice(1) : url.searchParams.get('v');
       return `https://www.youtube.com/embed/${videoId}`;
     }
     if (videoUrl.includes('vimeo.com')) {
-      const videoId = videoUrl.split('/').pop()?.split('?')[0];
+      videoId = videoUrl.split('/').pop()?.split('?')[0];
       return `https://player.vimeo.com/video/${videoId}`;
     }
     return videoUrl;
@@ -65,7 +67,7 @@ export default function PortfolioGrid() {
         layout
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {filteredPortfolio.map((project, index) => (
-          <Dialog key={project.id}>
+          <Dialog key={project.id} onOpenChange={(isOpen) => !isOpen && setSelectedProject(null)}>
             <DialogTrigger asChild>
               <motion.div
                 layout
@@ -80,7 +82,7 @@ export default function PortfolioGrid() {
                   src={project.imageUrl}
                   alt={project.title}
                   width={600}
-                  height={project.category === 'Evento' || project.category === 'Drone' ? 400 : 800}
+                  height={800}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   data-ai-hint={project.dataAiHint}
                 />
@@ -94,16 +96,16 @@ export default function PortfolioGrid() {
             {selectedProject && selectedProject.id === project.id && (
                 <DialogContent className="max-w-4xl bg-background/90 backdrop-blur-sm border-border p-0">
                     <div className="grid grid-cols-1 md:grid-cols-2">
-                        <div className="p-8 flex flex-col justify-center">
+                        <div className="p-8 flex flex-col justify-center order-2 md:order-1">
                             <DialogHeader>
-                                <DialogTitle className="font-headline text-3xl text-primary">{project.title}</DialogTitle>
+                                <DialogTitle className="font-headline text-3xl text-primary">{project.title === "Vuelta Al Lago" ? "Vuelta Al Lago 2025" : project.title === "Mambotopia" ? "Mambotopia 2025" : project.title}</DialogTitle>
                                 <DialogDescription className="text-muted-foreground mt-2 text-base">
                                     {project.description}
                                 </DialogDescription>
                             </DialogHeader>
                             <p className="mt-4 text-sm font-semibold text-foreground">{project.category}</p>
                         </div>
-                        <div>
+                        <div className="order-1 md:order-2">
                         {project.videoUrl ? (
                              <div className="aspect-video w-full h-full bg-black">
                                 {project.videoUrl.endsWith('.mp4') || project.videoUrl.endsWith('.MP4') ? (
