@@ -165,7 +165,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="proceso" className="py-20 sm:py-32">
+        <section id="proceso" className="py-20 sm:py-32 overflow-hidden">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">
@@ -177,30 +177,47 @@ export default function Home() {
             </div>
             <div className="relative">
               <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2 hidden md:block" aria-hidden="true"></div>
-              {t.processSteps.map((step, index) => (
-                <div key={step.title} className="relative mb-12 md:mb-20">
-                  <div className={`flex items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
-                    <div className="hidden md:block w-1/2"></div>
-                    <div className="hidden md:block relative w-12 h-12">
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-4 h-4 rounded-full bg-primary ring-8 ring-background"></div>
+              {t.processSteps.map((step, index) => {
+                const isEven = index % 2 === 0;
+                const xValue = isEven ? '-100%' : '100%';
+
+                return (
+                  <div key={step.title} className="relative mb-12 md:mb-20">
+                    <motion.div
+                      initial={{ opacity: 0, x: isEven ? -50 : 50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, ease: "easeOut" }}
+                      className={`flex items-center ${isEven ? 'md:flex-row-reverse' : 'md:flex-row'}`}
+                    >
+                      <div className="hidden md:block w-1/2"></div>
+                      <div className="hidden md:block relative w-12 h-12">
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <motion.div 
+                            initial={{ scale: 0 }}
+                            whileInView={{ scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.4, delay: 0.2 }}
+                            className="w-4 h-4 rounded-full bg-primary ring-8 ring-background"
+                          ></motion.div>
+                        </div>
                       </div>
-                    </div>
-                    <div className="w-full md:w-1/2 md:px-8">
-                       <Card className="p-6 bg-secondary/50 border-border">
-                         <div className="flex items-center gap-4">
-                          <div className="flex-shrink-0 text-primary">{step.icon}</div>
-                          <div>
-                            <Badge variant="outline" className="mb-2">Paso {index + 1}</Badge>
-                            <h3 className="text-2xl font-headline font-semibold">{step.title}</h3>
-                            <p className="mt-2 text-muted-foreground">{step.description}</p>
-                          </div>
-                         </div>
-                       </Card>
-                    </div>
+                      <div className="w-full md:w-1/2 md:px-8">
+                         <Card className="p-6 bg-secondary/50 border-border">
+                           <div className="flex items-center gap-4">
+                            <div className="flex-shrink-0 text-primary">{step.icon}</div>
+                            <div>
+                              <Badge variant="outline" className="mb-2">Paso {index + 1}</Badge>
+                              <h3 className="text-2xl font-headline font-semibold">{step.title}</h3>
+                              <p className="mt-2 text-muted-foreground">{step.description}</p>
+                            </div>
+                           </div>
+                         </Card>
+                      </div>
+                    </motion.div>
                   </div>
-                </div>
-              ))}
+                )
+              })}
             </div>
           </div>
         </section>
