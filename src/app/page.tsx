@@ -216,9 +216,14 @@ export default function Home() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <h2 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">Sobre Videame</h2>
-                        <p className="mt-6 text-lg text-muted-foreground">
-                          I’m Jose Chaves, an Audiovisual Producer, Filmmaker and Systems Engineer specialized in motion graphics, AR/VR and post-production. My 16 years of experience and my diverse skill set allows me to bring an unique perspective to every project, blending technical expertise with creative vision to deliver high-quality solutions and immersive audiovisual content. With passion for storytelling and commitment to innovation, I strive to push the boundaries of what’s possible in the world of digital media.
-                        </p>
+                        <div className="mt-6 text-lg text-muted-foreground space-y-6">
+                          <p>
+                            En Videame integramos diseño, tecnología y storytelling para convertir objetivos de comunicación en piezas audiovisuales memorables. Nuestro enfoque combina motion graphics, experiencias AR/VR y postproducción de alto nivel, con una operación de extremo a extremo: concepto y guion, producción y post, hasta la entrega final para TV, social y web. Trabajamos de cerca con cada marca para asegurar coherencia visual, claridad del mensaje y resultados medibles.
+                          </p>
+                           <p>
+                            La dirección creativa está a cargo de José Chaves, Productor Audiovisual, Filmmaker e Ingeniero en Sistemas con 16 años de experiencia, reconocido por fusionar precisión técnica con lenguaje cinematográfico. Bajo su liderazgo, el estudio impulsa flujos eficientes, acabados consistentes y soluciones creativas alineadas a cada identidad de marca.
+                           </p>
+                        </div>
                     </div>
                     <div>
                         <Image 
