@@ -228,7 +228,7 @@ export const processSteps = [
     },
     {
         title: "Pre-Producción",
-        description: "Planificamos cada detalle: guion, storyboard, locaciones, casting y logística para un rodaje impecable.",
+        description: "Planificamos cada detalle: guión, storyboard, locaciones, casting y logística para un rodaje impecable.",
         icon: <Users className="w-8 h-8" />,
     },
     {
