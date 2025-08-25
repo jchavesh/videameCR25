@@ -3,9 +3,9 @@
 
 import * as React from "react"
 import {
-  CaretSortIcon,
-  ChevronDownIcon,
-} from "@radix-ui/react-icons"
+  ChevronsUpDown,
+  ChevronDown,
+} from "lucide-react"
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -65,7 +65,7 @@ const columns: ColumnDef<CastingSubmission>[] = [
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
           Full Name
-          <CaretSortIcon className="ml-2 h-4 w-4" />
+          <ChevronsUpDown className="ml-2 h-4 w-4" />
         </Button>
       )
     },
@@ -98,7 +98,7 @@ const columns: ColumnDef<CastingSubmission>[] = [
             onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
           >
             Submitted At
-            <CaretSortIcon className="ml-2 h-4 w-4" />
+            <ChevronsUpDown className="ml-2 h-4 w-4" />
           </Button>
         )
       },
@@ -156,7 +156,7 @@ export function CastingAdminTable({ data }: { data: CastingSubmission[] }) {
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto">
-              Columns <ChevronDownIcon className="ml-2 h-4 w-4" />
+              Columns <ChevronDown className="ml-2 h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
