@@ -1,10 +1,10 @@
 
-
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 import { LanguageProvider } from '@/context/language-context';
+import { AuthProvider } from '@/context/auth-context';
 
 const logoUrl = 'https://studio.bypgd.com/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/VideameLogoFinal.svg';
 
@@ -52,14 +52,13 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
       </head>
       <body className={cn('font-body antialiased')} suppressHydrationWarning>
+        <AuthProvider>
           <LanguageProvider>
             {children}
           </LanguageProvider>
+        </AuthProvider>
         <Toaster />
       </body>
     </html>
   );
 }
-    
-
-    

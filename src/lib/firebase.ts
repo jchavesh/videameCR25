@@ -4,7 +4,9 @@
 // You can safely delete it if you don't plan to use Firebase.
 
 import { initializeApp, getApp, getApps } from "firebase/app";
+import { getAuth } from "firebase/auth";
 
+// IMPORTANT: Replace with your new Firebase project's configuration
 const firebaseConfig = {
   "projectId": "TU_NUEVO_PROJECT_ID",
   "appId": "TU_NUEVO_APP_ID",
@@ -17,7 +19,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+const auth = getAuth(app);
 
-export { app };
-
-    
+export { app, auth };
