@@ -2,6 +2,8 @@
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
+  // output: 'standalone' is the default and is not needed.
+  // 'export' would create a static site, which we don't want.
   images: {
     unoptimized: true,
   },
@@ -20,8 +22,12 @@ const nextConfig: NextConfig = {
       'https://*.google.com',
       'https://*.cloud.google.com',
       'https://*.cloud.run',
+      'https://*.hostinger.com',
+      'https://*.videamecr.com'
     ],
   },
 };
 
 export default nextConfig;
+
+    
