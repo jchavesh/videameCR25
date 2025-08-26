@@ -3,7 +3,7 @@
 
 import { useState, useEffect } from 'react';
 import { useToast } from '@/hooks/use-toast';
-import { Loader2, RefreshCw, ExternalLink, Image as ImageIcon, Video, User, Mail, Phone, MapPin } from 'lucide-react';
+import { Loader2, RefreshCw, ExternalLink, Image as ImageIcon, Video, User, Mail, Phone, MapPin, Globe } from 'lucide-react';
 import {
   Table,
   TableBody,
@@ -46,9 +46,8 @@ export function CastingSubmissionsClient() {
         return;
     }
     
-    // Using a CORS proxy to bypass browser restrictions
-    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-    const apiUrl = `${proxyUrl}https://api.netlify.com/api/v1/forms/${FORM_ID}/submissions`;
+    // Use the Netlify API proxy defined in next.config.js
+    const apiUrl = `/netlify-api/forms/${FORM_ID}/submissions`;
 
     try {
       const response = await fetch(apiUrl, {
@@ -84,7 +83,7 @@ export function CastingSubmissionsClient() {
       toast({
         variant: "destructive",
         title: "Error al cargar postulaciones",
-        description: "No se pudieron obtener los datos desde Netlify. Revisa la consola para más detalles.",
+        description: `No se pudieron obtener los datos. ${error instanceof Error ? error.message : ''}`,
       });
     } finally {
       setIsLoading(false);
