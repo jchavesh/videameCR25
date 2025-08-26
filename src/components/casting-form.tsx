@@ -26,45 +26,17 @@ import {
   DialogTrigger,
   DialogClose
 } from "@/components/ui/dialog";
-import { useToast } from "@/hooks/use-toast";
-import { useRouter } from "next/navigation";
-
 
 export function CastingForm() {
   const [hasExperience, setHasExperience] = useState<string | undefined>(undefined);
   const [cameraConfidence, setCameraConfidence] = useState(3);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-  const router = useRouter();
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  // This function is for disabling the button, but the submission is now handled by standard HTML form action.
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     setIsSubmitting(true);
-
-    const formData = new FormData(event.currentTarget);
-    
-    try {
-        const response = await fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formData as any).toString(),
-        });
-
-        // Since this is a static site and we can't easily read the response due to CORS,
-        // we'll assume success if the fetch doesn't throw a network error.
-        // The data *does* get to Netlify. We just can't confirm it from the client.
-        router.push("/casting-success/");
-        
-    } catch (error) {
-        console.error("Form submission error:", error);
-        // This catch block might run even on success because of CORS.
-        // We push to the success page anyway because the data likely submitted.
-        router.push("/casting-success/");
-    } finally {
-        setIsSubmitting(false);
-    }
+    // The form will now submit via its action attribute.
   };
-
 
   const danceSkillOptions = ["Urbano", "Reggaetón", "Comercial", "Contemporáneo", "Salsa/Bachata", "Hip-Hop", "Jazz", "Heels", "Otro"];
   const musicStyleOptions = ["Pop", "Urbano/Reggaetón", "Electrónica", "Rock", "Alternativa/Indie", "Latina", "Otro"];
@@ -81,7 +53,6 @@ export function CastingForm() {
         className="space-y-12"
         action="/casting-success/"
     >
-        {/* This action points to the success page on your Hostinger site, but the JS handles the submission */}
         <input type="hidden" name="form-name" value="casting" />
         <p className="hidden">
             <label>

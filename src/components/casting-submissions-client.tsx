@@ -46,9 +46,13 @@ export function CastingSubmissionsClient() {
         return;
     }
     
+    // Correct API URL for fetching submissions for a specific form.
     const apiUrl = `https://api.netlify.com/api/v1/forms/${FORM_ID}/submissions`;
 
     try {
+      // We are fetching directly from the client, CORS must be configured in Netlify UI
+      // Go to Site settings > Forms > Spam and usage > Allowed origins
+      // and add the domain of your Hostinger site (e.g., https://videamecr.com)
       const response = await fetch(apiUrl, {
         headers: {
           'Authorization': `Bearer ${NETLIFY_API_TOKEN}`,
@@ -91,6 +95,7 @@ export function CastingSubmissionsClient() {
 
   useEffect(() => {
     fetchSubmissions();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (isLoading) {
