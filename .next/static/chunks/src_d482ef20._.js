@@ -471,7 +471,7 @@ const firebaseConfig = {
     "appId": "TU_NUEVO_APP_ID",
     "storageBucket": "TU_NUEVO_STORAGE_BUCKET",
     "apiKey": "TU_NUEVO_API_KEY",
-    "authDomain": "TU_NUEVO_AUTH_DOMAIN",
+    "authDomain": "videamecr.com",
     "messagingSenderId": "TU_NUEVO_SENDER_ID",
     "measurementId": "TU_NUEVO_MEASUREMENT_ID"
 };
