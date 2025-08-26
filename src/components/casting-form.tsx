@@ -131,7 +131,7 @@ export function CastingForm() {
                     </SelectContent>
                 </Select>
             </div>
-            <div className="sm_col-span-3">
+            <div className="sm:col-span-3">
                 <Label htmlFor="hairColor">Color de cabello</Label>
                 <Select name="hairColor">
                     <SelectTrigger id="hairColor"><SelectValue placeholder="Selecciona..." /></SelectTrigger>
