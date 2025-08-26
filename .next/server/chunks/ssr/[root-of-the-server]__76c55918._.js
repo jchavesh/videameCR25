@@ -563,9 +563,6 @@ module.exports = mod;
 
 var { g: global, __dirname } = __turbopack_context__;
 {
-// This file is no longer used for form submissions, 
-// but is kept in case you want to use other Firebase services in the future.
-// You can safely delete it if you don't plan to use Firebase.
 __turbopack_context__.s({
     "app": (()=>app),
     "auth": (()=>auth)
@@ -576,15 +573,14 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$firebase$2f$
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$firebase$2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$node$2d$esm$2f$totp$2d$219bb96f$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__o__as__getAuth$3e$__ = __turbopack_context__.i("[project]/node_modules/firebase/node_modules/@firebase/auth/dist/node-esm/totp-219bb96f.js [app-ssr] (ecmascript) <export o as getAuth>");
 ;
 ;
-// IMPORTANT: Replace with your new Firebase project's configuration
+// Firebase configuration is now loaded from environment variables
 const firebaseConfig = {
-    "projectId": "TU_NUEVO_PROJECT_ID",
-    "appId": "TU_NUEVO_APP_ID",
-    "storageBucket": "TU_NUEVO_STORAGE_BUCKET",
-    "apiKey": "TU_NUEVO_API_KEY",
-    "authDomain": "videamecr.com",
-    "messagingSenderId": "TU_NUEVO_SENDER_ID",
-    "measurementId": "TU_NUEVO_MEASUREMENT_ID"
+    apiKey: ("TURBOPACK compile-time value", "AIzaSyABiqLO50kZBRz2ocLzzbaROwbyzdUyy74"),
+    authDomain: ("TURBOPACK compile-time value", "videame-next.firebaseapp.com"),
+    projectId: ("TURBOPACK compile-time value", "videame-next"),
+    storageBucket: ("TURBOPACK compile-time value", "videame-next.firebasestorage.app"),
+    messagingSenderId: ("TURBOPACK compile-time value", "309468263172"),
+    appId: ("TURBOPACK compile-time value", "1:309468263172:web:36481d8d5821f8e33e9651")
 };
 // Initialize Firebase
 const app = !(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$app$2f$dist$2f$esm$2f$index$2e$esm2017$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["getApps"])().length ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$app$2f$dist$2f$esm$2f$index$2e$esm2017$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["initializeApp"])(firebaseConfig) : (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$app$2f$dist$2f$esm$2f$index$2e$esm2017$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["getApp"])();

@@ -1,21 +1,15 @@
 
-
-// This file is no longer used for form submissions, 
-// but is kept in case you want to use other Firebase services in the future.
-// You can safely delete it if you don't plan to use Firebase.
-
 import { initializeApp, getApp, getApps } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
-// IMPORTANT: Replace with your new Firebase project's configuration
+// Firebase configuration is now loaded from environment variables
 const firebaseConfig = {
-  "projectId": "TU_NUEVO_PROJECT_ID",
-  "appId": "TU_NUEVO_APP_ID",
-  "storageBucket": "TU_NUEVO_STORAGE_BUCKET",
-  "apiKey": "TU_NUEVO_API_KEY",
-  "authDomain": "videamecr.com",
-  "messagingSenderId": "TU_NUEVO_SENDER_ID",
-  "measurementId": "TU_NUEVO_MEASUREMENT_ID"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
@@ -23,4 +17,3 @@ const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 const auth = getAuth(app);
 
 export { app, auth };
-
