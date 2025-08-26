@@ -31,7 +31,7 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
-        source: '/netlify-api/:path*',
+        source: '/netlify-api/:path*/',
         destination: 'https://api.netlify.com/api/v1/:path*',
       },
     ]
