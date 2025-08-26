@@ -34,7 +34,10 @@ export function CastingForm() {
 
   // This function is for disabling the button, but the submission is now handled by standard HTML form action.
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    setIsSubmitting(true);
+    // Check if the form is valid before setting the submitting state
+    if (event.currentTarget.checkValidity()) {
+        setIsSubmitting(true);
+    }
     // The form will now submit via its action attribute.
   };
 
@@ -359,3 +362,5 @@ export function CastingForm() {
     </form>
   );
 }
+
+    
