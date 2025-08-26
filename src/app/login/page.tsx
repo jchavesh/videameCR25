@@ -2,8 +2,9 @@
 import { LoginForm } from "@/components/login-form";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { Suspense } from "react";
 
-export default function LoginPage() {
+function LoginPageContent() {
   return (
     <div className="flex flex-col min-h-screen">
         <Header />
@@ -25,4 +26,13 @@ export default function LoginPage() {
         <Footer />
     </div>
   );
+}
+
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <LoginPageContent />
+    </Suspense>
+  )
 }
