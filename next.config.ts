@@ -25,8 +25,15 @@ const nextConfig: NextConfig = {
       'https://*.videamecr.com'
     ],
   },
+  // Required for Netlify API proxy
+  async rewrites() {
+    return [
+      {
+        source: '/netlify-api/:path*',
+        destination: 'https://api.netlify.com/api/v1/:path*',
+      },
+    ]
+  },
 };
 
 export default nextConfig;
-
-    
