@@ -43,8 +43,9 @@ export function CastingForm() {
 
     const formData = new FormData(event.currentTarget);
     
+    // The fetch must be to the Netlify-hosted page for the form to be processed.
     try {
-        await fetch("/", {
+        await fetch("/", { // This path is relative to the Netlify site URL
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams(formData as any).toString(),
@@ -71,6 +72,7 @@ export function CastingForm() {
     <form
         name="casting"
         method="POST"
+        action="/casting-success" // Action points to a success page on your main domain
         data-netlify="true"
         data-netlify-honeypot="bot-field"
         onSubmit={handleSubmit}
