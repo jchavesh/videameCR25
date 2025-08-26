@@ -2,8 +2,7 @@
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
-  // output: 'standalone' is the default and is not needed.
-  // 'export' would create a static site, which we don't want.
+  output: 'export',
   images: {
     unoptimized: true,
   },
