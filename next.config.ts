@@ -25,17 +25,6 @@ const nextConfig: NextConfig = {
       'https://*.videamecr.com'
     ],
   },
-  // Add a trailing slash to all paths
-  trailingSlash: true,
-  // Required for Netlify API proxy (this rewrite rule is ignored in static export)
-  async rewrites() {
-    return [
-      {
-        source: '/netlify-api/:path*/',
-        destination: 'https://api.netlify.com/api/v1/:path*',
-      },
-    ]
-  },
 };
 
 export default nextConfig;

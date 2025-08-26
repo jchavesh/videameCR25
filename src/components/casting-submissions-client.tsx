@@ -46,8 +46,7 @@ export function CastingSubmissionsClient() {
         return;
     }
     
-    // Use the Netlify API proxy defined in next.config.js
-    const apiUrl = `/netlify-api/forms/${FORM_ID}/submissions`;
+    const apiUrl = `https://api.netlify.com/api/v1/forms/${FORM_ID}/submissions`;
 
     try {
       const response = await fetch(apiUrl, {
