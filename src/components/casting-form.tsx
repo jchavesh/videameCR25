@@ -45,7 +45,8 @@ export function CastingForm() {
     
     // The fetch must be to the Netlify-hosted page for the form to be processed.
     try {
-        await fetch("/", { // This path is relative to the Netlify site URL
+        // IMPORTANT: Replace with your actual Netlify site URL before deploying to Hostinger
+        await fetch("https://videamecr.netlify.app", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams(formData as any).toString(),
@@ -72,12 +73,12 @@ export function CastingForm() {
     <form
         name="casting"
         method="POST"
-        action="/casting-success" // Action points to a success page on your main domain
         data-netlify="true"
         data-netlify-honeypot="bot-field"
         onSubmit={handleSubmit}
         className="space-y-12"
     >
+        {/* This action points to the success page on your Hostinger site, but the JS handles the submission */}
         <input type="hidden" name="form-name" value="casting" />
         <p className="hidden">
             <label>
@@ -384,5 +385,3 @@ export function CastingForm() {
     </form>
   );
 }
-
-    
