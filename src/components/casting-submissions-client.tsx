@@ -3,7 +3,7 @@
 
 import { useState, useEffect } from 'react';
 import { useToast } from '@/hooks/use-toast';
-import { Loader2, RefreshCw, ExternalLink, Image as ImageIcon, Video, User, Mail, Phone, MapPin, Globe, Link as LinkIcon } from 'lucide-react';
+import { Loader2, RefreshCw, ExternalLink, Link as LinkIcon, User, Mail, Phone, MapPin, Globe } from 'lucide-react';
 import {
   Table,
   TableBody,
@@ -21,7 +21,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
-import Image from 'next/image';
 import type { CastingSubmission } from '@/types/casting';
 
 
@@ -46,8 +45,6 @@ export function CastingSubmissionsClient() {
         return;
     }
     
-    // Correct API URL for fetching submissions for a specific form.
-    // This points directly to the Netlify API.
     const apiUrl = `https://api.netlify.com/api/v1/forms/${FORM_ID}/submissions`;
 
     try {
@@ -111,13 +108,13 @@ export function CastingSubmissionsClient() {
                 Una o más variables de entorno de Netlify (FORM_ID, API_TOKEN) no están configuradas.
             </p>
              <p className="text-muted-foreground mt-2 text-sm">
-                Asegúrate de que los valores `NEXT_PUBLIC_NETLIFY_FORM_ID` y `NEXT_PUBLIC_NETLIFY_API_TOKEN` estén en tu archivo `.env.local`.
+                Asegúrate de que los valores `NEXT_PUBLIC_NETLIFY_FORM_ID` y `NEXT_PUBLIC_NETLIFY_API_TOKEN` estén en tu archivo `.env.local` y en la configuración de tu hosting.
             </p>
         </div>
     )
   }
 
-  if (submissions.length === 0) {
+  if (submissions.length === 0 && !isLoading) {
     return (
         <div className="text-center py-16">
             <h2 className="text-2xl font-headline">No hay postulaciones todavía</h2>
@@ -236,3 +233,5 @@ export function CastingSubmissionsClient() {
     </div>
   );
 }
+
+    

@@ -766,10 +766,6 @@ function CastingForm() {
     const [cameraConfidence, setCameraConfidence] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(3);
     const [isSubmitting, setIsSubmitting] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
-    // Handle form submission for a static site with Netlify forms.
-    // We manually trigger the form submission via fetch, but we don't await the result.
-    // The browser will show a CORS error, but Netlify will still process the form.
-    // We immediately redirect to the success page for a smooth user experience.
     const handleSubmit = async (event)=>{
         event.preventDefault();
         setIsSubmitting(true);
@@ -782,11 +778,8 @@ function CastingForm() {
             },
             body: new URLSearchParams(formData).toString()
         }).catch((error)=>{
-            // We expect a CORS error, so we can largely ignore it.
-            // The form submission will still go through on Netlify.
             console.warn("CORS error is expected on static site form submission to Netlify:", error);
         });
-        // Redirect to success page immediately without waiting for the fetch to complete.
         router.push('/casting-success');
     };
     const danceSkillOptions = [
@@ -841,7 +834,7 @@ function CastingForm() {
                 value: "casting"
             }, void 0, false, {
                 fileName: "[project]/src/components/casting-form.tsx",
-                lineNumber: 77,
+                lineNumber: 70,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -853,18 +846,18 @@ function CastingForm() {
                             name: "bot-field"
                         }, void 0, false, {
                             fileName: "[project]/src/components/casting-form.tsx",
-                            lineNumber: 80,
+                            lineNumber: 73,
                             columnNumber: 50
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/casting-form.tsx",
-                    lineNumber: 79,
+                    lineNumber: 72,
                     columnNumber: 13
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/casting-form.tsx",
-                lineNumber: 78,
+                lineNumber: 71,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -875,7 +868,7 @@ function CastingForm() {
                         children: "Información Básica"
                     }, void 0, false, {
                         fileName: "[project]/src/components/casting-form.tsx",
-                        lineNumber: 86,
+                        lineNumber: 79,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -889,7 +882,7 @@ function CastingForm() {
                                         children: "Nombre completo"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 89,
+                                        lineNumber: 82,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -898,13 +891,13 @@ function CastingForm() {
                                         required: true
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 90,
+                                        lineNumber: 83,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/casting-form.tsx",
-                                lineNumber: 88,
+                                lineNumber: 81,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -915,7 +908,7 @@ function CastingForm() {
                                         children: "Edad"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 93,
+                                        lineNumber: 86,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -927,13 +920,13 @@ function CastingForm() {
                                         required: true
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 94,
+                                        lineNumber: 87,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/casting-form.tsx",
-                                lineNumber: 92,
+                                lineNumber: 85,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -944,7 +937,7 @@ function CastingForm() {
                                         children: "Nacionalidad"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 97,
+                                        lineNumber: 90,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -952,13 +945,13 @@ function CastingForm() {
                                         name: "nationality"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 98,
+                                        lineNumber: 91,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/casting-form.tsx",
-                                lineNumber: 96,
+                                lineNumber: 89,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -969,7 +962,7 @@ function CastingForm() {
                                         children: "Ciudad y país de residencia"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 101,
+                                        lineNumber: 94,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -978,13 +971,13 @@ function CastingForm() {
                                         required: true
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 102,
+                                        lineNumber: 95,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/casting-form.tsx",
-                                lineNumber: 100,
+                                lineNumber: 93,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -995,7 +988,7 @@ function CastingForm() {
                                         children: "Teléfono"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 105,
+                                        lineNumber: 98,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -1006,13 +999,13 @@ function CastingForm() {
                                         required: true
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 106,
+                                        lineNumber: 99,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/casting-form.tsx",
-                                lineNumber: 104,
+                                lineNumber: 97,
                                 columnNumber: 14
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1023,7 +1016,7 @@ function CastingForm() {
                                         children: "Email"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 109,
+                                        lineNumber: 102,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -1033,13 +1026,13 @@ function CastingForm() {
                                         required: true
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 110,
+                                        lineNumber: 103,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/casting-form.tsx",
-                                lineNumber: 108,
+                                lineNumber: 101,
                                 columnNumber: 14
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1050,7 +1043,7 @@ function CastingForm() {
                                         children: "Redes Sociales (Instagram, TikTok, etc.)"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 113,
+                                        lineNumber: 106,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$textarea$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Textarea"], {
@@ -1060,25 +1053,25 @@ function CastingForm() {
                                         placeholder: "https://instagram.com/tu_usuario"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 114,
+                                        lineNumber: 107,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/casting-form.tsx",
-                                lineNumber: 112,
+                                lineNumber: 105,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/casting-form.tsx",
-                        lineNumber: 87,
+                        lineNumber: 80,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/casting-form.tsx",
-                lineNumber: 85,
+                lineNumber: 78,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1089,7 +1082,7 @@ function CastingForm() {
                         children: "Aspecto Físico"
                     }, void 0, false, {
                         fileName: "[project]/src/components/casting-form.tsx",
-                        lineNumber: 120,
+                        lineNumber: 113,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1103,7 +1096,7 @@ function CastingForm() {
                                         children: "Estatura (cm)"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 123,
+                                        lineNumber: 116,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -1113,13 +1106,13 @@ function CastingForm() {
                                         required: true
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 124,
+                                        lineNumber: 117,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/casting-form.tsx",
-                                lineNumber: 122,
+                                lineNumber: 115,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1130,7 +1123,7 @@ function CastingForm() {
                                         children: "Talla de Ropa"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 127,
+                                        lineNumber: 120,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Select"], {
@@ -1143,12 +1136,12 @@ function CastingForm() {
                                                     placeholder: "Selecciona..."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/casting-form.tsx",
-                                                    lineNumber: 129,
+                                                    lineNumber: 122,
                                                     columnNumber: 54
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/casting-form.tsx",
-                                                lineNumber: 129,
+                                                lineNumber: 122,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -1158,7 +1151,7 @@ function CastingForm() {
                                                         children: "XS"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/casting-form.tsx",
-                                                        lineNumber: 131,
+                                                        lineNumber: 124,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1166,7 +1159,7 @@ function CastingForm() {
                                                         children: "S"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/casting-form.tsx",
-                                                        lineNumber: 132,
+                                                        lineNumber: 125,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1174,7 +1167,7 @@ function CastingForm() {
                                                         children: "M"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/casting-form.tsx",
-                                                        lineNumber: 133,
+                                                        lineNumber: 126,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1182,7 +1175,7 @@ function CastingForm() {
                                                         children: "L"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/casting-form.tsx",
-                                                        lineNumber: 134,
+                                                        lineNumber: 127,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1190,25 +1183,25 @@ function CastingForm() {
                                                         children: "XL"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/casting-form.tsx",
-                                                        lineNumber: 135,
+                                                        lineNumber: 128,
                                                         columnNumber: 25
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/casting-form.tsx",
-                                                lineNumber: 130,
+                                                lineNumber: 123,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 128,
+                                        lineNumber: 121,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/casting-form.tsx",
-                                lineNumber: 126,
+                                lineNumber: 119,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1219,7 +1212,7 @@ function CastingForm() {
                                         children: "Talla de calzado (EUR)"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 140,
+                                        lineNumber: 133,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -1228,13 +1221,13 @@ function CastingForm() {
                                         type: "number"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 141,
+                                        lineNumber: 134,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/casting-form.tsx",
-                                lineNumber: 139,
+                                lineNumber: 132,
                                 columnNumber: 14
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1245,7 +1238,7 @@ function CastingForm() {
                                         children: "Color de ojos"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 144,
+                                        lineNumber: 137,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Select"], {
@@ -1257,12 +1250,12 @@ function CastingForm() {
                                                     placeholder: "Selecciona..."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/casting-form.tsx",
-                                                    lineNumber: 146,
+                                                    lineNumber: 139,
                                                     columnNumber: 51
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/casting-form.tsx",
-                                                lineNumber: 146,
+                                                lineNumber: 139,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -1271,24 +1264,24 @@ function CastingForm() {
                                                         children: color
                                                     }, color, false, {
                                                         fileName: "[project]/src/components/casting-form.tsx",
-                                                        lineNumber: 148,
+                                                        lineNumber: 141,
                                                         columnNumber: 56
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/casting-form.tsx",
-                                                lineNumber: 147,
+                                                lineNumber: 140,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 145,
+                                        lineNumber: 138,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/casting-form.tsx",
-                                lineNumber: 143,
+                                lineNumber: 136,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1299,7 +1292,7 @@ function CastingForm() {
                                         children: "Color de cabello"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 153,
+                                        lineNumber: 146,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Select"], {
@@ -1311,12 +1304,12 @@ function CastingForm() {
                                                     placeholder: "Selecciona..."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/casting-form.tsx",
-                                                    lineNumber: 155,
+                                                    lineNumber: 148,
                                                     columnNumber: 51
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/casting-form.tsx",
-                                                lineNumber: 155,
+                                                lineNumber: 148,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -1325,36 +1318,36 @@ function CastingForm() {
                                                         children: color
                                                     }, color, false, {
                                                         fileName: "[project]/src/components/casting-form.tsx",
-                                                        lineNumber: 157,
+                                                        lineNumber: 150,
                                                         columnNumber: 56
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/casting-form.tsx",
-                                                lineNumber: 156,
+                                                lineNumber: 149,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 154,
+                                        lineNumber: 147,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/casting-form.tsx",
-                                lineNumber: 152,
+                                lineNumber: 145,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/casting-form.tsx",
-                        lineNumber: 121,
+                        lineNumber: 114,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/casting-form.tsx",
-                lineNumber: 119,
+                lineNumber: 112,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1365,7 +1358,7 @@ function CastingForm() {
                         children: "Experiencia y Habilidades"
                     }, void 0, false, {
                         fileName: "[project]/src/components/casting-form.tsx",
-                        lineNumber: 165,
+                        lineNumber: 158,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1378,7 +1371,7 @@ function CastingForm() {
                                         children: "¿Has trabajado en videos musicales, comerciales o sesiones de fotos?"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 168,
+                                        lineNumber: 161,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$radio$2d$group$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["RadioGroup"], {
@@ -1395,7 +1388,7 @@ function CastingForm() {
                                                         id: "exp-yes"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/casting-form.tsx",
-                                                        lineNumber: 171,
+                                                        lineNumber: 164,
                                                         columnNumber: 29
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
@@ -1404,13 +1397,13 @@ function CastingForm() {
                                                         children: "Sí"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/casting-form.tsx",
-                                                        lineNumber: 172,
+                                                        lineNumber: 165,
                                                         columnNumber: 29
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/casting-form.tsx",
-                                                lineNumber: 170,
+                                                lineNumber: 163,
                                                 columnNumber: 25
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1421,7 +1414,7 @@ function CastingForm() {
                                                         id: "exp-no"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/casting-form.tsx",
-                                                        lineNumber: 175,
+                                                        lineNumber: 168,
                                                         columnNumber: 29
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
@@ -1430,25 +1423,25 @@ function CastingForm() {
                                                         children: "No"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/casting-form.tsx",
-                                                        lineNumber: 176,
+                                                        lineNumber: 169,
                                                         columnNumber: 29
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/casting-form.tsx",
-                                                lineNumber: 174,
+                                                lineNumber: 167,
                                                 columnNumber: 25
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 169,
+                                        lineNumber: 162,
                                         columnNumber: 21
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/casting-form.tsx",
-                                lineNumber: 167,
+                                lineNumber: 160,
                                 columnNumber: 15
                             }, this),
                             hasExperience === "Sí" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1458,7 +1451,7 @@ function CastingForm() {
                                         children: "Describe tu experiencia"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 183,
+                                        lineNumber: 176,
                                         columnNumber: 23
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$textarea$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Textarea"], {
@@ -1470,13 +1463,13 @@ function CastingForm() {
                                         required: hasExperience === "Sí"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 184,
+                                        lineNumber: 177,
                                         columnNumber: 23
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/casting-form.tsx",
-                                lineNumber: 182,
+                                lineNumber: 175,
                                 columnNumber: 19
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1485,7 +1478,7 @@ function CastingForm() {
                                         children: "Habilidades de Baile"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 189,
+                                        lineNumber: 182,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1499,7 +1492,7 @@ function CastingForm() {
                                                         value: skill
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/casting-form.tsx",
-                                                        lineNumber: 193,
+                                                        lineNumber: 186,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
@@ -1508,24 +1501,24 @@ function CastingForm() {
                                                         children: skill
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/casting-form.tsx",
-                                                        lineNumber: 194,
+                                                        lineNumber: 187,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, skill, true, {
                                                 fileName: "[project]/src/components/casting-form.tsx",
-                                                lineNumber: 192,
+                                                lineNumber: 185,
                                                 columnNumber: 28
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 190,
+                                        lineNumber: 183,
                                         columnNumber: 20
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/casting-form.tsx",
-                                lineNumber: 188,
+                                lineNumber: 181,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1535,7 +1528,7 @@ function CastingForm() {
                                         children: "Experiencia en actuación"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 201,
+                                        lineNumber: 194,
                                         columnNumber: 21
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Select"], {
@@ -1548,12 +1541,12 @@ function CastingForm() {
                                                     placeholder: "Selecciona..."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/casting-form.tsx",
-                                                    lineNumber: 203,
+                                                    lineNumber: 196,
                                                     columnNumber: 79
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/casting-form.tsx",
-                                                lineNumber: 203,
+                                                lineNumber: 196,
                                                 columnNumber: 25
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -1563,7 +1556,7 @@ function CastingForm() {
                                                         children: "Ninguna"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/casting-form.tsx",
-                                                        lineNumber: 205,
+                                                        lineNumber: 198,
                                                         columnNumber: 29
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1571,7 +1564,7 @@ function CastingForm() {
                                                         children: "Básica"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/casting-form.tsx",
-                                                        lineNumber: 206,
+                                                        lineNumber: 199,
                                                         columnNumber: 29
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1579,7 +1572,7 @@ function CastingForm() {
                                                         children: "Intermedia"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/casting-form.tsx",
-                                                        lineNumber: 207,
+                                                        lineNumber: 200,
                                                         columnNumber: 29
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1587,25 +1580,25 @@ function CastingForm() {
                                                         children: "Avanzada"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/casting-form.tsx",
-                                                        lineNumber: 208,
+                                                        lineNumber: 201,
                                                         columnNumber: 29
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/casting-form.tsx",
-                                                lineNumber: 204,
+                                                lineNumber: 197,
                                                 columnNumber: 25
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 202,
+                                        lineNumber: 195,
                                         columnNumber: 21
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/casting-form.tsx",
-                                lineNumber: 200,
+                                lineNumber: 193,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1615,7 +1608,7 @@ function CastingForm() {
                                         children: "Confianza frente a cámara (1=Poca, 5=Mucha)"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 214,
+                                        lineNumber: 207,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1627,7 +1620,7 @@ function CastingForm() {
                                                 children: "1"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/casting-form.tsx",
-                                                lineNumber: 216,
+                                                lineNumber: 209,
                                                 columnNumber: 25
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$slider$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Slider"], {
@@ -1645,7 +1638,7 @@ function CastingForm() {
                                                 "aria-label": "Confianza frente a cámara"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/casting-form.tsx",
-                                                lineNumber: 217,
+                                                lineNumber: 210,
                                                 columnNumber: 25
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1654,19 +1647,19 @@ function CastingForm() {
                                                 children: "5"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/casting-form.tsx",
-                                                lineNumber: 227,
+                                                lineNumber: 220,
                                                 columnNumber: 25
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 215,
+                                        lineNumber: 208,
                                         columnNumber: 21
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/casting-form.tsx",
-                                lineNumber: 213,
+                                lineNumber: 206,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1675,7 +1668,7 @@ function CastingForm() {
                                         children: "Estilos musicales con los que te identificas"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 232,
+                                        lineNumber: 225,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1689,7 +1682,7 @@ function CastingForm() {
                                                         value: style
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/casting-form.tsx",
-                                                        lineNumber: 236,
+                                                        lineNumber: 229,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
@@ -1698,36 +1691,36 @@ function CastingForm() {
                                                         children: style
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/casting-form.tsx",
-                                                        lineNumber: 237,
+                                                        lineNumber: 230,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, style, true, {
                                                 fileName: "[project]/src/components/casting-form.tsx",
-                                                lineNumber: 235,
+                                                lineNumber: 228,
                                                 columnNumber: 28
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 233,
+                                        lineNumber: 226,
                                         columnNumber: 20
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/casting-form.tsx",
-                                lineNumber: 231,
+                                lineNumber: 224,
                                 columnNumber: 16
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/casting-form.tsx",
-                        lineNumber: 166,
+                        lineNumber: 159,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/casting-form.tsx",
-                lineNumber: 164,
+                lineNumber: 157,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1738,7 +1731,7 @@ function CastingForm() {
                         children: "Disponibilidad y Logística"
                     }, void 0, false, {
                         fileName: "[project]/src/components/casting-form.tsx",
-                        lineNumber: 246,
+                        lineNumber: 239,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1754,7 +1747,7 @@ function CastingForm() {
                                                 children: "¿Disponibilidad para ensayos?"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/casting-form.tsx",
-                                                lineNumber: 250,
+                                                lineNumber: 243,
                                                 columnNumber: 25
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1767,7 +1760,7 @@ function CastingForm() {
                                                         required: true
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/casting-form.tsx",
-                                                        lineNumber: 252,
+                                                        lineNumber: 245,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
@@ -1776,19 +1769,19 @@ function CastingForm() {
                                                         children: "Sí, tengo disponibilidad"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/casting-form.tsx",
-                                                        lineNumber: 253,
+                                                        lineNumber: 246,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/casting-form.tsx",
-                                                lineNumber: 251,
+                                                lineNumber: 244,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 249,
+                                        lineNumber: 242,
                                         columnNumber: 21
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("fieldset", {
@@ -1798,7 +1791,7 @@ function CastingForm() {
                                                 children: "¿Puedes desplazarte al lugar de filmación por tus medios?"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/casting-form.tsx",
-                                                lineNumber: 258,
+                                                lineNumber: 251,
                                                 columnNumber: 25
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$radio$2d$group$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["RadioGroup"], {
@@ -1814,7 +1807,7 @@ function CastingForm() {
                                                                 id: "travel-yes"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/casting-form.tsx",
-                                                                lineNumber: 261,
+                                                                lineNumber: 254,
                                                                 columnNumber: 33
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
@@ -1823,13 +1816,13 @@ function CastingForm() {
                                                                 children: "Sí"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/casting-form.tsx",
-                                                                lineNumber: 262,
+                                                                lineNumber: 255,
                                                                 columnNumber: 33
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/casting-form.tsx",
-                                                        lineNumber: 260,
+                                                        lineNumber: 253,
                                                         columnNumber: 29
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1840,7 +1833,7 @@ function CastingForm() {
                                                                 id: "travel-no"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/casting-form.tsx",
-                                                                lineNumber: 265,
+                                                                lineNumber: 258,
                                                                 columnNumber: 33
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
@@ -1849,31 +1842,31 @@ function CastingForm() {
                                                                 children: "No"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/casting-form.tsx",
-                                                                lineNumber: 266,
+                                                                lineNumber: 259,
                                                                 columnNumber: 33
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/casting-form.tsx",
-                                                        lineNumber: 264,
+                                                        lineNumber: 257,
                                                         columnNumber: 29
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/casting-form.tsx",
-                                                lineNumber: 259,
+                                                lineNumber: 252,
                                                 columnNumber: 25
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 257,
+                                        lineNumber: 250,
                                         columnNumber: 21
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/casting-form.tsx",
-                                lineNumber: 248,
+                                lineNumber: 241,
                                 columnNumber: 16
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1884,7 +1877,7 @@ function CastingForm() {
                                         children: "Restricciones médicas (opcional)"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 272,
+                                        lineNumber: 265,
                                         columnNumber: 21
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$textarea$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Textarea"], {
@@ -1895,25 +1888,25 @@ function CastingForm() {
                                         placeholder: "Alergias, lesiones, medicamentos, etc."
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 273,
+                                        lineNumber: 266,
                                         columnNumber: 21
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/casting-form.tsx",
-                                lineNumber: 271,
+                                lineNumber: 264,
                                 columnNumber: 17
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/casting-form.tsx",
-                        lineNumber: 247,
+                        lineNumber: 240,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/casting-form.tsx",
-                lineNumber: 245,
+                lineNumber: 238,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1924,15 +1917,15 @@ function CastingForm() {
                         children: "Material Visual"
                     }, void 0, false, {
                         fileName: "[project]/src/components/casting-form.tsx",
-                        lineNumber: 279,
+                        lineNumber: 272,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         className: "text-muted-foreground text-sm",
-                        children: "Debido a limitaciones del hosting, el envío de archivos no está soportado. Por favor, sube tu material a un servicio como Google Drive o WeTransfer y pega los enlaces en tu descripción de experiencia o redes sociales."
+                        children: "Por favor, sube tu material a un servicio como Google Drive o WeTransfer. Asegúrate de que el enlace sea público. Necesitamos fotos de frente, de costado y de cuerpo entero."
                     }, void 0, false, {
                         fileName: "[project]/src/components/casting-form.tsx",
-                        lineNumber: 280,
+                        lineNumber: 273,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1945,7 +1938,7 @@ function CastingForm() {
                                     children: "Enlace a reel, fotos o material visual"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/casting-form.tsx",
-                                    lineNumber: 283,
+                                    lineNumber: 276,
                                     columnNumber: 21
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -1957,24 +1950,24 @@ function CastingForm() {
                                     required: true
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/casting-form.tsx",
-                                    lineNumber: 284,
+                                    lineNumber: 277,
                                     columnNumber: 21
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/casting-form.tsx",
-                            lineNumber: 282,
+                            lineNumber: 275,
                             columnNumber: 18
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/casting-form.tsx",
-                        lineNumber: 281,
+                        lineNumber: 274,
                         columnNumber: 13
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/casting-form.tsx",
-                lineNumber: 278,
+                lineNumber: 271,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1985,7 +1978,7 @@ function CastingForm() {
                         children: "Autorizaciones"
                     }, void 0, false, {
                         fileName: "[project]/src/components/casting-form.tsx",
-                        lineNumber: 290,
+                        lineNumber: 283,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2000,7 +1993,7 @@ function CastingForm() {
                                         value: "Sí"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 293,
+                                        lineNumber: 286,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
@@ -2009,13 +2002,13 @@ function CastingForm() {
                                         children: "Autorizo el uso de mi imagen en contenido de casting o redes sociales de la producción."
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 294,
+                                        lineNumber: 287,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/casting-form.tsx",
-                                lineNumber: 292,
+                                lineNumber: 285,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2028,7 +2021,7 @@ function CastingForm() {
                                         required: true
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 297,
+                                        lineNumber: 290,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2049,12 +2042,12 @@ function CastingForm() {
                                                                 children: "Política de Privacidad"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/casting-form.tsx",
-                                                                lineNumber: 303,
+                                                                lineNumber: 296,
                                                                 columnNumber: 33
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/casting-form.tsx",
-                                                            lineNumber: 302,
+                                                            lineNumber: 295,
                                                             columnNumber: 29
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogContent"], {
@@ -2066,20 +2059,20 @@ function CastingForm() {
                                                                             children: "Política de Privacidad y Tratamiento de Datos"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/casting-form.tsx",
-                                                                            lineNumber: 307,
+                                                                            lineNumber: 300,
                                                                             columnNumber: 37
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogDescription"], {
                                                                             children: "Última actualización: 25 de Agosto de 2025"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/casting-form.tsx",
-                                                                            lineNumber: 308,
+                                                                            lineNumber: 301,
                                                                             columnNumber: 37
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/casting-form.tsx",
-                                                                    lineNumber: 306,
+                                                                    lineNumber: 299,
                                                                     columnNumber: 33
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2089,7 +2082,7 @@ function CastingForm() {
                                                                             children: 'Al enviar este formulario, usted entiende y acepta los siguientes términos sobre el tratamiento de sus datos personales por parte de Videame (en adelante, "la Producción").'
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/casting-form.tsx",
-                                                                            lineNumber: 313,
+                                                                            lineNumber: 306,
                                                                             columnNumber: 37
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2097,14 +2090,14 @@ function CastingForm() {
                                                                             children: "1. Datos Recopilados"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/casting-form.tsx",
-                                                                            lineNumber: 315,
+                                                                            lineNumber: 308,
                                                                             columnNumber: 37
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                             children: "La Producción recopilará los datos personales que usted proporcione en este formulario, incluyendo pero no limitado a: nombre completo, edad, datos de contacto, características físicas, experiencia, y material audiovisual (fotos y videos)."
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/casting-form.tsx",
-                                                                            lineNumber: 316,
+                                                                            lineNumber: 309,
                                                                             columnNumber: 37
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2112,14 +2105,14 @@ function CastingForm() {
                                                                             children: "2. Finalidad del Tratamiento"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/casting-form.tsx",
-                                                                            lineNumber: 318,
+                                                                            lineNumber: 311,
                                                                             columnNumber: 37
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                             children: "Sus datos serán utilizados exclusivamente para los siguientes fines:"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/casting-form.tsx",
-                                                                            lineNumber: 319,
+                                                                            lineNumber: 312,
                                                                             columnNumber: 37
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -2129,27 +2122,27 @@ function CastingForm() {
                                                                                     children: "Evaluar su perfil para oportunidades de casting en producciones audiovisuales actuales y futuras de la Producción."
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/casting-form.tsx",
-                                                                                    lineNumber: 321,
+                                                                                    lineNumber: 314,
                                                                                     columnNumber: 41
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                                     children: "Contactarle para coordinar audiciones, ensayos o participaciones."
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/casting-form.tsx",
-                                                                                    lineNumber: 322,
+                                                                                    lineNumber: 315,
                                                                                     columnNumber: 41
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                                     children: "Gestionar su participación en caso de ser seleccionado/a."
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/casting-form.tsx",
-                                                                                    lineNumber: 323,
+                                                                                    lineNumber: 316,
                                                                                     columnNumber: 41
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/components/casting-form.tsx",
-                                                                            lineNumber: 320,
+                                                                            lineNumber: 313,
                                                                             columnNumber: 37
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2157,14 +2150,14 @@ function CastingForm() {
                                                                             children: "3. Almacenamiento y Seguridad"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/casting-form.tsx",
-                                                                            lineNumber: 326,
+                                                                            lineNumber: 319,
                                                                             columnNumber: 37
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                             children: "Su información será almacenada de forma segura en bases de datos gestionadas a través de servicios en la nube (Firebase de Google). Se han implementado medidas técnicas y organizativas para proteger sus datos contra el acceso no autorizado, alteración o destrucción."
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/casting-form.tsx",
-                                                                            lineNumber: 327,
+                                                                            lineNumber: 320,
                                                                             columnNumber: 37
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2172,14 +2165,14 @@ function CastingForm() {
                                                                             children: "4. Consentimiento de Imagen"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/casting-form.tsx",
-                                                                            lineNumber: 329,
+                                                                            lineNumber: 322,
                                                                             columnNumber: 37
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                             children: "Si marca la casilla de consentimiento para uso de imagen, autoriza a la Producción a utilizar su imagen, nombre y/o voz, capturados durante el proceso de casting o en el material que usted proporciona, para fines de promoción interna o en redes sociales relacionadas con el casting o la productora, sin derecho a compensación adicional."
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/casting-form.tsx",
-                                                                            lineNumber: 330,
+                                                                            lineNumber: 323,
                                                                             columnNumber: 37
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2187,14 +2180,14 @@ function CastingForm() {
                                                                             children: "5. Cesión de Datos"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/casting-form.tsx",
-                                                                            lineNumber: 332,
+                                                                            lineNumber: 325,
                                                                             columnNumber: 37
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                             children: "Sus datos no serán cedidos a terceros sin su consentimiento explícito, salvo que sea estrictamente necesario para la realización de la producción (e.g., directores, clientes finales del proyecto) o por obligación legal."
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/casting-form.tsx",
-                                                                            lineNumber: 333,
+                                                                            lineNumber: 326,
                                                                             columnNumber: 37
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2202,14 +2195,14 @@ function CastingForm() {
                                                                             children: "6. Conservación de Datos"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/casting-form.tsx",
-                                                                            lineNumber: 335,
+                                                                            lineNumber: 328,
                                                                             columnNumber: 37
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                             children: "Sus datos serán conservados en nuestra base de datos por un período de 5 años para futuras oportunidades de casting. Transcurrido este tiempo, serán eliminados de forma segura."
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/casting-form.tsx",
-                                                                            lineNumber: 336,
+                                                                            lineNumber: 329,
                                                                             columnNumber: 37
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2217,14 +2210,14 @@ function CastingForm() {
                                                                             children: "7. Sus Derechos"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/casting-form.tsx",
-                                                                            lineNumber: 338,
+                                                                            lineNumber: 331,
                                                                             columnNumber: 37
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                             children: "Usted tiene derecho a acceder, rectificar, cancelar u oponerse al tratamiento de sus datos. Para ejercer estos derechos, puede enviar un correo a [email de contacto de Videame]."
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/casting-form.tsx",
-                                                                            lineNumber: 339,
+                                                                            lineNumber: 332,
                                                                             columnNumber: 37
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2232,13 +2225,13 @@ function CastingForm() {
                                                                             children: 'Al marcar la casilla "Acepto", usted confirma que ha leído, entendido y aceptado los términos de esta política de privacidad, liberando a Videame de cualquier reclamación futura relacionada con el tratamiento de sus datos para los fines aquí descritos.'
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/casting-form.tsx",
-                                                                            lineNumber: 341,
+                                                                            lineNumber: 334,
                                                                             columnNumber: 37
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/casting-form.tsx",
-                                                                    lineNumber: 312,
+                                                                    lineNumber: 305,
                                                                     columnNumber: 33
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2250,47 +2243,47 @@ function CastingForm() {
                                                                             children: "Cerrar"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/casting-form.tsx",
-                                                                            lineNumber: 345,
+                                                                            lineNumber: 338,
                                                                             columnNumber: 41
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/casting-form.tsx",
-                                                                        lineNumber: 344,
+                                                                        lineNumber: 337,
                                                                         columnNumber: 38
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/casting-form.tsx",
-                                                                    lineNumber: 343,
+                                                                    lineNumber: 336,
                                                                     columnNumber: 33
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/casting-form.tsx",
-                                                            lineNumber: 305,
+                                                            lineNumber: 298,
                                                             columnNumber: 29
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/casting-form.tsx",
-                                                    lineNumber: 301,
+                                                    lineNumber: 294,
                                                     columnNumber: 26
                                                 }, this),
                                                 "."
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/casting-form.tsx",
-                                            lineNumber: 299,
+                                            lineNumber: 292,
                                             columnNumber: 21
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 298,
+                                        lineNumber: 291,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/casting-form.tsx",
-                                lineNumber: 296,
+                                lineNumber: 289,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2303,7 +2296,7 @@ function CastingForm() {
                                         required: true
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 355,
+                                        lineNumber: 348,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
@@ -2312,25 +2305,25 @@ function CastingForm() {
                                         children: "Declaro ser mayor de 18 años."
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/casting-form.tsx",
-                                        lineNumber: 356,
+                                        lineNumber: 349,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/casting-form.tsx",
-                                lineNumber: 354,
+                                lineNumber: 347,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/casting-form.tsx",
-                        lineNumber: 291,
+                        lineNumber: 284,
                         columnNumber: 10
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/casting-form.tsx",
-                lineNumber: 289,
+                lineNumber: 282,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2342,7 +2335,7 @@ function CastingForm() {
                         children: "Cancelar"
                     }, void 0, false, {
                         fileName: "[project]/src/components/casting-form.tsx",
-                        lineNumber: 362,
+                        lineNumber: 355,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2354,7 +2347,7 @@ function CastingForm() {
                                     className: "mr-2 h-4 w-4 animate-spin"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/casting-form.tsx",
-                                    lineNumber: 364,
+                                    lineNumber: 357,
                                     columnNumber: 29
                                 }, this),
                                 "Enviando..."
@@ -2362,19 +2355,19 @@ function CastingForm() {
                         }, void 0, true) : 'Enviar Postulación'
                     }, void 0, false, {
                         fileName: "[project]/src/components/casting-form.tsx",
-                        lineNumber: 363,
+                        lineNumber: 356,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/casting-form.tsx",
-                lineNumber: 361,
+                lineNumber: 354,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/casting-form.tsx",
-        lineNumber: 68,
+        lineNumber: 61,
         columnNumber: 5
     }, this);
 }
