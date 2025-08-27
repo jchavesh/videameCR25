@@ -49,6 +49,9 @@ export function CastingForm() {
       console.warn("CORS error is expected on static site form submission to Netlify:", error);
     });
 
+    // We optimistically navigate to the success page.
+    // This is because on a static site, we can't await the fetch response due to CORS.
+    // We know Netlify will process the form, so we send the user to the success page right away.
     router.push('/casting-success');
   };
 
@@ -270,11 +273,14 @@ export function CastingForm() {
 
       <div className="space-y-6 border-b border-border pb-12">
             <h2 className="text-xl font-headline font-semibold text-foreground">Material Visual</h2>
-            <p className="text-muted-foreground text-sm">Por favor, sube tu material a un servicio como Google Drive o WeTransfer. Asegúrate de que el enlace sea público. Necesitamos fotos de frente, de costado y de cuerpo entero.</p>
+            <p className="text-muted-foreground text-sm">
+              Por favor, sube tu material a un servicio como Google Drive o WeTransfer y pega el enlace aquí. Necesitamos fotos de frente, de costado y de cuerpo entero.
+              <span className="font-bold block mt-1">Importante: El enlace debe ser público para que podamos acceder a tus fotos.</span>
+            </p>
             <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                  <div className="col-span-full">
-                    <Label htmlFor="reelOrDanceLink">Enlace a reel, fotos o material visual</Label>
-                    <Input id="reelOrDanceLink" name="reelOrDanceLink" type="url" className="mt-1" placeholder="https://youtube.com/... o https://drive.google.com/..." required/>
+                    <Label htmlFor="reelOrDanceLink">Enlace a reel, fotos o material visual (opcional)</Label>
+                    <Input id="reelOrDanceLink" name="reelOrDanceLink" type="url" className="mt-1" placeholder="https://youtube.com/... o https://drive.google.com/..."/>
                 </div>
             </div>
         </div>
