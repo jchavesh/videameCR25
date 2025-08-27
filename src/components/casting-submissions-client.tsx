@@ -233,5 +233,3 @@ export function CastingSubmissionsClient() {
     </div>
   );
 }
-
-    
