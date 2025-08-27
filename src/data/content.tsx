@@ -79,7 +79,7 @@ export const content: Record<Language, Content> = {
         title: "Introducing the Ford Explorer® Men’s Only Edition",
         category: "Comercial",
         imageUrl: `${imagePath}/MensOnly_md.jpg`,
-        description: "Nos encargamos de la redacción del guión y la postproducción del video \"Introducing the Ford Explorer® Men’s Only Edition\", dando forma a una narrativa clara y atractiva, mejorando las imágenes con una edición precisa y asegurando que la pieza final se alineara perfectamente con la identidad de la marca Ford.",
+        description: "Nos encargamos de la redacción del guión y la postproducción del video \"Introducing the Ford Explorer® Men’s Only Edition\", dando forma a una narrativa clara y atractiva, mejorando las imágenes con una edición precisa y asegurando que la pieza final se alineara perfectly con la identidad de la marca Ford.",
         videoUrl: "https://youtu.be/gIjWLWlRctE?si=MWxDv_cTqvocb1St",
         dataAiHint: "car commercial"
       },

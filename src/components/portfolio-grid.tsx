@@ -40,16 +40,30 @@ export default function PortfolioGrid() {
   
   const getEmbedUrl = (videoUrl: string) => {
     let videoId;
+    // Check if the URL is for YouTube
     if (videoUrl.includes('youtu.be') || videoUrl.includes('youtube.com')) {
-      const url = new URL(videoUrl);
-      videoId = url.hostname === 'youtu.be' ? url.pathname.slice(1) : url.searchParams.get('v');
-      return `https://www.youtube.com/embed/${videoId}`;
+      try {
+        const url = new URL(videoUrl);
+        videoId = url.hostname === 'youtu.be' ? url.pathname.slice(1) : url.searchParams.get('v');
+        return videoId ? `https://www.youtube.com/embed/${videoId}` : null;
+      } catch (e) {
+        console.error("Invalid YouTube URL", e);
+        return null;
+      }
     }
+    // Check if the URL is for Vimeo
     if (videoUrl.includes('vimeo.com')) {
-      videoId = videoUrl.split('/').pop()?.split('?')[0];
-      return `https://player.vimeo.com/video/${videoId}`;
+       try {
+        const url = new URL(videoUrl);
+        videoId = url.pathname.split('/').pop()?.split('?')[0];
+        return videoId ? `https://player.vimeo.com/video/${videoId}` : null;
+      } catch(e) {
+        console.error("Invalid Vimeo URL", e);
+        return null;
+      }
     }
-    return videoUrl;
+    // Return null if it's not a recognized embeddable URL
+    return null;
   }
   
   const currentAllCategory = language === 'es' ? 'Todos' : 'All';
@@ -115,23 +129,16 @@ export default function PortfolioGrid() {
                                 </DialogDescription>
                             </DialogHeader>
                             <p className="mt-4 text-sm font-semibold text-foreground">{project.category}</p>
+                             {project.videoUrl && !project.videoUrl.startsWith('/') && (
+                                <Button asChild className="mt-4">
+                                    <a href={project.videoUrl} target="_blank" rel="noopener noreferrer">Ver Video</a>
+                                </Button>
+                            )}
                         </div>
                         <div className="order-1 md:order-2">
-                        {project.videoUrl ? (
+                        {project.videoUrl && project.videoUrl.startsWith('/') ? (
                              <div className="aspect-video w-full h-full bg-black">
-                                {project.videoUrl.startsWith('/') ? (
-                                    <video src={project.videoUrl} width="100%" height="100%" controls autoPlay playsInline />
-                                ) : (
-                                    <iframe 
-                                        src={getEmbedUrl(project.videoUrl)}
-                                        width="100%" 
-                                        height="100%" 
-                                        frameBorder="0" 
-                                        allow="autoplay; fullscreen; picture-in-picture" 
-                                        allowFullScreen
-                                        title={project.title}>
-                                    </iframe>
-                                )}
+                                <video src={project.videoUrl} width="100%" height="100%" controls autoPlay playsInline />
                              </div>
                         ) : (
                              <Image

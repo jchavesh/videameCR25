@@ -360,7 +360,7 @@ const content = {
                 title: "Introducing the Ford Explorer® Men’s Only Edition",
                 category: "Comercial",
                 imageUrl: `${imagePath}/MensOnly_md.jpg`,
-                description: "Nos encargamos de la redacción del guión y la postproducción del video \"Introducing the Ford Explorer® Men’s Only Edition\", dando forma a una narrativa clara y atractiva, mejorando las imágenes con una edición precisa y asegurando que la pieza final se alineara perfectamente con la identidad de la marca Ford.",
+                description: "Nos encargamos de la redacción del guión y la postproducción del video \"Introducing the Ford Explorer® Men’s Only Edition\", dando forma a una narrativa clara y atractiva, mejorando las imágenes con una edición precisa y asegurando que la pieza final se alineara perfectly con la identidad de la marca Ford.",
                 videoUrl: "https://youtu.be/gIjWLWlRctE?si=MWxDv_cTqvocb1St",
                 dataAiHint: "car commercial"
             },
@@ -2997,16 +2997,30 @@ function PortfolioGrid() {
     };
     const getEmbedUrl = (videoUrl)=>{
         let videoId;
+        // Check if the URL is for YouTube
         if (videoUrl.includes('youtu.be') || videoUrl.includes('youtube.com')) {
-            const url = new URL(videoUrl);
-            videoId = url.hostname === 'youtu.be' ? url.pathname.slice(1) : url.searchParams.get('v');
-            return `https://www.youtube.com/embed/${videoId}`;
+            try {
+                const url = new URL(videoUrl);
+                videoId = url.hostname === 'youtu.be' ? url.pathname.slice(1) : url.searchParams.get('v');
+                return videoId ? `https://www.youtube.com/embed/${videoId}` : null;
+            } catch (e) {
+                console.error("Invalid YouTube URL", e);
+                return null;
+            }
         }
+        // Check if the URL is for Vimeo
         if (videoUrl.includes('vimeo.com')) {
-            videoId = videoUrl.split('/').pop()?.split('?')[0];
-            return `https://player.vimeo.com/video/${videoId}`;
+            try {
+                const url = new URL(videoUrl);
+                videoId = url.pathname.split('/').pop()?.split('?')[0];
+                return videoId ? `https://player.vimeo.com/video/${videoId}` : null;
+            } catch (e) {
+                console.error("Invalid Vimeo URL", e);
+                return null;
+            }
         }
-        return videoUrl;
+        // Return null if it's not a recognized embeddable URL
+        return null;
     };
     const currentAllCategory = language === 'es' ? 'Todos' : 'All';
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3020,7 +3034,7 @@ function PortfolioGrid() {
                         children: currentAllCategory
                     }, void 0, false, {
                         fileName: "[project]/src/components/portfolio-grid.tsx",
-                        lineNumber: 60,
+                        lineNumber: 74,
                         columnNumber: 9
                     }, this),
                     categories.map((category)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -3029,13 +3043,13 @@ function PortfolioGrid() {
                             children: category
                         }, category, false, {
                             fileName: "[project]/src/components/portfolio-grid.tsx",
-                            lineNumber: 67,
+                            lineNumber: 81,
                             columnNumber: 11
                         }, this))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/portfolio-grid.tsx",
-                lineNumber: 59,
+                lineNumber: 73,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -3076,14 +3090,14 @@ function PortfolioGrid() {
                                             "data-ai-hint": project.dataAiHint
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/portfolio-grid.tsx",
-                                            lineNumber: 92,
+                                            lineNumber: 106,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/portfolio-grid.tsx",
-                                            lineNumber: 100,
+                                            lineNumber: 114,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3094,7 +3108,7 @@ function PortfolioGrid() {
                                                     children: project.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/portfolio-grid.tsx",
-                                                    lineNumber: 102,
+                                                    lineNumber: 116,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3102,24 +3116,24 @@ function PortfolioGrid() {
                                                     children: project.category
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/portfolio-grid.tsx",
-                                                    lineNumber: 103,
+                                                    lineNumber: 117,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/portfolio-grid.tsx",
-                                            lineNumber: 101,
+                                            lineNumber: 115,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/portfolio-grid.tsx",
-                                    lineNumber: 83,
+                                    lineNumber: 97,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/portfolio-grid.tsx",
-                                lineNumber: 82,
+                                lineNumber: 96,
                                 columnNumber: 13
                             }, this),
                             selectedProject && selectedProject.id === project.id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DialogContent"], {
@@ -3137,7 +3151,7 @@ function PortfolioGrid() {
                                                             children: project.title === "Vuelta Al Lago" ? "Vuelta Al Lago 2025" : project.title === "Mambotopia" ? "Mambotopia 2025" : project.title
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/portfolio-grid.tsx",
-                                                            lineNumber: 112,
+                                                            lineNumber: 126,
                                                             columnNumber: 33
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DialogDescription"], {
@@ -3145,13 +3159,13 @@ function PortfolioGrid() {
                                                             children: project.description
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/portfolio-grid.tsx",
-                                                            lineNumber: 113,
+                                                            lineNumber: 127,
                                                             columnNumber: 33
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/portfolio-grid.tsx",
-                                                    lineNumber: 111,
+                                                    lineNumber: 125,
                                                     columnNumber: 29
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3159,20 +3173,38 @@ function PortfolioGrid() {
                                                     children: project.category
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/portfolio-grid.tsx",
-                                                    lineNumber: 117,
+                                                    lineNumber: 131,
                                                     columnNumber: 29
+                                                }, this),
+                                                project.videoUrl && !project.videoUrl.startsWith('/') && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                                                    asChild: true,
+                                                    className: "mt-4",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                        href: project.videoUrl,
+                                                        target: "_blank",
+                                                        rel: "noopener noreferrer",
+                                                        children: "Ver Video"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/portfolio-grid.tsx",
+                                                        lineNumber: 134,
+                                                        columnNumber: 37
+                                                    }, this)
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/portfolio-grid.tsx",
+                                                    lineNumber: 133,
+                                                    columnNumber: 33
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/portfolio-grid.tsx",
-                                            lineNumber: 110,
+                                            lineNumber: 124,
                                             columnNumber: 25
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "order-1 md:order-2",
-                                            children: project.videoUrl ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            children: project.videoUrl && project.videoUrl.startsWith('/') ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "aspect-video w-full h-full bg-black",
-                                                children: project.videoUrl.startsWith('/') ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
                                                     src: project.videoUrl,
                                                     width: "100%",
                                                     height: "100%",
@@ -3181,24 +3213,12 @@ function PortfolioGrid() {
                                                     playsInline: true
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/portfolio-grid.tsx",
-                                                    lineNumber: 123,
-                                                    columnNumber: 37
-                                                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("iframe", {
-                                                    src: getEmbedUrl(project.videoUrl),
-                                                    width: "100%",
-                                                    height: "100%",
-                                                    frameBorder: "0",
-                                                    allow: "autoplay; fullscreen; picture-in-picture",
-                                                    allowFullScreen: true,
-                                                    title: project.title
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/portfolio-grid.tsx",
-                                                    lineNumber: 125,
-                                                    columnNumber: 37
+                                                    lineNumber: 141,
+                                                    columnNumber: 33
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/portfolio-grid.tsx",
-                                                lineNumber: 121,
+                                                lineNumber: 140,
                                                 columnNumber: 30
                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                                 src: project.gallery?.[0] || project.imageUrl,
@@ -3209,40 +3229,40 @@ function PortfolioGrid() {
                                                 "data-ai-hint": project.dataAiHint
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/portfolio-grid.tsx",
-                                                lineNumber: 137,
+                                                lineNumber: 144,
                                                 columnNumber: 30
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/portfolio-grid.tsx",
-                                            lineNumber: 119,
+                                            lineNumber: 138,
                                             columnNumber: 25
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/portfolio-grid.tsx",
-                                    lineNumber: 109,
+                                    lineNumber: 123,
                                     columnNumber: 21
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/portfolio-grid.tsx",
-                                lineNumber: 108,
+                                lineNumber: 122,
                                 columnNumber: 17
                             }, this)
                         ]
                     }, project.id, true, {
                         fileName: "[project]/src/components/portfolio-grid.tsx",
-                        lineNumber: 81,
+                        lineNumber: 95,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/components/portfolio-grid.tsx",
-                lineNumber: 77,
+                lineNumber: 91,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/portfolio-grid.tsx",
-        lineNumber: 58,
+        lineNumber: 72,
         columnNumber: 5
     }, this);
 }
