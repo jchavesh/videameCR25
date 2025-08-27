@@ -16,10 +16,8 @@ export interface CastingSubmission {
     phone: string;
     city: string;
     hasExperience: 'Sí' | 'No';
-    headshot: string;
-    fullBodyPhoto: string;
+    reelOrDanceLink?: string;
     data: {
         [key: string]: any;
-        additionalPhotos?: NetlifyFile | NetlifyFile[];
     };
 }

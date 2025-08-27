@@ -3,7 +3,7 @@
 
 import { useState, useEffect } from 'react';
 import { useToast } from '@/hooks/use-toast';
-import { Loader2, RefreshCw, ExternalLink, Image as ImageIcon, Video, User, Mail, Phone, MapPin, Globe } from 'lucide-react';
+import { Loader2, RefreshCw, ExternalLink, Image as ImageIcon, Video, User, Mail, Phone, MapPin, Globe, Link as LinkIcon } from 'lucide-react';
 import {
   Table,
   TableBody,
@@ -51,9 +51,6 @@ export function CastingSubmissionsClient() {
     const apiUrl = `https://api.netlify.com/api/v1/forms/${FORM_ID}/submissions`;
 
     try {
-      // NOTE: For this direct client-side fetch to work, you MUST configure CORS in Netlify.
-      // Go to your Netlify site settings > Forms > Spam and usage > Allowed origins
-      // and add the domain of your Hostinger site (e.g., https://videamecr.com)
       const response = await fetch(apiUrl, {
         headers: {
           'Authorization': `Bearer ${NETLIFY_API_TOKEN}`,
@@ -75,8 +72,7 @@ export function CastingSubmissionsClient() {
         phone: sub.data.phone,
         city: sub.data.city,
         hasExperience: sub.data.hasExperience,
-        headshot: sub.data.headshot?.url,
-        fullBodyPhoto: sub.data.fullBodyPhoto?.url,
+        reelOrDanceLink: sub.data.reelOrDanceLink,
         data: sub.data,
       }));
 
@@ -198,37 +194,12 @@ export function CastingSubmissionsClient() {
                                         
                                         <h3 className="font-headline text-lg text-foreground border-b pb-2 pt-4">Material Visual</h3>
                                         <div className="flex flex-wrap gap-2">
-                                            {selectedSubmission.headshot && (
-                                                <a href={selectedSubmission.headshot} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-primary hover:underline">
-                                                    <ImageIcon className="w-4 h-4"/> Foto Rostro <ExternalLink className="w-3 h-3"/>
-                                                </a>
-                                            )}
-                                            {selectedSubmission.fullBodyPhoto && (
-                                                <a href={selectedSubmission.fullBodyPhoto} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-primary hover:underline">
-                                                   <ImageIcon className="w-4 h-4"/> Foto Cuerpo <ExternalLink className="w-3 h-3"/>
-                                                </a>
-                                            )}
                                             {selectedSubmission.data.reelOrDanceLink && (
                                                 <a href={selectedSubmission.data.reelOrDanceLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-primary hover:underline">
-                                                    <Video className="w-4 h-4"/> Ver Reel <ExternalLink className="w-3 h-3"/>
+                                                    <LinkIcon className="w-4 h-4"/> Ver material <ExternalLink className="w-3 h-3"/>
                                                 </a>
                                             )}
                                         </div>
-
-                                        {/* Display additional photos if they exist */}
-                                        {Array.isArray(selectedSubmission.data.additionalPhotos) && selectedSubmission.data.additionalPhotos.length > 0 && (
-                                            <div>
-                                                <p className="font-semibold">Fotos Adicionales:</p>
-                                                <div className="flex flex-wrap gap-2 mt-2">
-                                                    {selectedSubmission.data.additionalPhotos.map((photo: any, index: number) => (
-                                                        <a key={photo.id || index} href={photo.url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-xs">
-                                                            Foto {index + 1}
-                                                        </a>
-                                                    ))}
-                                                </div>
-                                            </div>
-                                        )}
-
                                     </div>
 
                                     {/* Column 2 */}
@@ -265,5 +236,3 @@ export function CastingSubmissionsClient() {
     </div>
   );
 }
-
-    
