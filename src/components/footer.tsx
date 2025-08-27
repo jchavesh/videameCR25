@@ -9,7 +9,7 @@ import { LanguageContext } from '@/context/language-context';
 import { content } from '@/data/content';
 
 const socialLinks = [
-  { name: 'Instagram', href: 'http://instagram.com/videame.cr', icon: <Instagram className="w-6 h-6" /> },
+  { name: 'Instagram', href: 'https://instagram.com/videame.cr', icon: <Instagram className="w-6 h-6" /> },
   { name: 'YouTube', href: 'https://www.youtube.com/@VideameMedia', icon: <Youtube className="w-6 h-6" /> },
 ];
 
