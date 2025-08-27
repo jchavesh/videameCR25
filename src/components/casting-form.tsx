@@ -34,10 +34,6 @@ export function CastingForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
 
-  // Handle form submission for a static site with Netlify forms.
-  // We manually trigger the form submission via fetch, but we don't await the result.
-  // The browser will show a CORS error, but Netlify will still process the form.
-  // We immediately redirect to the success page for a smooth user experience.
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsSubmitting(true);
@@ -50,12 +46,9 @@ export function CastingForm() {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData as any).toString(),
     }).catch((error) => {
-      // We expect a CORS error, so we can largely ignore it.
-      // The form submission will still go through on Netlify.
       console.warn("CORS error is expected on static site form submission to Netlify:", error);
     });
 
-    // Redirect to success page immediately without waiting for the fetch to complete.
     router.push('/casting-success');
   };
 
@@ -277,7 +270,7 @@ export function CastingForm() {
 
       <div className="space-y-6 border-b border-border pb-12">
             <h2 className="text-xl font-headline font-semibold text-foreground">Material Visual</h2>
-            <p className="text-muted-foreground text-sm">Debido a limitaciones del hosting, el envío de archivos no está soportado. Por favor, sube tu material a un servicio como Google Drive o WeTransfer y pega los enlaces en tu descripción de experiencia o redes sociales.</p>
+            <p className="text-muted-foreground text-sm">Por favor, sube tu material a un servicio como Google Drive o WeTransfer. Asegúrate de que el enlace sea público. Necesitamos fotos de frente, de costado y de cuerpo entero.</p>
             <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                  <div className="col-span-full">
                     <Label htmlFor="reelOrDanceLink">Enlace a reel, fotos o material visual</Label>
