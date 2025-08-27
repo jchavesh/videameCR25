@@ -5,13 +5,13 @@ import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 import { LanguageProvider } from '@/context/language-context';
 
-const logoUrl = 'https://studio.bypgd.com/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/VideameLogoFinal.svg';
+const logoUrl = '/images/VideameLogoFinal.svg';
 
 export const metadata: Metadata = {
   title: 'Producción Audiovisual y Videos Profesionales en Costa Rica | Videame',
   description: 'Creamos videos corporativos, publicitarios y cinematográficos en Costa Rica. Producción audiovisual profesional para marcas que quieren destacar.',
   icons: {
-    icon: 'https://studio.bypgd.com/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/Favicon.png',
+    icon: '/images/Favicon.png',
   },
   openGraph: {
     title: 'Producción Audiovisual y Videos Profesionales en Costa Rica | Videame',

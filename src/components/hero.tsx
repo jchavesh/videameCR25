@@ -38,7 +38,7 @@ export default function Hero() {
         className="absolute z-0 w-auto min-w-full min-h-full max-w-none object-cover"
         style={{ y }}
         >
-        <source src="https://studio.bypgd.com/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/reel.mp4" type="video/mp4" />
+        <source src="/images/reel.mp4" type="video/mp4" />
         Your browser does not support the video tag.
         </motion.video>
         <div className="absolute inset-0 bg-black/60"></div>
@@ -57,7 +57,7 @@ export default function Hero() {
                 </DialogHeader>
                 <div className="aspect-video">
                     <video 
-                        src="https://studio.bypgd.com/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/reel.mp4"
+                        src="/images/reel.mp4"
                         width="100%" 
                         height="100%" 
                         controls

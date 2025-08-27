@@ -1,5 +1,4 @@
 
-
 "use client";
 
 import Image from 'next/image';
@@ -215,7 +214,7 @@ export default function Home() {
                     <div ref={aboutImageRef} className="overflow-hidden rounded-lg">
                         <motion.div style={{ y: aboutImageY }}>
                           <Image 
-                              src="https://studio.bypgd.com/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images/jose-chaves.jpeg"
+                              src="/images/jose-chaves.jpeg"
                               alt="Jose Chaves, Productor Audiovisual"
                               width={600}
                               height={400}
@@ -308,5 +307,3 @@ export default function Home() {
     </div>
   );
 }
-
-    

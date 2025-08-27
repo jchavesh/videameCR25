@@ -20,7 +20,7 @@ type Content = {
   page: Record<string, string>;
 };
 
-const imagePath = 'https://studio.bypgd.com/pdgstudio/Kimberly_Clark/KC-SITE/JoseChaves/videamecr/images';
+const imagePath = '/images';
 
 export const content: Record<Language, Content> = {
   es: {
