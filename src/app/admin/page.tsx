@@ -8,7 +8,7 @@ import { useToast } from '@/hooks/use-toast';
 import { Loader2, LogOut } from 'lucide-react';
 import { CastingSubmissionsClient } from '@/components/casting-submissions-client';
 
-const PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PASSWORD;
+const PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || process.env.ADMIN_PASSWORD;
 
 export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
