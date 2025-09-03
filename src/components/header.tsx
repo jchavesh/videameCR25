@@ -5,7 +5,7 @@ import { useState, useEffect, useContext } from 'react';
 import Link from 'next/link';
 import { Menu, X, Globe, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { Logo } from './logo';
 import { LanguageContext } from '@/context/language-context';
@@ -100,6 +100,10 @@ export default function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-background p-0">
+                  <SheetHeader className="sr-only">
+                    <SheetTitle>Menú Principal</SheetTitle>
+                    <SheetDescription>Navegación principal del sitio Videame.</SheetDescription>
+                  </SheetHeader>
                   <div className="p-6 h-full flex flex-col">
                     <div className="flex justify-between items-center mb-8">
                        <Link href="/" onClick={handleMobileMenuLinkClick}>
