@@ -879,6 +879,10 @@ body {
   width: max-content;
 }
 
+.w-12 {
+  width: 3rem;
+}
+
 .min-w-0 {
   min-width: 0;
 }
@@ -1783,6 +1787,10 @@ body {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.text-primary\/50 {
+  color: hsl(var(--primary) / .5);
 }
 
 .underline {
