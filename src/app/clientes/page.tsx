@@ -1,13 +1,15 @@
 
 "use client";
 
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2, Download, KeyRound } from 'lucide-react';
+import { LanguageContext } from '@/context/language-context';
+import { content } from '@/data/content';
 
 export default function ClientesPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -15,6 +17,8 @@ export default function ClientesPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [downloadUrl, setDownloadUrl] = useState('');
   const { toast } = useToast();
+  const { language } = useContext(LanguageContext);
+  const t = content[language].page;
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,8 +27,8 @@ export default function ClientesPage() {
     if (!projectCode.trim()) {
         toast({
             variant: 'destructive',
-            title: 'Código Inválido',
-            description: 'Por favor, ingresa un código de proyecto.',
+            title: t.clientsToastInvalidTitle,
+            description: t.clientsToastInvalidDesc,
         });
         setIsLoading(false);
         return;
@@ -38,24 +42,24 @@ export default function ClientesPage() {
 
         if (response.ok) {
             toast({
-                title: 'Acceso Concedido',
-                description: `Tu proyecto está listo para descargar.`,
+                title: t.clientsToastSuccessTitle,
+                description: t.clientsToastSuccessDesc,
             });
             setDownloadUrl(potentialUrl);
             setIsAuthenticated(true);
         } else {
             toast({
                 variant: 'destructive',
-                title: 'Acceso Denegado',
-                description: 'El código de proyecto es incorrecto o el archivo no existe.',
+                title: t.clientsToastErrorTitle,
+                description: t.clientsToastErrorDesc,
             });
             setIsAuthenticated(false);
         }
     } catch (error) {
          toast({
             variant: 'destructive',
-            title: 'Error de Red',
-            description: 'No se pudo verificar el proyecto. Inténtalo de nuevo.',
+            title: t.clientsToastNetworkErrorTitle,
+            description: t.clientsToastNetworkErrorDesc,
         });
         setIsAuthenticated(false);
     }
@@ -78,24 +82,24 @@ export default function ClientesPage() {
             <div className="bg-background shadow-xl rounded-lg p-8 space-y-6 border border-border">
               <div className="text-center">
                 <KeyRound className="mx-auto h-12 w-12 text-primary/50" />
-                <h1 className="text-2xl font-headline font-bold text-primary mt-4">Portal de Clientes</h1>
-                <p className="text-muted-foreground mt-2">Ingresa tu código de proyecto para descargar los entregables.</p>
+                <h1 className="text-2xl font-headline font-bold text-primary mt-4">{t.clientsTitle}</h1>
+                <p className="text-muted-foreground mt-2">{t.clientsSubtitle}</p>
               </div>
               <form onSubmit={handleLogin} className="space-y-4">
                 <div>
-                  <label htmlFor="projectCode" className="sr-only">Código de Proyecto</label>
+                  <label htmlFor="projectCode" className="sr-only">{t.clientsInputPlaceholder}</label>
                   <Input
                     id="projectCode"
                     type="text"
                     value={projectCode}
                     onChange={(e) => setProjectCode(e.target.value)}
-                    placeholder="Código de Proyecto"
+                    placeholder={t.clientsInputPlaceholder}
                     required
                     className="text-center"
                   />
                 </div>
                 <Button type="submit" className="w-full" disabled={isLoading}>
-                  {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : 'Acceder'}
+                  {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : t.clientsButton}
                 </Button>
               </form>
             </div>
@@ -114,21 +118,21 @@ export default function ClientesPage() {
                  <div className="max-w-2xl mx-auto bg-background/80 backdrop-blur-sm rounded-lg shadow-xl p-8 sm:p-12 border border-border">
                     <Download className="mx-auto h-16 w-16 text-primary" />
                     <h1 className="mt-6 font-headline text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
-                        Proyecto: {projectCode}
+                        {t.clientsDownloadTitle.replace('{projectCode}', projectCode)}
                     </h1>
                     <p className="mt-4 text-lg text-muted-foreground">
-                        ¡Tu proyecto está listo para descargar!
+                        {t.clientsDownloadSubtitle}
                     </p>
                     <div className="mt-8">
                         <Button asChild size="lg">
                             <a href={downloadUrl} download>
                                 <Download className="mr-2"/>
-                                Descargar Archivos (.zip)
+                                {t.clientsDownloadButton}
                             </a>
                         </Button>
                     </div>
                      <div className="mt-8">
-                        <Button variant="ghost" onClick={handleLogout}>Ingresar otro código</Button>
+                        <Button variant="ghost" onClick={handleLogout}>{t.clientsDownloadOtherCode}</Button>
                     </div>
                 </div>
             </div>

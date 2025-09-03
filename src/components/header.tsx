@@ -29,7 +29,7 @@ export default function Header() {
     { href: '/#proceso', label: t.navProcess },
     { href: '/#sobre', label: t.navAbout },
     { href: '/casting', label: t.navCasting },
-    { href: '/clientes', label: 'Clientes' },
+    { href: '/clientes', label: t.navClients },
   ];
 
   useEffect(() => {

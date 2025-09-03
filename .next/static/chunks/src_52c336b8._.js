@@ -637,6 +637,7 @@ const content = {
             "navAbout": "Sobre Nosotros",
             "navContact": "Contacto",
             "navCasting": "Casting",
+            "navClients": "Clientes",
             "footerRights": "Videame. Todos los derechos reservados. San José, Costa Rica.",
             "footerPrivacy": "Política de Privacidad",
             "formName": "Nombre",
@@ -662,7 +663,23 @@ const content = {
             "emailInvalid": "Email inválido.",
             "projectTypeRequired": "Selecciona un tipo de proyecto.",
             "messageRequired": "El mensaje debe tener al menos 10 caracteres.",
-            "portfolioAll": "Todos"
+            "portfolioAll": "Todos",
+            "clientsTitle": "Portal de Clientes",
+            "clientsSubtitle": "Ingresa tu código de proyecto para descargar los entregables.",
+            "clientsInputPlaceholder": "Código de Proyecto",
+            "clientsButton": "Acceder",
+            "clientsToastSuccessTitle": "Acceso Concedido",
+            "clientsToastSuccessDesc": "Tu proyecto está listo para descargar.",
+            "clientsToastErrorTitle": "Acceso Denegado",
+            "clientsToastErrorDesc": "El código de proyecto es incorrecto o el archivo no existe.",
+            "clientsToastNetworkErrorTitle": "Error de Red",
+            "clientsToastNetworkErrorDesc": "No se pudo verificar el proyecto. Inténtalo de nuevo.",
+            "clientsToastInvalidTitle": "Código Inválido",
+            "clientsToastInvalidDesc": "Por favor, ingresa un código de proyecto.",
+            "clientsDownloadTitle": "Proyecto: {projectCode}",
+            "clientsDownloadSubtitle": "¡Tu proyecto está listo para descargar!",
+            "clientsDownloadButton": "Descargar Archivos (.zip)",
+            "clientsDownloadOtherCode": "Ingresar otro código"
         }
     },
     en: {
@@ -674,7 +691,7 @@ const content = {
                     className: "w-8 h-8"
                 }, void 0, false, {
                     fileName: "[project]/src/data/content.tsx",
-                    lineNumber: 321,
+                    lineNumber: 338,
                     columnNumber: 15
                 }, this)
             },
@@ -685,7 +702,7 @@ const content = {
                     className: "w-8 h-8"
                 }, void 0, false, {
                     fileName: "[project]/src/data/content.tsx",
-                    lineNumber: 326,
+                    lineNumber: 343,
                     columnNumber: 15
                 }, this)
             },
@@ -696,7 +713,7 @@ const content = {
                     className: "w-8 h-8"
                 }, void 0, false, {
                     fileName: "[project]/src/data/content.tsx",
-                    lineNumber: 331,
+                    lineNumber: 348,
                     columnNumber: 15
                 }, this)
             },
@@ -707,7 +724,7 @@ const content = {
                     className: "w-8 h-8"
                 }, void 0, false, {
                     fileName: "[project]/src/data/content.tsx",
-                    lineNumber: 336,
+                    lineNumber: 353,
                     columnNumber: 15
                 }, this)
             }
@@ -949,7 +966,7 @@ const content = {
                     className: "w-8 h-8"
                 }, void 0, false, {
                     fileName: "[project]/src/data/content.tsx",
-                    lineNumber: 533,
+                    lineNumber: 550,
                     columnNumber: 19
                 }, this)
             },
@@ -960,7 +977,7 @@ const content = {
                     className: "w-8 h-8"
                 }, void 0, false, {
                     fileName: "[project]/src/data/content.tsx",
-                    lineNumber: 538,
+                    lineNumber: 555,
                     columnNumber: 19
                 }, this)
             },
@@ -971,7 +988,7 @@ const content = {
                     className: "w-8 h-8"
                 }, void 0, false, {
                     fileName: "[project]/src/data/content.tsx",
-                    lineNumber: 543,
+                    lineNumber: 560,
                     columnNumber: 19
                 }, this)
             },
@@ -982,7 +999,7 @@ const content = {
                     className: "w-8 h-8"
                 }, void 0, false, {
                     fileName: "[project]/src/data/content.tsx",
-                    lineNumber: 548,
+                    lineNumber: 565,
                     columnNumber: 19
                 }, this)
             }
@@ -1014,6 +1031,7 @@ const content = {
             "navAbout": "About Us",
             "navContact": "Contact",
             "navCasting": "Casting",
+            "navClients": "Clients",
             "footerRights": "Videame. All rights reserved. San José, Costa Rica.",
             "footerPrivacy": "Privacy Policy",
             "formName": "Name",
@@ -1039,7 +1057,23 @@ const content = {
             "emailInvalid": "Invalid email.",
             "projectTypeRequired": "Please select a project type.",
             "messageRequired": "Message must be at least 10 characters long.",
-            "portfolioAll": "All"
+            "portfolioAll": "All",
+            "clientsTitle": "Client Portal",
+            "clientsSubtitle": "Enter your project code to download the deliverables.",
+            "clientsInputPlaceholder": "Project Code",
+            "clientsButton": "Access",
+            "clientsToastSuccessTitle": "Access Granted",
+            "clientsToastSuccessDesc": "Your project is ready for download.",
+            "clientsToastErrorTitle": "Access Denied",
+            "clientsToastErrorDesc": "The project code is incorrect or the file does not exist.",
+            "clientsToastNetworkErrorTitle": "Network Error",
+            "clientsToastNetworkErrorDesc": "Could not verify the project. Please try again.",
+            "clientsToastInvalidTitle": "Invalid Code",
+            "clientsToastInvalidDesc": "Please enter a project code.",
+            "clientsDownloadTitle": "Project: {projectCode}",
+            "clientsDownloadSubtitle": "Your project is ready to download!",
+            "clientsDownloadButton": "Download Files (.zip)",
+            "clientsDownloadOtherCode": "Enter another code"
         }
     }
 };
@@ -1338,7 +1372,7 @@ function Header() {
         },
         {
             href: '/clientes',
-            label: 'Clientes'
+            label: t.navClients
         }
     ];
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
