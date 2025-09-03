@@ -66,10 +66,10 @@ export default function Header() {
 
           <div className="flex items-center gap-2">
              <div className="hidden md:flex items-center gap-2">
-                <Button asChild>
+                <Button asChild variant="outline">
                   <Link href="/#contacto">{t.navContact}</Link>
                 </Button>
-                <Button asChild size="icon">
+                <Button asChild size="icon" variant="outline">
                   <Link href="/portal" aria-label={t.navPortal}>
                     <Download className="h-5 w-5" />
                   </Link>
@@ -100,7 +100,7 @@ export default function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-background p-0">
-                  <SheetHeader className="sr-only">
+                  <SheetHeader className="p-6 pb-0 sr-only">
                     <SheetTitle>Menú Principal</SheetTitle>
                     <SheetDescription>Navegación principal del sitio Videame.</SheetDescription>
                   </SheetHeader>
@@ -123,10 +123,10 @@ export default function Header() {
                       ))}
                     </nav>
                      <div className="mt-auto space-y-4">
-                        <Button asChild className="w-full">
+                        <Button asChild className="w-full" variant="outline">
                           <Link href="/#contacto" onClick={handleMobileMenuLinkClick}>{t.navContact}</Link>
                         </Button>
-                        <Button asChild className="w-full">
+                        <Button asChild className="w-full" variant="outline">
                            <Link href="/portal" onClick={handleMobileMenuLinkClick}>
                              <Download className="mr-2" />
                              {t.navPortal}

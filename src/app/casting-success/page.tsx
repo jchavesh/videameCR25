@@ -21,7 +21,7 @@ export default function CastingSuccessPage() {
             </p>
             <p className="mt-2 text-muted-foreground">¡Mucha suerte!</p>
             <div className="mt-8">
-              <Button asChild>
+              <Button asChild variant="outline">
                 <Link href="/">
                   Volver al Inicio
                 </Link>

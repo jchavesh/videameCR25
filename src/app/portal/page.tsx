@@ -105,7 +105,7 @@ export default function PortalPage() {
                           className="text-center"
                         />
                       </div>
-                      <Button type="submit" className="w-full" disabled={isLoading}>
+                      <Button type="submit" className="w-full" disabled={isLoading} variant="outline">
                         {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : t.clientsButton}
                       </Button>
                     </form>
@@ -122,7 +122,7 @@ export default function PortalPage() {
                           {t.clientsDownloadSubtitle}
                       </p>
                       <div className="mt-8">
-                          <Button asChild size="lg">
+                          <Button asChild size="lg" variant="outline">
                               <a href={downloadUrl} download>
                                   <Download className="mr-2"/>
                                   {t.clientsDownloadButton}

@@ -130,7 +130,7 @@ export default function PortfolioGrid() {
                             </DialogHeader>
                             <p className="mt-4 text-sm font-semibold text-foreground">{project.category}</p>
                              {project.videoUrl && !project.videoUrl.startsWith('/') && (
-                                <Button asChild className="mt-4">
+                                <Button asChild className="mt-4" variant="outline">
                                     <a href={project.videoUrl} target="_blank" rel="noopener noreferrer">Ver Video</a>
                                 </Button>
                             )}

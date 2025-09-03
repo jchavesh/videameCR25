@@ -47,7 +47,7 @@ export default function Hero() {
         <motion.div style={{ y: buttonsY }} className="mt-10 flex flex-wrap justify-center gap-4">
             <Dialog open={isReelOpen} onOpenChange={setIsReelOpen}>
             <DialogTrigger asChild>
-                <Button size="lg" aria-label="Ver Reel de Videame">
+                <Button size="lg" aria-label="Ver Reel de Videame" variant="outline">
                 {t.page.seeReel}
                 </Button>
             </DialogTrigger>

@@ -35,7 +35,7 @@ type ContactFormInputs = z.infer<ReturnType<typeof getContactSchema>>;
 
 function SubmitButton({ pending, text }: { pending: boolean, text: string }) {
   return (
-    <Button type="submit" disabled={pending} className="w-full">
+    <Button type="submit" disabled={pending} className="w-full" variant="outline">
       {pending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : text}
     </Button>
   );
