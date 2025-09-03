@@ -31,7 +31,7 @@ export default function Header() {
     { href: '/casting', label: t.navCasting },
   ];
   
-  const mobileNavLinks = [...navLinks, { href: '/portal', label: t.navPortal }];
+  const mobileNavLinks = [...navLinks];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -122,9 +122,15 @@ export default function Header() {
                            </Link>
                       ))}
                     </nav>
-                     <div className="mt-auto">
+                     <div className="mt-auto space-y-4">
                         <Button asChild className="w-full">
                           <Link href="/#contacto" onClick={handleMobileMenuLinkClick}>{t.navContact}</Link>
+                        </Button>
+                        <Button asChild variant="outline" className="w-full">
+                           <Link href="/portal" onClick={handleMobileMenuLinkClick}>
+                             <Download className="mr-2" />
+                             {t.navPortal}
+                           </Link>
                         </Button>
                      </div>
                   </div>
