@@ -3,7 +3,7 @@
 
 import { useState, useEffect, useContext } from 'react';
 import Link from 'next/link';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X, Globe, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
@@ -64,8 +64,10 @@ export default function Header() {
 
           <div className="flex items-center gap-2">
              <div className="hidden md:flex items-center gap-2">
-                <Button asChild>
-                  <Link href="/portal">{t.navPortal}</Link>
+                <Button asChild size="icon">
+                  <Link href="/portal" aria-label={t.navPortal}>
+                    <Download className="h-5 w-5" />
+                  </Link>
                 </Button>
                 <Button asChild>
                   <Link href="/#contacto">{t.navContact}</Link>
