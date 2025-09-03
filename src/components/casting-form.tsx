@@ -359,7 +359,7 @@ export function CastingForm() {
 
       <div className="mt-12 flex items-center justify-end gap-x-6">
         <Button type="reset" variant="ghost">Cancelar</Button>
-        <Button type="submit" disabled={isSubmitting} variant="outline">
+        <Button type="submit" disabled={isSubmitting}>
           {isSubmitting ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" />Enviando...</> : 'Enviar Postulación'}
         </Button>
       </div>
