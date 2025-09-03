@@ -126,7 +126,7 @@ export default function Header() {
                         <Button asChild className="w-full">
                           <Link href="/#contacto" onClick={handleMobileMenuLinkClick}>{t.navContact}</Link>
                         </Button>
-                        <Button asChild variant="outline" className="w-full">
+                        <Button asChild className="w-full">
                            <Link href="/portal" onClick={handleMobileMenuLinkClick}>
                              <Download className="mr-2" />
                              {t.navPortal}
