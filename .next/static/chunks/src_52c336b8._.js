@@ -637,7 +637,7 @@ const content = {
             "navAbout": "Sobre Nosotros",
             "navContact": "Contacto",
             "navCasting": "Casting",
-            "navClients": "Clientes",
+            "navClients": "Portal",
             "footerRights": "Videame. Todos los derechos reservados. San José, Costa Rica.",
             "footerPrivacy": "Política de Privacidad",
             "formName": "Nombre",
@@ -1031,7 +1031,7 @@ const content = {
             "navAbout": "About Us",
             "navContact": "Contact",
             "navCasting": "Casting",
-            "navClients": "Clients",
+            "navClients": "Portal",
             "footerRights": "Videame. All rights reserved. San José, Costa Rica.",
             "footerPrivacy": "Privacy Policy",
             "formName": "Name",
@@ -1371,7 +1371,7 @@ function Header() {
             label: t.navCasting
         },
         {
-            href: '/clientes',
+            href: '/portal',
             label: t.navClients
         }
     ];

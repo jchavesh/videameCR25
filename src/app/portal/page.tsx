@@ -11,7 +11,7 @@ import { Loader2, Download, KeyRound } from 'lucide-react';
 import { LanguageContext } from '@/context/language-context';
 import { content } from '@/data/content';
 
-export default function ClientesPage() {
+export default function PortalPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [projectCode, setProjectCode] = useState('');
   const [isLoading, setIsLoading] = useState(false);
