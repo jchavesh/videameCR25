@@ -37,7 +37,6 @@ export default function PortalPage() {
     const potentialUrl = `/work/${projectCode.toLowerCase().trim()}.zip`;
     
     try {
-        // We check if the file exists by making a HEAD request.
         const response = await fetch(potentialUrl, { method: 'HEAD' });
 
         if (response.ok) {
@@ -73,71 +72,75 @@ export default function PortalPage() {
     setDownloadUrl('');
   };
 
-  if (!isAuthenticated) {
-    return (
-      <div className="flex flex-col min-h-screen">
-        <Header />
-        <main className="flex-1 flex items-center justify-center bg-secondary/30">
-          <div className="w-full max-w-md mx-auto p-4">
-            <div className="bg-background shadow-xl rounded-lg p-8 space-y-6 border border-border">
-              <div className="text-center">
-                <KeyRound className="mx-auto h-12 w-12 text-primary/50" />
-                <h1 className="text-2xl font-headline font-bold text-primary mt-4">{t.clientsTitle}</h1>
-                <p className="text-muted-foreground mt-2">{t.clientsSubtitle}</p>
-              </div>
-              <form onSubmit={handleLogin} className="space-y-4">
-                <div>
-                  <label htmlFor="projectCode" className="sr-only">{t.clientsInputPlaceholder}</label>
-                  <Input
-                    id="projectCode"
-                    type="text"
-                    value={projectCode}
-                    onChange={(e) => setProjectCode(e.target.value)}
-                    placeholder={t.clientsInputPlaceholder}
-                    required
-                    className="text-center"
-                  />
-                </div>
-                <Button type="submit" className="w-full" disabled={isLoading}>
-                  {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : t.clientsButton}
-                </Button>
-              </form>
-            </div>
-          </div>
-        </main>
-        <Footer />
-      </div>
-    );
-  }
-
   return (
     <div className="flex flex-col min-h-screen">
-       <Header />
-        <main className="flex-1 flex items-center justify-center bg-secondary/30">
-            <div className="container mx-auto px-4 py-16 text-center">
-                 <div className="max-w-2xl mx-auto bg-background/80 backdrop-blur-sm rounded-lg shadow-xl p-8 sm:p-12 border border-border">
-                    <Download className="mx-auto h-16 w-16 text-primary" />
-                    <h1 className="mt-6 font-headline text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
-                        {t.clientsDownloadTitle.replace('{projectCode}', projectCode)}
+      <Header />
+      <main className="flex-1 bg-secondary/30">
+        <section id="portal" className="py-20 sm:py-32">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+
+              {!isAuthenticated ? (
+                <>
+                  <div className="text-center mb-12">
+                    <KeyRound className="mx-auto h-12 w-12 text-primary/50" />
+                    <h1 className="mt-6 font-headline text-4xl font-bold tracking-tight sm:text-5xl text-primary">
+                      {t.clientsTitle}
                     </h1>
-                    <p className="mt-4 text-lg text-muted-foreground">
-                        {t.clientsDownloadSubtitle}
+                    <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+                      {t.clientsSubtitle}
                     </p>
-                    <div className="mt-8">
-                        <Button asChild size="lg">
-                            <a href={downloadUrl} download>
-                                <Download className="mr-2"/>
-                                {t.clientsDownloadButton}
-                            </a>
-                        </Button>
-                    </div>
-                     <div className="mt-8">
-                        <Button variant="ghost" onClick={handleLogout}>{t.clientsDownloadOtherCode}</Button>
-                    </div>
+                  </div>
+                  <div className="bg-background/80 backdrop-blur-sm rounded-lg shadow-xl p-6 sm:p-10 border border-border">
+                    <form onSubmit={handleLogin} className="max-w-sm mx-auto space-y-4">
+                      <div>
+                        <label htmlFor="projectCode" className="sr-only">{t.clientsInputPlaceholder}</label>
+                        <Input
+                          id="projectCode"
+                          type="text"
+                          value={projectCode}
+                          onChange={(e) => setProjectCode(e.target.value)}
+                          placeholder={t.clientsInputPlaceholder}
+                          required
+                          className="text-center"
+                        />
+                      </div>
+                      <Button type="submit" className="w-full" disabled={isLoading}>
+                        {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : t.clientsButton}
+                      </Button>
+                    </form>
+                  </div>
+                </>
+              ) : (
+                <div className="text-center">
+                    <div className="max-w-2xl mx-auto bg-background/80 backdrop-blur-sm rounded-lg shadow-xl p-8 sm:p-12 border border-border">
+                      <Download className="mx-auto h-16 w-16 text-primary" />
+                      <h1 className="mt-6 font-headline text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
+                          {t.clientsDownloadTitle.replace('{projectCode}', projectCode)}
+                      </h1>
+                      <p className="mt-4 text-lg text-muted-foreground">
+                          {t.clientsDownloadSubtitle}
+                      </p>
+                      <div className="mt-8">
+                          <Button asChild size="lg">
+                              <a href={downloadUrl} download>
+                                  <Download className="mr-2"/>
+                                  {t.clientsDownloadButton}
+                              </a>
+                          </Button>
+                      </div>
+                      <div className="mt-8">
+                          <Button variant="ghost" onClick={handleLogout}>{t.clientsDownloadOtherCode}</Button>
+                      </div>
+                  </div>
                 </div>
+              )}
+
             </div>
-        </main>
-       <Footer />
+          </div>
+        </section>
+      </main>
+      <Footer />
     </div>
-  )
+  );
 }
