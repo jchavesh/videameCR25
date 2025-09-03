@@ -66,7 +66,7 @@ export default function Header() {
 
           <div className="flex items-center gap-2">
              <div className="hidden md:flex items-center gap-2">
-                <Button asChild variant="outline">
+                <Button asChild>
                   <Link href="/#contacto">{t.navContact}</Link>
                 </Button>
                 <Button asChild size="icon" variant="outline">
@@ -123,7 +123,7 @@ export default function Header() {
                       ))}
                     </nav>
                      <div className="mt-auto space-y-4">
-                        <Button asChild className="w-full" variant="outline">
+                        <Button asChild className="w-full">
                           <Link href="/#contacto" onClick={handleMobileMenuLinkClick}>{t.navContact}</Link>
                         </Button>
                         <Button asChild className="w-full" variant="outline">
