@@ -64,13 +64,13 @@ export default function Header() {
 
           <div className="flex items-center gap-2">
              <div className="hidden md:flex items-center gap-2">
+                <Button asChild>
+                  <Link href="/#contacto">{t.navContact}</Link>
+                </Button>
                 <Button asChild size="icon">
                   <Link href="/portal" aria-label={t.navPortal}>
                     <Download className="h-5 w-5" />
                   </Link>
-                </Button>
-                <Button asChild>
-                  <Link href="/#contacto">{t.navContact}</Link>
                 </Button>
             </div>
 
