@@ -104,12 +104,6 @@ export default function Header() {
                        <Link href="/" onClick={handleMobileMenuLinkClick}>
                           <Logo />
                        </Link>
-                       <SheetClose asChild>
-                         <Button variant="ghost" size="icon">
-                           <X className="h-6 w-6" />
-                           <span className="sr-only">Cerrar menú</span>
-                         </Button>
-                       </SheetClose>
                     </div>
                     <nav className="flex flex-col gap-6">
                       {[...navLinks, { href: '/portal', label: t.navPortal }].map((link) => (
