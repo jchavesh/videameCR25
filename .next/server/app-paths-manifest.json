@@ -3,5 +3,6 @@
   "/casting/page": "app/casting/page.js",
   "/clientes/page": "app/clientes/page.js",
   "/page": "app/page.js",
+  "/portal/page": "app/portal/page.js",
   "/work/page": "app/work/page.js"
 }

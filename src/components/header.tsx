@@ -29,8 +29,12 @@ export default function Header() {
     { href: '/#proceso', label: t.navProcess },
     { href: '/#sobre', label: t.navAbout },
     { href: '/casting', label: t.navCasting },
-    { href: '/portal', label: t.navClients },
   ];
+  
+  const ctaLinks = [
+      { href: '/portal', label: t.navPortal },
+      { href: '#contacto', label: t.navContact },
+  ]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,6 +68,9 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
+             <Button asChild className="hidden md:flex" variant="outline">
+              <Link href="/portal">{t.navPortal}</Link>
+            </Button>
             <Button asChild className="hidden md:flex">
               <Link href="#contacto">{t.navContact}</Link>
             </Button>
@@ -106,7 +113,7 @@ export default function Header() {
                        </SheetClose>
                     </div>
                     <nav className="flex flex-col gap-6">
-                      {navLinks.map((link) => (
+                      {[...navLinks, { href: '/portal', label: t.navPortal }].map((link) => (
                            <Link 
                               key={link.href} 
                               href={link.href} 
