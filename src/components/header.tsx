@@ -68,7 +68,7 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
-             <Button asChild className="hidden md:flex" variant="outline">
+             <Button asChild className="hidden md:flex">
               <Link href="/portal">{t.navPortal}</Link>
             </Button>
             <Button asChild className="hidden md:flex">
