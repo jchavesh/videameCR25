@@ -30,11 +30,6 @@ export default function Header() {
     { href: '/#sobre', label: t.navAbout },
     { href: '/casting', label: t.navCasting },
   ];
-  
-  const ctaLinks = [
-      { href: '/portal', label: t.navPortal },
-      { href: '#contacto', label: t.navContact },
-  ]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,7 +63,7 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
-             <Button asChild className="hidden md:flex">
+            <Button asChild className="hidden md:flex">
               <Link href="/portal">{t.navPortal}</Link>
             </Button>
             <Button asChild className="hidden md:flex">
