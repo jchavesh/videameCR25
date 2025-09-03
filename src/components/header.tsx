@@ -63,12 +63,14 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <Button asChild className="hidden md:flex">
-              <Link href="/portal">{t.navPortal}</Link>
-            </Button>
-            <Button asChild className="hidden md:flex">
-              <Link href="#contacto">{t.navContact}</Link>
-            </Button>
+             <div className="hidden md:flex items-center gap-2">
+                <Button asChild>
+                  <Link href="/portal">{t.navPortal}</Link>
+                </Button>
+                <Button asChild>
+                  <Link href="/#contacto">{t.navContact}</Link>
+                </Button>
+            </div>
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
