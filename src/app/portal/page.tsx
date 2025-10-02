@@ -37,41 +37,43 @@ export default function PortalPage() {
     const code = projectCode.trim();
     const extensions = ['zip', 'mp4', 'jpg', 'pdf', 'mov'];
     const caseVariations = [code, code.toLowerCase(), code.toUpperCase()];
-    let foundUrl = '';
-
-    for (const variation of caseVariations) {
-        for (const ext of extensions) {
-            const potentialUrl = `/work/${variation}.${ext}`;
-            try {
-                const response = await fetch(potentialUrl, { method: 'HEAD' });
-                if (response.ok) {
-                    foundUrl = potentialUrl;
-                    break; 
-                }
-            } catch (error) {
-                console.error(`Error checking for ${variation}.${ext}:`, error);
-            }
-        }
-        if (foundUrl) break;
-    }
     
-    if (foundUrl) {
-      toast({
-          title: t.clientsToastSuccessTitle,
-          description: t.clientsToastSuccessDesc,
-      });
-      setDownloadUrl(foundUrl);
-      setIsAuthenticated(true);
-    } else {
-       toast({
-          variant: 'destructive',
-          title: t.clientsToastErrorTitle,
-          description: t.clientsToastErrorDesc,
-      });
-      setIsAuthenticated(false);
-    }
+    // Create a unique set of variations to avoid redundant checks
+    const uniqueVariations = [...new Set(caseVariations)];
 
-    setIsLoading(false);
+    const potentialUrls: string[] = [];
+    uniqueVariations.forEach(variation => {
+        extensions.forEach(ext => {
+            potentialUrls.push(`/work/${variation}.${ext}`);
+        });
+    });
+
+    try {
+        const checkPromises = potentialUrls.map(url => 
+            fetch(url, { method: 'HEAD' }).then(res => res.ok ? url : Promise.reject())
+        );
+
+        // Promise.any stops as soon as one promise fulfills
+        const foundUrl = await Promise.any(checkPromises);
+
+        toast({
+            title: t.clientsToastSuccessTitle,
+            description: t.clientsToastSuccessDesc,
+        });
+        setDownloadUrl(foundUrl);
+        setIsAuthenticated(true);
+
+    } catch (error) {
+        // This catch block runs if all promises reject (no file found)
+        toast({
+            variant: 'destructive',
+            title: t.clientsToastErrorTitle,
+            description: t.clientsToastErrorDesc,
+        });
+        setIsAuthenticated(false);
+    } finally {
+        setIsLoading(false);
+    }
   };
 
   const handleLogout = () => {
@@ -130,7 +132,7 @@ export default function PortalPage() {
                           {t.clientsDownloadSubtitle}
                       </p>
                       <div className="mt-8">
-                          <Button asChild size="lg">
+                          <Button asChild size="lg" variant="outline">
                               <a href={downloadUrl} download>
                                   <Download className="mr-2"/>
                                   {t.clientsDownloadButton}
