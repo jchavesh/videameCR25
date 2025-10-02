@@ -34,33 +34,38 @@ export default function PortalPage() {
         return;
     }
 
-    const potentialUrl = `/work/${projectCode.toLowerCase().trim()}.zip`;
-    
-    try {
-        const response = await fetch(potentialUrl, { method: 'HEAD' });
+    const code = projectCode.toLowerCase().trim();
+    const extensions = ['zip', 'mp4', 'jpg', 'pdf', 'mov'];
+    let foundUrl = '';
 
+    for (const ext of extensions) {
+      const potentialUrl = `/work/${code}.${ext}`;
+      try {
+        const response = await fetch(potentialUrl, { method: 'HEAD' });
         if (response.ok) {
-            toast({
-                title: t.clientsToastSuccessTitle,
-                description: t.clientsToastSuccessDesc,
-            });
-            setDownloadUrl(potentialUrl);
-            setIsAuthenticated(true);
-        } else {
-            toast({
-                variant: 'destructive',
-                title: t.clientsToastErrorTitle,
-                description: t.clientsToastErrorDesc,
-            });
-            setIsAuthenticated(false);
+          foundUrl = potentialUrl;
+          break; // Stop searching once a file is found
         }
-    } catch (error) {
-         toast({
-            variant: 'destructive',
-            title: t.clientsToastNetworkErrorTitle,
-            description: t.clientsToastNetworkErrorDesc,
-        });
-        setIsAuthenticated(false);
+      } catch (error) {
+        // This can happen if the network fails, but we'll catch it globally later
+        console.error(`Error checking for ${ext}:`, error);
+      }
+    }
+    
+    if (foundUrl) {
+      toast({
+          title: t.clientsToastSuccessTitle,
+          description: t.clientsToastSuccessDesc,
+      });
+      setDownloadUrl(foundUrl);
+      setIsAuthenticated(true);
+    } else {
+       toast({
+          variant: 'destructive',
+          title: t.clientsToastErrorTitle,
+          description: t.clientsToastErrorDesc,
+      });
+      setIsAuthenticated(false);
     }
 
     setIsLoading(false);
@@ -122,7 +127,7 @@ export default function PortalPage() {
                           {t.clientsDownloadSubtitle}
                       </p>
                       <div className="mt-8">
-                          <Button asChild size="lg" variant="outline">
+                          <Button asChild size="lg">
                               <a href={downloadUrl} download>
                                   <Download className="mr-2"/>
                                   {t.clientsDownloadButton}
