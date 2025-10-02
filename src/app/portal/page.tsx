@@ -36,20 +36,23 @@ export default function PortalPage() {
 
     const code = projectCode.trim();
     const extensions = ['zip', 'mp4', 'jpg', 'pdf', 'mov'];
+    const caseVariations = [code, code.toLowerCase(), code.toUpperCase()];
     let foundUrl = '';
 
-    for (const ext of extensions) {
-      const potentialUrl = `/work/${code}.${ext}`;
-      try {
-        const response = await fetch(potentialUrl, { method: 'HEAD' });
-        if (response.ok) {
-          foundUrl = potentialUrl;
-          break; // Stop searching once a file is found
+    for (const variation of caseVariations) {
+        for (const ext of extensions) {
+            const potentialUrl = `/work/${variation}.${ext}`;
+            try {
+                const response = await fetch(potentialUrl, { method: 'HEAD' });
+                if (response.ok) {
+                    foundUrl = potentialUrl;
+                    break; 
+                }
+            } catch (error) {
+                console.error(`Error checking for ${variation}.${ext}:`, error);
+            }
         }
-      } catch (error) {
-        // This can happen if the network fails, but we'll catch it globally later
-        console.error(`Error checking for ${ext}:`, error);
-      }
+        if (foundUrl) break;
     }
     
     if (foundUrl) {
