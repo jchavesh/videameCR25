@@ -34,7 +34,7 @@ export default function PortalPage() {
         return;
     }
 
-    const code = projectCode.toLowerCase().trim();
+    const code = projectCode.trim();
     const extensions = ['zip', 'mp4', 'jpg', 'pdf', 'mov'];
     let foundUrl = '';
 
