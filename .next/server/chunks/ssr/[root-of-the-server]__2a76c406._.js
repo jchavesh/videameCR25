@@ -670,7 +670,7 @@ const content = {
             "clientsToastInvalidDesc": "Por favor, ingresa un código de proyecto.",
             "clientsDownloadTitle": "Proyecto: {projectCode}",
             "clientsDownloadSubtitle": "¡Tu proyecto está listo para descargar!",
-            "clientsDownloadButton": "Descargar Archivos (.zip)",
+            "clientsDownloadButton": "Descargar Archivos",
             "clientsDownloadOtherCode": "Ingresar otro código"
         }
     },
@@ -1064,7 +1064,7 @@ const content = {
             "clientsToastInvalidDesc": "Please enter a project code.",
             "clientsDownloadTitle": "Project: {projectCode}",
             "clientsDownloadSubtitle": "Your project is ready to download!",
-            "clientsDownloadButton": "Download Files (.zip)",
+            "clientsDownloadButton": "Download Files",
             "clientsDownloadOtherCode": "Enter another code"
         }
     }
