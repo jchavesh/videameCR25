@@ -118,7 +118,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$language$2
 ;
 ;
 ;
-const logoUrl = '/images/VideameLogoFinal.svg';
+const logoUrl = '/images/preview.png';
 const metadata = {
     title: 'Producción Audiovisual y Videos Profesionales en Costa Rica | Videame',
     description: 'Creamos videos corporativos, publicitarios y cinematográficos en Costa Rica. Producción audiovisual profesional para marcas que quieren destacar.',

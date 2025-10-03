@@ -5,7 +5,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 import { LanguageProvider } from '@/context/language-context';
 
-const logoUrl = '/images/VideameLogoFinal.svg';
+const logoUrl = '/images/preview.png';
 
 export const metadata: Metadata = {
   title: 'Producción Audiovisual y Videos Profesionales en Costa Rica | Videame',
